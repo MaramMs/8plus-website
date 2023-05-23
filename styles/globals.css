@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  overflow: hidden;
+}
+
+nav ul li {
+  position: relative;
+}
+
+.active {
+  color: #1768AC;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 23px;
+}
+
+.active:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #1768AC;
+}
