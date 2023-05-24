@@ -1,4 +1,3 @@
-import HorizontalScroll from "@/components/HorizontalScroll";
 import { Button } from "antd";
 import { useTranslation } from "react-i18next";
 import {CgScrollV} from 'react-icons/cg'
