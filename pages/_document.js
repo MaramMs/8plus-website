@@ -10,6 +10,9 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800&family=Cairo&family=DM+Sans:ital,wght@0,500;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;600;700&family=Lato&family=Montserrat+Subrayada&family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Nunito+Sans:wght@800&family=Open+Sans&family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,600&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,300;1,500&family=Work+Sans:ital,wght@0,800;1,700&display=swap"
           rel="stylesheet"
         />
+
+<link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
       </Head>
       <body>
         <Main />

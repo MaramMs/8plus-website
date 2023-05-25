@@ -69,10 +69,14 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="z-10 absolute w-full md:py-[20px] ">
+      <nav className="z-100 absolute w-full md:py-[20px] ">
+    <img src="/images/plus.png" className=" absolute left-[36%]  top-[1%]"/>
         <div className="container flex justify-between items-center">
           <div>
-            <img src="/images/logo.png" />
+            {
+              router.pathname === '/' ?  <img src="/images/logo.png" /> : <img src="/images/about-logo.png" />
+            }
+           
           </div>
           <FaBars onClick={() => setMenu(!meun)} className="cursor-pointer" />
         </div>
@@ -126,87 +130,3 @@ export default Navbar;
 
 
 
-// import Link from "next/link";
-// import React, { useEffect, useState } from "react";
-// import { FaBars } from "react-icons/fa";
-// import { AiOutlineClose } from "react-icons/ai";
-// import { useRouter } from "next/router";
-// import { useTranslation } from "react-i18next";
-
-// const Navbar = () => {
-//   const router = useRouter();
-//   const [menuOpen, setMenuOpen] = useState(false);
-//   const { t } = useTranslation();
-
-//   const paths = ['/', '/services', '/about', '/contact'];
-
-//   const handleMouseClick = (path) => {
-//     console.log(path);
-//     console.log('path');
-//     if (path !== router.pathname) {
-//       router.push(path);
-//       setMenuOpen(false);
-//     }
-//   };
-
-//   useEffect(() => {
-//     const handleTouchStart = () => {
-//       setMenuOpen(false);
-//     };
-
-//     document.addEventListener("touchstart", handleTouchStart);
-//     return () => {
-//       document.removeEventListener("touchstart", handleTouchStart);
-//     };
-//   }, []);
-
-//   return (
-//     <>
-//       <nav className="z-10 absolute w-full md:py-[20px] ">
-//         <div className="container flex justify-between items-center">
-//           <div>
-//             <img src="/images/logo.png" />
-//           </div>
-//           <FaBars
-//             onClick={() => setMenuOpen(!menuOpen)}
-//             className="cursor-pointer"
-//           />
-//         </div>
-//       </nav>
-
-//       {menuOpen && (
-//         <div className="bg-white md:w-[507px]  left-0 top-0 h-full flex  px-[100px] z-10 items-center fixed text-right	">
-//           <AiOutlineClose
-//             className="top-[64px] left-[128px] absolute cursor-pointer text-[27px] text-[#03256c]"
-//             onClick={() => setMenuOpen(false)}
-//           />
-//           <ul>
-//             {paths.map((path, index) => (
-            
-//             <>
-//             console.log('matbdcnsc');
-//               console.log(path);
-//               <li
-//               key={index}
-//               className={`${
-//                 router.pathname === path ? "active" : ""
-//               } mb-[23px] text-[32px] text-[#000] font-semibold`}
-//             >
-//               <div
-//                 onClick={() => handleMouseClick(path)}
-//                 onTouchStart={() => handleMouseClick(path)}
-//                 data-path={path}
-//               >
-//                 {t(path.slice(1))}
-//               </div>
-//             </li>
-//             </>
-//             ))}
-//           </ul>
-//         </div>
-//       )}
-//     </>
-//   );
-// };
-
-// export default Navbar;
