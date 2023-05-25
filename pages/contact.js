@@ -11,10 +11,10 @@ const contact = () => {
   return (
     <div className="md:pt-[129px]">
       <Row className="md:mb-[230px]">
-        <Col md={{ span: 12 }} className=" container">
+        <Col md={{ span: 12 }} className="md:px-[76px]">
           <h1 className="text-[#1768ac] text-[32px] font-medium">contact us</h1>
 
-          <p className="md:w-[592px] break-words text-[16px] text-[#949494] font-[450] mt-[9px]">
+          <p className="break-words text-[16px] text-[#949494] font-[450] mt-[9px]">
             {t("home-desc")}
           </p>
 
@@ -138,7 +138,7 @@ const contact = () => {
         </Col>
 
         <Col md={{ span: 12 }}>
-          <ul className="bg-[#1768AC] text-[507px] h-[477px] rounded-r-[50px] flex justify-center items-center flex-col gap-[71px]">
+          <ul className="bg-[#1768AC] h-[477px] rounded-r-[50px] flex justify-center items-center flex-col gap-[71px]">
             <li className="flex items-center gap-[13px]">
               <HiLocationMarker className="text-[#fff] text-[19px]" />
               <span className="text-[#fff] font-medium text-[16px]">
