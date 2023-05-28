@@ -76,3 +76,7 @@ nav ul li {
   border-left: transparent;
   border-right: transparent;
 }
+
+.ser{
+  background: linear-gradient(277.95deg, #1768AC 0%, #1768AC 42.63%, #1E4BAA 100%);
+}
