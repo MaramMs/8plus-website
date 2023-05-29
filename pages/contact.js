@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import Wrapper from "@/components/Wrapper";
 import { Button, Col, Form, Input, Row, Select } from "antd";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -9,9 +10,11 @@ import { IoMdMail } from "react-icons/io";
 const contact = () => {
   const { t } = useTranslation();
   return (
-    <div className="md:pt-[129px]">
+<>
+    <div className="md:pt-[162px]">
+
       <Row className="md:mb-[230px]">
-        <Col md={{ span: 12 }} className="md:px-[76px]">
+        <Col md={{ span: 12 }} className="md:px-[128px]">
           <h1 className="text-[#1768ac] text-[32px] font-medium">contact us</h1>
 
           <p className="break-words text-[16px] text-[#949494] font-[450] mt-[9px]">
@@ -137,8 +140,8 @@ const contact = () => {
           </Form>
         </Col>
 
-        <Col md={{ span: 12 }}>
-          <ul className="bg-[#1768AC] h-[477px] rounded-r-[50px] flex justify-center items-center flex-col gap-[71px]">
+        <Col md={{ span: 12 }} className="flex justify-end">
+          <ul className="bg-[#1768AC] h-[477px] rounded-r-[50px] flex md:py-[127px] md:px-[101px] flex-col gap-[71px] md:w-[507px]">
             <li className="flex items-center gap-[13px]">
               <HiLocationMarker className="text-[#fff] text-[19px]" />
               <span className="text-[#fff] font-medium text-[16px]">
@@ -161,8 +164,9 @@ const contact = () => {
         </Col>
       </Row>
 
-      <Footer />
     </div>
+      <Footer />
+</>
   );
 };
 

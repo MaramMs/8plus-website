@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import Wrapper from "@/components/Wrapper";
 import { Col, Row } from "antd";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -77,28 +78,23 @@ const about = () => {
   ]
   return (
     <div className="about">
-    <div className="container md:pt-[129px]">
-    <Row gutter={[74,74]}>
-        <Col md={{ span: 12 }} className="md:pt-[119px]">
+      <Wrapper className='md:pt-[162px]' >
+    <Row gutter={[74,101]}>
+        <Col md={{ span: 12 }} className="md:pt-[119px] gutter-row">
           <h3 className="text-[#1768ac] text-[36px] font-medium mb-[13px]">{t('about')}</h3>
           <p className="text-[#000] text-[18px] w-[503px] break-words text-right font-medium">
-            {/* Eight Plus provides a wide range of services that cater to different
-            customer needs. In the field of marketing, the company provides
-            strategic consultancy, brand development, market and competition
-            analysis, design and implementation of digital marketing campaigns
-            including social media management, online advertising and search
-            engine optimization (SEO). */}
+          
 
             {t('home-desc')}
           </p>
         </Col>
 
-        <Col md={{ span: 12 }}>
+        <Col md={{ span: 12 }} className="flex justify-end">
           <img src="/images/about-img.png" className="max-w-[100%]"/>
         </Col>
 
 
-        <Col md={{ span: 12 }} >
+        <Col md={{ span: 12 }}>
           <div  className="flex items-center gap-[17px]">
         <GoMail  className="text-[#1768ac] text-[35px]"/>
           <h3 className="text-[#1768ac] text-[36px] font-medium mb-[13px] ">
@@ -114,7 +110,7 @@ const about = () => {
         </Col>
 
 
-        <Col md={{ span: 12 }}>
+        <Col md={{ span: 12 }} className="flex justify-col-end flex-col">
 
           <div className="flex items-center gap-[17px]">
 
@@ -131,6 +127,17 @@ const about = () => {
       </Row>
 
 
+      {/* <Row>
+        <Col span={12}>
+        maram
+        </Col>
+
+        <Col span={12}>
+        ismail
+        </Col>
+      </Row> */}
+
+
       <div className="md:mt-[65px] md:mb-[160px]">
         <h2 className="text-center text-[36px] text-[#1768ac] font-medium md:mb-[57px]">{t('about-partners')}</h2>
 
@@ -144,12 +151,13 @@ const about = () => {
 </Slider>
       </div>
 
-    </div>
-
+    
     
 
+    </Wrapper>
     <Footer />
     </div>
+
   );
 };
 

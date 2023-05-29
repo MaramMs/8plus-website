@@ -11,12 +11,13 @@ const Layout = ({children}) => {
         return null;
     }
   return (
-    <>
+    //1920
+    <div>
      <Navbar />
      <main>
       {children}
      </main>
-    </>
+    </div>
   )
 }
 

@@ -8,7 +8,7 @@ import {IoMdMail} from 'react-icons/io'
 const Footer = () => {
   return (
   <footer className='bg-[#1768ac] md:pt-[109px]  md:pb-[77px] flex justify-center items-center'>
- <div className='container'>
+ <div className='container px-[128px]'>
  <Row className='md:mb-[12px]'>
   <Col md={{span:8}}>
      <span className='text-[#fff] font-medium text-[16px]'>@8plus Co</span>
