@@ -10,63 +10,51 @@ const Navbar = () => {
   const router = useRouter();
   const [meun, setMenu] = useState(false);
   const { t } = useTranslation();
-  const KEY_RIGHT_ARROW = 39;
-  const KEY_LEFT_ARROW = 37;
+  // const KEY_RIGHT_ARROW = 39;
+  // const KEY_LEFT_ARROW = 37;
 
-  const paths = ["/", "/services", "/about", "/contact"];
-  const handleKeydown = (event) => {
-    if (event.keyCode === KEY_RIGHT_ARROW) {
-      const currentIndex = paths.indexOf(router.pathname);
-      if (currentIndex != -1) {
-        const nextPage = paths[currentIndex + 1];
-        if (nextPage) {
-          router.push(nextPage);
-        }
-      }
-    } else if (event.keyCode === KEY_LEFT_ARROW) {
-      const currentIndex = paths.indexOf(router.pathname);
-      const prevPage = paths[currentIndex - 1];
-      if (prevPage) {
-        router.push(prevPage);
+  // const handleKeydown = (event) => {
+    //   if (event.keyCode === KEY_RIGHT_ARROW) {
+      //     const currentIndex = paths.indexOf(router.pathname);
+      //     if (currentIndex != -1) {
+        //       const nextPage = paths[currentIndex + 1];
+        //       if (nextPage) {
+          //         router.push(nextPage);
+  //       }
+  //     }
+  //   } else if (event.keyCode === KEY_LEFT_ARROW) {
+  //     const currentIndex = paths.indexOf(router.pathname);
+  //     const prevPage = paths[currentIndex - 1];
+  //     if (prevPage) {
+    //       router.push(prevPage);
+  //     }
+  //   }
+  // };
+  
+  // useEffect(() => {
+  //   document.addEventListener("keydown", handleKeydown);
+  //   return () => {
+    //     document.removeEventListener("keydown", handleKeydown);
+    //   };
+    // }, [router.pathname]);
+
+const handleWheel = (event) => {
+    const delta = Math.sign(event.deltaY);
+     if (delta < 0) {
+      if (router.pathname === '/') {
+          router.push('/about');
+        
       }
     }
   };
 
+
   useEffect(() => {
-    document.addEventListener("keydown", handleKeydown);
+    document.addEventListener('wheel', handleWheel);
     return () => {
-      document.removeEventListener("keydown", handleKeydown);
+      document.removeEventListener('wheel', handleWheel);
     };
   }, [router.pathname]);
-
-  //   const paths = ['/', '/services', '/about', '/contact'];
-
-  // const handleMouseClick = (event) => {
-  //   console.log(event.target, 'event');
-  //   const currentIndex = paths.indexOf(router.pathname);
-  //   console.log(currentIndex , 'index');
-  //   const targetPath = event.target.getAttribute('data-path');
-  //   console.log(targetPath , 'target');
-
-  //   if (targetPath && targetPath !== router.pathname) {
-  //     const targetIndex = paths.indexOf(targetPath);
-
-  //     if (targetIndex > currentIndex) {
-  //       const nextPage = paths[targetIndex];
-  //       router.push(nextPage);
-  //     } else if (targetIndex < currentIndex) {
-  //       const prevPage = paths[targetIndex];
-  //       router.push(prevPage);
-  //     }
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   document.addEventListener('click', handleMouseClick);
-  //   return () => {
-  //     document.removeEventListener('click', handleMouseClick);
-  //   };
-  // }, [router.pathname]);
 
   return (
     <>

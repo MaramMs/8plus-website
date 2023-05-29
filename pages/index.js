@@ -27,10 +27,8 @@ export default function Home() {
       <CgScrollV />
    </div>
 
-   {/* <HorizontalScroll /> */}
     </div>
   );
 }
 
 
-//inset-0 bg-gradient-to-r from-[#2563eba3] to-[#1e3a8ae6]
