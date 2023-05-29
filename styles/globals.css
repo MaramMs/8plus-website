@@ -67,6 +67,7 @@ nav ul li {
     rgba(23, 104, 172, 0.13) 0%,
     rgba(217, 217, 217, 0) 99.41%
   );
+  overflow-x: hidden;
 }
 
 .slick-slide>div{
