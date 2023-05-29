@@ -89,8 +89,8 @@ const about = () => {
           </p>
         </Col>
 
-        <Col md={{ span: 12 }} className="flex justify-end">
-          <img src="/images/about-img.png" className="max-w-[100%]"/>
+        <Col md={{ span: 12 }}>
+          <img src="/images/about-img.png"  className='w-[100%] h-[100%] object-cover'/>
         </Col>
 
 
@@ -110,7 +110,7 @@ const about = () => {
         </Col>
 
 
-        <Col md={{ span: 12 }} className="flex justify-col-end flex-col">
+        <Col md={{ span: 12 }} >
 
           <div className="flex items-center gap-[17px]">
 
@@ -127,15 +127,7 @@ const about = () => {
       </Row>
 
 
-      {/* <Row>
-        <Col span={12}>
-        maram
-        </Col>
 
-        <Col span={12}>
-        ismail
-        </Col>
-      </Row> */}
 
 
       <div className="md:mt-[65px] md:mb-[160px]">
