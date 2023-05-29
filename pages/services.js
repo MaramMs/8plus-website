@@ -1,11 +1,13 @@
 import Footer from "@/components/Footer";
+import Wrapper from "@/components/Wrapper";
 import { Button, Col, Form, Input, Row, Select } from "antd";
 import React from "react";
 
 const services = () => {
   return (
     <>
-      <div className="flex flex-col justify-center items-center md:pt-[129px]">
+
+  <div className="flex flex-col justify-center items-center md:pt-[162px]">
         <h1 className="text-[#1768AC] text-[36px] font-semibold">Services</h1>
         <p className="text-[#949494] text-[16px] font-medium md:w-[728px] break-words text-center">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
@@ -15,7 +17,8 @@ const services = () => {
       </div>
 
       <div className="ser md:mt-[66px]">
-        <div className="container md:py-[31px] md:px-[127px]">
+        {/* <div className="container md:py-[31px] md:px-[127px]"> */}
+  <Wrapper>
           <Row>
             <Col
               md={{ span: 8 }}
@@ -235,29 +238,30 @@ const services = () => {
               </div>
             </Col>
           </Row>
-        </div>
-      </div>
+        {/* </div> */}
 
 
+  </Wrapper>
+                </div>
       <div className="flex justify-center items-center flex-col md:mt-[119px] md:mb-[90px]">
         <h2 className="text-[#1768AC] font-medium text-[32px]">Services Request</h2>
       <Form
             className="md:mt-[39px]"
             name="basic"
             // labelCol={{
-            //   span: 8,
+              //   span: 8,
             // }}
             // wrapperCol={{
             //   span: 16,
             // }}
-
+            
             initialValues={{
               remember: true,
             }}
             // onFinish={onFinish}
             // onFinishFailed={onFinishFailed}
             autoComplete="off"
-          >
+            >
             <Row span="24" gutter={[36, 10]}>
               <Col md={{ span: 12 }}>
                 <Form.Item
@@ -353,7 +357,7 @@ const services = () => {
                 type="primary"
                 htmlType="submit"
                 className="md:w-[272px] md:h-[48px] bg-[#1768ac] rounded-[24px] text-[#fff] font-semibold text-[14px] p-[12px] flex justify-center items-center"
-              >
+                >
                 Send
               </Button>
             </Form.Item>
