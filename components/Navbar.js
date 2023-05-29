@@ -115,7 +115,7 @@ const handleWheel = (event) => {
       </nav>
 
       {meun && (
-        <div className="bg-white md:w-[507px]  left-0 top-0 h-full flex  px-[100px] z-10 items-center fixed text-right	">
+        <div className="bg-white w-[242px] md:w-[507px]  left-0 top-0 h-full flex px-[74px] md:px-[100px] absolute z-[100] items-center  text-right	">
           <AiOutlineClose
             className="top-[64px] left-[128px] absolute cursor-pointer text-[27px] text-[#03256c]"
             onClick={() => setMenu(false)}
@@ -124,7 +124,7 @@ const handleWheel = (event) => {
             <li
               className={`${
                 router.pathname === "/" ? "active" : ""
-              } mb-[23px] text-[32px] text-[#000] font-semibold`}
+              } mb-[23px] text-[20px] md:text-[32px]  text-[#000] font-semibold`}
             >
               <Link href="/" data-path="/">
                 {t("home")}
@@ -133,7 +133,7 @@ const handleWheel = (event) => {
             <li
               className={`${
                 router.pathname === "/services" ? "active" : ""
-              } mb-[23px] text-[32px] text-[#000] font-semibold`}
+              } mb-[23px]  text-[20px] md:text-[32px] text-[#000] font-semibold`}
             >
               <Link href="/services" data-path="/services">
                 {t("services")}
@@ -143,7 +143,7 @@ const handleWheel = (event) => {
             <li
               className={`${
                 router.pathname === "/about" ? "active" : ""
-              } mb-[23px] text-[32px] text-[#000] font-semibold`}
+              } mb-[23px] text-[20px] md:text-[32px]  text-[#000] font-semibold`}
             >
               <Link href="/about" data-path="/about">
                 {t("about")}
@@ -153,7 +153,7 @@ const handleWheel = (event) => {
             <li
               className={`${
                 router.pathname === "/contact" ? "active" : ""
-              } mb-[23px] text-[32px] text-[#000] font-semibold`}
+              } mb-[23px]text-[20px] md:text-[32px]  text-[#000] font-semibold`}
             >
               <Link href="/contact" data-path="/contact">
                 {t("contact")}

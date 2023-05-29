@@ -26,11 +26,21 @@ nav ul li {
 
 .active {
   color: #1768ac;
-  font-size: 32px;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 23px;
+
 }
 
+@media (min-width = '575px') {
+  .active {
+    color: #1768ac;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 23px;
+  
+  }
+}
 .active:before {
   content: "";
   position: absolute;

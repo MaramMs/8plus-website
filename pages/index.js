@@ -9,10 +9,10 @@ export default function Home() {
       <div className="absolute  home"></div>
    <div className="container flex justify-center items-center flex-col z-20">
      
-   <h1 className="text-[#fff] text-[30px] font-semibold text-center w-[782px] break-words md:mb-[15px]">
+   <h1 className="text-[#fff] md:text-[30px] text-[20px] font-semibold text-center md:w-[782px] break-words md:mb-[15px] mb-[9px]">
       {t('home-title')}
       </h1>
-      <p className="text-[14px] font-medium text-[#fff] text-center w-[580px] break-words md:mb-[64px]">
+      <p className="text-[14px] font-medium text-[#fff] text-center md:w-[580px] break-words md:mb-[64px] mb-[42px]">
       {t('home-desc')}
       </p>
       <div className="flex justify-center items-center gap-[11px]">
