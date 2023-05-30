@@ -11,13 +11,14 @@ const contact = () => {
   const { t } = useTranslation();
   return (
 <>
-    <div className="md:pt-[162px]">
+    <div className="pt-[162px] overflow-x-hidden">
 
-      <Row className="md:mb-[230px]">
-        <Col md={{ span: 12 }} className="md:px-[128px]">
-          <h1 className="text-[#1768ac] text-[32px] font-medium">contact us</h1>
 
-          <p className="break-words text-[16px] text-[#949494] font-[450] mt-[9px]">
+     <Row className="md:mb-[230px] mb-[108px]">
+        <Col span={24} md={{ span: 12 }} className="md:px-[128px] px-[19px]">
+          <h1 className="text-[#1768ac] text-[16px] md:text-[32px] font-medium">contact us</h1>
+
+          <p className="break-words text-[14px] md:text-[16px] text-[#949494] font-[450] mt-[9px] leading-[23px] mb-[36px]">
             {t("home-desc")}
           </p>
 
@@ -39,7 +40,7 @@ const contact = () => {
             autoComplete="off"
           >
             <Row span="24" gutter={[36, 10]}>
-              <Col md={{ span: 12 }}>
+              <Col span={24} md={{ span: 12 }}>
                 <Form.Item
                   name="username"
                   rules={[
@@ -56,7 +57,7 @@ const contact = () => {
                 </Form.Item>
               </Col>
 
-              <Col md={{ span: 12 }}>
+              <Col span={24} md={{ span: 12 }}>
                 <Form.Item
                   name="password"
                   rules={[
@@ -73,7 +74,7 @@ const contact = () => {
                 </Form.Item>
               </Col>
 
-              <Col md={{ span: 12 }}>
+              <Col span={24} md={{ span: 12 }}>
                 <Form.Item
                   name="username"
                   rules={[
@@ -90,7 +91,7 @@ const contact = () => {
                 </Form.Item>
               </Col>
 
-              <Col md={{ span: 12 }}>
+              <Col span={24} md={{ span: 12 }}>
                 <Form.Item
                   name="services"
                   rules={[
@@ -111,7 +112,7 @@ const contact = () => {
                 </Form.Item>
               </Col>
 
-              <Col md={{ span: 24 }}>
+              <Col span={24} md={{ span: 12 }}>
                 <Form.Item
                   name="password"
                   rules={[
@@ -132,7 +133,7 @@ const contact = () => {
               <Button
                 type="primary"
                 htmlType="submit"
-                className="md:w-[272px] md:h-[48px] bg-[#1768ac] rounded-[24px] text-[#fff] font-semibold text-[14px] p-[12px] flex justify-center items-center"
+                className="md:w-[272px] w-[126px]  h-[48px] bg-[#1768ac] rounded-[24px] text-[#fff] font-semibold text-[14px] p-[12px] flex justify-center items-center"
               >
                 Send
               </Button>
@@ -140,8 +141,8 @@ const contact = () => {
           </Form>
         </Col>
 
-        <Col md={{ span: 12 }} className="flex justify-end">
-          <ul className="bg-[#1768AC] h-[477px] rounded-r-[50px] flex md:py-[127px] md:px-[101px] flex-col gap-[71px] md:w-[507px]">
+        <Col span={24} md={{ span: 12 }} className="flex justify-end px-[19px]">
+          <ul className="bg-[#1768AC] md:h-[477px] h-[284px] px-[37px] py-[39px] rounded-[8px] w-[350px] md:rounded-r-[50px] flex md:py-[127px] md:px-[101px] flex-col md:gap-[71px] gap-[31px] md:w-[507px]">
             <li className="flex items-center gap-[13px]">
               <HiLocationMarker className="text-[#fff] text-[19px]" />
               <span className="text-[#fff] font-medium text-[16px]">
@@ -164,6 +165,7 @@ const contact = () => {
         </Col>
       </Row>
 
+    
     </div>
       <Footer />
 </>

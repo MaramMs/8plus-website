@@ -5,15 +5,16 @@ import {MdAccessTimeFilled} from 'react-icons/md'
 import {HiLocationMarker} from 'react-icons/hi'
 import {IoMdMail} from 'react-icons/io'
 import { useTranslation } from 'react-i18next'
+import Wrapper from './Wrapper'
 
 const Footer = () => {
 
    const {t} = useTranslation()
   return (
-  <footer className='bg-[#1768ac] md:pt-[109px]  md:pb-[77px] flex justify-center items-center py-[23px]'>
- <div className='container md:px-[128px] px-[22px]'>
+  <footer className='bg-[#1768ac] bg-[url("/images/footer-img.png")] md:py-[70px]'>
 
 
+<Wrapper>
 
 <Row className="md:mb-[12px]">
   <Col span={18} md={{span:12}}>
@@ -23,62 +24,37 @@ const Footer = () => {
 
   <Col span={4} md={{span:12}}>
     <div className="flex flex-wrap justify-between md:space-y-[16px] space-y-[14px]">
-    <div className='flex items-center gap-[4px] md:gap-[13px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2'>
-    
-    <span className='text-[#fff] font-medium text-[8px] md:text-[19px]'>
-     8pluscompany@info
-     
-     </span>
-     <IoMdMail />
-
-     </div>
-     <div className='flex items-center gap-[4px] md:gap-[13px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2'>
-    
-     <span className='text-[#fff] font-medium text-[8px] md:text-[19px]'>
-      Palestine-Gaza
-      </span>
-      <HiLocationMarker />
-
-     </div>
-     <div className='flex items-center gap-[4px]md:gap-[13px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2'>
-    
-     <span className='text-[#fff] font-medium text-[8px] md:text-[19px]'>
-      Palestine - Gaza</span>
-      <HiLocationMarker />
-
-     </div>
-     <div className='flex items-center gap-[4px]md:gap-[13px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2'>
-    
-    <span className='text-[#fff] font-medium text-[8px] md:text-[19px]'>
-     8pluscompany@info
-     
-     </span>
-     <IoMdMail />
-
-     </div>
-     {/* <div className='flex items-center gap-[4px]md:gap-[13px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2'>
-     <span className='text-[#fff] font-medium text-[8px] md:text-[19px]'>
-      Palestine - Gaza</span>
-      <HiLocationMarker />
+    <div className="flex items-center gap-[4px] md:gap-[13px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2">
+        <span className="text-[#fff] font-medium text-[8px] md:text-[19px]"> 8pluscompany@info</span>
+        <IoMdMail className='text-[12px] md:text-[14px]'/>
       </div>
+    
+      <div className='flex items-center gap-[4px] md:gap-[13px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2'>
+     <span className='text-[#fff] font-medium text-[8px] md:text-[19px]'>
+     PalestineGaza</span>
 
-      <div className="flex items-center gap-[4px]md:gap-[13px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2">
+      <HiLocationMarker className='text-[12px] md:text-[14px]'/>
+   </div>
+
+   <div className="flex items-center gap-[4px] md:gap-[20px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2">
         <span className="text-[#fff] font-medium text-[8px] md:text-[19px]">+972595365842</span>
-        <BsTelephoneFill />
+        <BsTelephoneFill className='text-[12px] md:text-[14px]'/>
       </div>
-
-
-      <div className='flex items-center gap-[4px]md:gap-[13px] text-[#fff] text-[8px] md:text-[19px]md:w-1/2'>
+    
+      <div className='flex items-center gap-[4px] md:gap-[20px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2'>
      <span className='text-[#fff] font-medium text-[8px] md:text-[19px]'>
-      24 h At Work</span>
+      24hAtWork</span>
 
-      <MdAccessTimeFilled />
-   </div> */}
+      <MdAccessTimeFilled  className='text-[12px] md:text-[14px]'/>
+   </div>
+
+ 
+
     </div>
   </Col>
 </Row>
+</Wrapper>
   
- </div>
   </footer>
   )
 }
