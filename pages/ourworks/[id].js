@@ -11,28 +11,28 @@ const Work = () => {
 <>
 <Wrapper >
 
-<div className='md:pt-[162px] '>
+<div className='pt-[162px] '>
 
      <Row >
-        <Col md={{span:18}}>
-        <h1 className='text-[#1768ac] text-[36px] font-medium'>project one</h1>
+        <Col span={24} md={{span:18}}>
+        <h1 className='text-[#1768ac] text-[16px] md:text-[36px] font-medium'>project one</h1>
        <div className='flex gap-[5px] '>
        <AiFillCaretLeft className='text-[#03256C] text-[31px]' />
-        <p className='text-[#949494] text-[16px] font-medium break-words '>
+        <p className='text-[#949494] text-[12px] md:text-[16px] font-medium break-words '>
             {t('home-desc')}
         </p>
        </div>
 
-       <div className='bg-[#F5F5F5] p-[13px] md:mt-[36px]'>
-        <ul className='flex gap-[38px] list-disc list-inside'>
-            <li className='text-[#000] text-[20px] font-medium'>
+       <div className='bg-[#F5F5F5] p-[13px] md:mt-[36px] mt-[9px]'>
+        <ul className='flex md:gap-[38px] list-disc list-inside'>
+            <li className='text-[#000] md:text-[20px] text-[12px] font-medium'>
             Digital Sound Company
             </li>
 
-            <li className='text-[#000] text-[20px] font-medium'>
+            <li className='text-[#000] md:text-[20px] text-[12px] font-medium'>
             Digital Sound Company
             </li>
-            <li className='text-[#000] text-[20px] font-medium'>
+            <li className='text-[#000] md:text-[20px] text-[12px] font-medium'>
             Digital Sound Company
             </li>
         </ul>
@@ -41,7 +41,7 @@ const Work = () => {
       </Row>
 
 
-      <Row gutter={[24,24]} className='md:mt-[84.74px] md:mb-[127.23px]' >
+      <Row gutter={[24,24]} className='md:mt-[84.74px] md:mb-[127.23px] mt-[31px]' >
         <Col md={{span:12}}>
             <div className='rounded-[100px]'>
                 <img src='/images/works/work1.png' className='w-[100%] h-[100%] object-cover'/>
