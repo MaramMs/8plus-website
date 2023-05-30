@@ -5,26 +5,26 @@ import React from "react";
 
 const services = () => {
   return (
-    <>
+    <div className="overflow-x-hidden pt-[162px]">
 
-  <div className="flex flex-col justify-center items-center md:pt-[162px]">
-        <h1 className="text-[#1768AC] text-[36px] font-semibold">Services</h1>
-        <p className="text-[#949494] text-[16px] font-medium md:w-[728px] break-words text-center">
+  <div className="flex flex-col justify-center items-center ">
+        <h1 className="text-[#1768AC] text-[20px] md:text-[36px] font-semibold">Services</h1>
+        <p className="text-[#949494] w-[350px] text-[12px] md:text-[16px] font-medium md:w-[728px] break-words text-center">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
           quos Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Quisquam, quos
         </p>
       </div>
 
-      <div className="ser md:mt-[66px]">
-        {/* <div className="container md:py-[31px] md:px-[127px]"> */}
+      <div className="ser md:mt-[66px] mt-[34px]">
   <Wrapper>
-          <Row>
+          <Row gutter={[29,24]}>
             <Col
+            span={12}
               md={{ span: 8 }}
-              className="border-r-[0.5px] border-r-[#fff] border-l-[0.5px] border-l-[#fff] border-b-[0.5px] border-b-[#fff] "
+              className="md:border-r-[0.5px] md:border-r-[#fff] md:border-l-[0.5px] md:border-l-[#fff] md:border-b-[0.5px] md:border-b-[#fff] "
             >
-              <div className="flex gap-[17px] md:px-[32px] md:pb-[76px] md:pt-[52px]">
+              <div className="flex  gap-[8px] md:gap-[17px] md:px-[32px] md:pb-[76px] md:pt-[52px]">
                 <span>
                   <svg
                     width="40"
@@ -32,6 +32,7 @@ const services = () => {
                     viewBox="0 0 40 40"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    className="w-[31px]"
                   >
                     <path
                       d="M19.6248 9.79151C18.6057 9.79151 16.803 12.9609 16.5226 18.2233H22.7269C22.4466 12.9609 20.6439 9.79151 19.6248 9.79151ZM13.7162 18.2233C13.848 15.508 14.3611 12.8726 15.2428 10.8358C13.8231 11.5453 12.5962 12.5877 11.6667 13.8741C10.7372 15.1605 10.1327 16.6526 9.90479 18.2233H13.7162ZM16.5226 21.0268C16.803 26.2891 18.6057 29.4586 19.6248 29.4586C20.6439 29.4586 22.4466 26.2891 22.7269 21.0268H16.5226ZM25.5333 18.2233H29.3461C29.118 16.6527 28.5135 15.1606 27.584 13.8743C26.6545 12.588 25.4277 11.5455 24.0082 10.8358C24.8885 12.8726 25.4015 15.508 25.5333 18.2233Z"
@@ -48,10 +49,10 @@ const services = () => {
                   </svg>
                 </span>
                 <div>
-                  <h2 className="text-[#fff] text-[16px] font-semibold md:mb-[3px]">
+                  <h2 className="text-[#fff]  text-[11px] md:text-[16px] font-semibold mb-[3px] break-words">
                     website programming
                   </h2>
-                  <p className="text-[#fff] text-[12px] font-medium md:w-[237px] break-words">
+                  <p className="text-[#fff]  text-[9px] w-[123px]  md:text-[12px] font-medium md:w-[237px] break-words">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Quisquam, quos Lorem ipsum dolor sit amet consectetur
                     adipisicing elit. Quisquam, quos Lorem ipsum dolor sit amet
@@ -62,17 +63,19 @@ const services = () => {
             </Col>
 
             <Col
+             span={12}
               md={{ span: 8 }}
-              className="border-r-[0.5px] border-r-[#fff] border-l-[0.5px] border-l-[#fff] border-b-[0.5px] border-b-[#fff]"
+              className="md:border-r-[0.5px] md:border-r-[#fff] md:border-l-[0.5px] md:border-l-[#fff] md:border-b-[0.5px] md:border-b-[#fff] "
             >
-              <div className="flex gap-[17px] md:px-[32px] md:pb-[76px] md:pt-[52px]">
-                <span>
+              <div className="flex gap-[8px] md:gap-[17px] md:px-[32px] md:pb-[76px] md:pt-[52px]">
+                <span >
                   <svg
                     width="35"
                     height="47"
                     viewBox="0 0 35 47"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    className="w-[31px]"
                   >
                     <path
                       d="M31.3945 3.74531C31.3945 1.67988 29.7146 0 27.6492 0H7.23359C5.16816 0 3.48828 1.67988 3.48828 3.74531V5.13604H31.3945V3.74531ZM3.48828 7.88994H31.3945V10.6484H3.48828V7.88994ZM3.48828 43.2547C3.48828 45.3201 5.16816 47 7.23359 47H27.6492C29.7146 47 31.3945 45.3201 31.3945 43.2547V38.1875H3.48828V43.2547ZM15.1006 40.5742H19.7822C20.5423 40.5742 21.1592 41.1911 21.1592 41.9512C21.1592 42.7113 20.5423 43.3281 19.7822 43.3281H15.1006C14.3405 43.3281 13.7236 42.7113 13.7236 41.9512C13.7236 41.1911 14.3405 40.5742 15.1006 40.5742ZM33.5059 13.4023H1.37695C0.616875 13.4023 0 14.0192 0 14.7793V34.0566C0 34.8167 0.616875 35.4336 1.37695 35.4336H33.5059C34.2659 35.4336 34.8828 34.8167 34.8828 34.0566V14.7793C34.8828 14.0192 34.2659 13.4023 33.5059 13.4023ZM12.4486 26.3365C12.9865 26.8735 12.9865 27.7456 12.4486 28.2835C12.1796 28.5525 11.8271 28.6865 11.4746 28.6865C11.1221 28.6865 10.7696 28.5525 10.5006 28.2835L7.60904 25.3919C7.07203 24.854 7.07203 23.9819 7.60904 23.4449L10.5006 20.5533C11.0386 20.0154 11.9106 20.0154 12.4486 20.5533C12.9865 21.0903 12.9865 21.9624 12.4486 22.5003L10.53 24.418L12.4486 26.3365ZM20.064 19.7125L17.4873 29.8046C17.3103 30.5343 16.5289 30.9917 15.812 30.7979C15.0758 30.6097 14.6306 29.8597 14.8188 29.1235L17.3955 19.0313C17.5767 18.3062 18.3317 17.8451 19.0708 18.0381C19.807 18.2263 20.2522 18.9762 20.064 19.7125ZM27.2738 25.3919L24.3822 28.2835C24.1132 28.5525 23.7607 28.6865 23.4082 28.6865C23.0557 28.6865 22.7032 28.5525 22.4342 28.2835C21.8972 27.7456 21.8972 26.8735 22.4342 26.3356L24.3528 24.418L22.4342 22.5003C21.8972 21.9624 21.8972 21.0903 22.4342 20.5524C22.9722 20.0154 23.8442 20.0154 24.3822 20.5524L27.2738 23.444C27.8108 23.9819 27.8108 24.854 27.2738 25.3919Z"
@@ -81,10 +84,10 @@ const services = () => {
                   </svg>
                 </span>
                 <div>
-                  <h2 className="text-[#fff] text-[16px] font-semibold md:mb-[3px]">
+                  <h2 className="text-[#fff]  text-[11px] md:text-[16px] font-semibold mb-[3px]">
                     website programming
                   </h2>
-                  <p className="text-[#fff] text-[12px] font-medium md:w-[237px] break-words">
+                  <p className="text-[#fff]  text-[9px] w-[123px]  md:text-[12px] font-medium md:w-[237px] break-words">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Quisquam, quos Lorem ipsum dolor sit amet consectetur
                     adipisicing elit. Quisquam, quos Lorem ipsum dolor sit amet
@@ -95,10 +98,11 @@ const services = () => {
             </Col>
 
             <Col
+             span={12}
               md={{ span: 8 }}
-              className="border-r-[0.5px] border-r-[#fff] border-l-[0.5px] border-l-[#fff] border-b-[0.5px] border-b-[#fff]"
+              className="md:border-r-[0.5px] md:border-r-[#fff] md:border-l-[0.5px] md:border-l-[#fff] md:border-b-[0.5px] md:border-b-[#fff] "
             >
-              <div className="flex gap-[17px] md:px-[32px] md:pb-[76px] md:pt-[52px]">
+              <div className="flex  gap-[8px] md:gap-[17px] md:px-[32px] md:pb-[76px] md:pt-[52px]">
                 <span>
                   <svg
                     width="37"
@@ -106,6 +110,7 @@ const services = () => {
                     viewBox="0 0 37 37"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    className="w-[31px]"
                   >
                     <path
                       d="M36.4205 17.4063C36.3832 17.3813 36.3446 17.3582 36.305 17.3372L33.6793 15.9233L19.1185 23.6325C18.928 23.7334 18.7156 23.7861 18.5001 23.7861C18.2845 23.7861 18.0722 23.7334 17.8816 23.6325L3.32088 15.9233L0.695163 17.3372C0.0570068 17.6759 -0.185806 18.4678 0.152939 19.106C0.174 19.1456 0.197073 19.1842 0.222082 19.2215L18.5001 28.8983L36.778 19.2215C37.1806 18.6215 37.0205 17.8088 36.4205 17.4063Z"
@@ -118,10 +123,10 @@ const services = () => {
                   </svg>
                 </span>
                 <div>
-                  <h2 className="text-[#fff] text-[16px] font-semibold md:mb-[3px]">
+                  <h2 className="text-[#fff]  text-[11px] md:text-[16px] font-semibold mb-[3px]">
                     website programming
                   </h2>
-                  <p className="text-[#fff] text-[12px] font-medium md:w-[237px] break-words">
+                  <p className="text-[#fff]  text-[9px] w-[123px]  md:text-[12px] font-medium md:w-[237px] break-words">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Quisquam, quos Lorem ipsum dolor sit amet consectetur
                     adipisicing elit. Quisquam, quos Lorem ipsum dolor sit amet
@@ -132,10 +137,11 @@ const services = () => {
             </Col>
 
             <Col
+             span={12}
               md={{ span: 8 }}
-              className="border-r-[0.5px] border-r-[#fff] border-l-[0.5px] border-l-[#fff]"
+              className="md:border-r-[0.5px] md:border-r-[#fff] md:border-l-[0.5px] md:border-l-[#fff] md:border-b-[0.5px] md:border-b-[#fff] "
             >
-              <div className="flex gap-[17px] md:px-[32px] md:pb-[76px] md:pt-[52px]">
+              <div className="flex  gap-[8px] md:gap-[17px] md:px-[32px] md:pb-[76px] md:pt-[52px]">
                 <span>
                   <svg
                     width="40"
@@ -143,6 +149,7 @@ const services = () => {
                     viewBox="0 0 40 45"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    className="w-[31px]"
                   >
                     <path
                       d="M37.9504 18.4637L20.6062 1.11706C19.5833 0.0966711 17.9286 0.108744 16.9191 1.11576C15.9038 2.13363 15.9038 3.78633 16.9191 4.80289L34.2658 22.1484C35.282 23.1646 36.9341 23.1646 37.9504 22.1484C38.9694 21.1294 38.9694 19.4826 37.9504 18.4637ZM15.6323 7.20082L15.5018 7.8552C14.5822 12.4549 12.3474 16.8248 9.32473 20.3665L18.7614 29.8032C22.3027 26.7811 26.6123 24.4863 31.2123 23.5656L31.8678 23.435L15.6323 7.20082ZM7.59464 22.3211L1.1453 28.7691C-0.378594 30.293 -0.384935 32.7671 1.1453 34.2973L4.82992 37.9819C6.35381 39.5058 8.82783 39.5121 10.3581 37.9819L16.8068 31.5332L7.59464 22.3211ZM8.51584 32.4551C8.00695 32.964 7.18242 32.964 6.67353 32.4551C6.16464 31.9462 6.16464 31.1217 6.67353 30.6128L8.51584 28.7705C9.02473 28.2616 9.84925 28.2616 10.3581 28.7705C10.867 29.2793 10.867 30.1039 10.3581 30.6128L8.51584 32.4551ZM22.2465 38.6752L24.0188 36.9029C25.5491 35.3728 25.5441 32.8988 24.0189 31.3761L22.7025 30.0588C21.9749 30.5475 21.2801 31.0786 20.6045 31.6452L22.1766 33.2197C22.6843 33.7247 22.6878 34.5467 22.1766 35.0607L20.375 36.8622L17.7275 34.2971L14.0427 37.9819L19.9539 43.7098C20.9626 44.7212 22.6189 44.7269 23.6372 43.7085C24.6537 42.692 24.6537 41.0393 23.6372 40.0226L22.2465 38.6752ZM27.5098 0C26.7897 0 26.207 0.582719 26.207 1.30284V3.90853C26.207 4.62866 26.7897 5.21138 27.5098 5.21138C28.23 5.21138 28.8127 4.62866 28.8127 3.90853V1.30284C28.8127 0.582719 28.23 0 27.5098 0ZM37.9326 10.4228H35.3269C34.6068 10.4228 34.0241 11.0055 34.0241 11.7256C34.0241 12.4457 34.6068 13.0284 35.3269 13.0284H37.9326C38.6527 13.0284 39.2354 12.4457 39.2354 11.7256C39.2354 11.0055 38.6527 10.4228 37.9326 10.4228ZM36.248 2.98734C35.7391 2.47844 34.9146 2.47844 34.4057 2.98734L31.8 5.59302C31.2911 6.10192 31.2911 6.92644 31.8 7.43533C32.3089 7.94422 33.1334 7.94431 33.6423 7.43533L36.248 4.82964C36.7569 4.32075 36.7569 3.49623 36.248 2.98734Z"
@@ -151,10 +158,10 @@ const services = () => {
                   </svg>
                 </span>
                 <div>
-                  <h2 className="text-[#fff] text-[16px] font-semibold md:mb-[3px]">
+                  <h2 className="text-[#fff]  text-[11px] md:text-[16px] font-semibold mb-[3px]">
                     website programming
                   </h2>
-                  <p className="text-[#fff] text-[12px] font-medium md:w-[237px] break-words">
+                  <p className="text-[#fff]  text-[9px] w-[123px]  md:text-[12px] font-medium md:w-[237px] break-words">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Quisquam, quos Lorem ipsum dolor sit amet consectetur
                     adipisicing elit. Quisquam, quos Lorem ipsum dolor sit amet
@@ -164,10 +171,11 @@ const services = () => {
               </div>
             </Col>
             <Col
+             span={12}
               md={{ span: 8 }}
-              className="border-r-[0.5px] border-r-[#fff] border-l-[0.5px] border-l-[#fff] "
+              className="md:border-r-[0.5px] md:border-r-[#fff] md:border-l-[0.5px] md:border-l-[#fff] md:border-b-[0.5px] md:border-b-[#fff]"
             >
-              <div className="flex gap-[17px] md:px-[32px] md:pb-[76px] md:pt-[52px]">
+              <div className="flex gap-[8px] md:gap-[17px] md:px-[32px] md:pb-[76px] md:pt-[52px]">
                 <span>
                   <svg
                     width="44"
@@ -175,6 +183,7 @@ const services = () => {
                     viewBox="0 0 44 36"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    className="w-[31px]"
                   >
                     <path
                       fill-rule="evenodd"
@@ -185,10 +194,10 @@ const services = () => {
                   </svg>
                 </span>
                 <div>
-                  <h2 className="text-[#fff] text-[16px] font-semibold md:mb-[3px]">
+                  <h2 className="text-[#fff]  text-[11px] md:text-[16px] font-semibold mb-[3px]">
                     website programming
                   </h2>
-                  <p className="text-[#fff] text-[12px] font-medium md:w-[237px] break-words">
+                  <p className="text-[#fff]  text-[9px] w-[123px]  md:text-[12px] font-medium md:w-[237px] break-words">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Quisquam, quos Lorem ipsum dolor sit amet consectetur
                     adipisicing elit. Quisquam, quos Lorem ipsum dolor sit amet
@@ -198,10 +207,11 @@ const services = () => {
               </div>
             </Col>
             <Col
+             span={12}
               md={{ span: 8 }}
-              className="border-r-[0.5px] border-r-[#fff] border-l-[0.5px] border-l-[#fff] "
+              className="md:border-r-[0.5px] md:border-r-[#fff] md:border-l-[0.5px] md:border-l-[#fff] md:border-b-[0.5px] md:border-b-[#fff]"
             >
-              <div className="flex gap-[17px] md:px-[32px] md:pb-[76px] md:pt-[52px]">
+              <div className="flex gap-[8px] md:gap-[17px] md:px-[32px] md:pb-[76px] md:pt-[52px]">
                 <span>
                   <svg
                     width="37"
@@ -209,6 +219,7 @@ const services = () => {
                     viewBox="0 0 37 37"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    className="w-[31px]"
                   >
                     <path
                       d="M31.58 6.504H22.9081C22.309 6.504 21.8242 6.01917 21.8242 5.42001C21.8242 4.82086 22.309 4.33603 22.9081 4.33603H31.58C32.1791 4.33603 32.664 4.82086 32.664 5.42001C32.664 6.01917 32.1791 6.504 31.58 6.504ZM14.0918 6.504C13.4931 6.504 13.0078 6.01866 13.0078 5.42001C13.0078 4.82122 13.4931 4.33603 14.0918 4.33603C14.6904 4.33603 15.1757 4.82122 15.1757 5.42001C15.1757 6.01866 14.6904 6.504 14.0918 6.504ZM9.75583 6.504C9.15718 6.504 8.67185 6.01866 8.67185 5.42001C8.67185 4.82122 9.15718 4.33603 9.75583 4.33603C10.3545 4.33603 10.8398 4.82122 10.8398 5.42001C10.8398 6.01866 10.3545 6.504 9.75583 6.504ZM5.41991 6.504C4.82126 6.504 4.33592 6.01866 4.33592 5.42001C4.33592 4.82122 4.82126 4.33603 5.41991 4.33603C6.01855 4.33603 6.50389 4.82122 6.50389 5.42001C6.50389 6.01866 6.01855 6.504 5.41991 6.504ZM33.7479 0.000107586H3.25194C1.45875 0.000107586 0 1.45886 0 3.25205V7.58798C0 9.38117 1.45875 10.8399 3.25194 10.8399H33.7479C35.5411 10.8399 36.9999 9.38117 36.9999 7.58798V3.25205C36.9999 1.45886 35.5411 0.000107586 33.7479 0.000107586Z"
@@ -225,10 +236,10 @@ const services = () => {
                   </svg>
                 </span>
                 <div>
-                  <h2 className="text-[#fff] text-[16px] font-semibold md:mb-[3px]">
+                  <h2 className="text-[#fff]  text-[11px] md:text-[16px] font-semibold mb-[3px]">
                     website programming
                   </h2>
-                  <p className="text-[#fff] text-[12px] font-medium md:w-[237px] break-words">
+                  <p className="text-[#fff]  text-[9px] md:text-[12px] w-[123px] font-medium md:w-[237px] break-words">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Quisquam, quos Lorem ipsum dolor sit amet consectetur
                     adipisicing elit. Quisquam, quos Lorem ipsum dolor sit amet
@@ -243,27 +254,27 @@ const services = () => {
 
   </Wrapper>
                 </div>
-      <div className="flex justify-center items-center flex-col md:mt-[119px] md:mb-[90px]">
-        <h2 className="text-[#1768AC] font-medium text-[32px]">Services Request</h2>
-      <Form
+      <div className="flex justify-center items-center flex-col mt-[59px] md:mt-[119px] md:mb-[90px] px-[19px]">
+        <h2 className="text-[#1768AC] font-medium text-[20px] md:text-center text-right md:text-[32px] mb-[4px]">Services Request</h2>
+        <Form
             className="md:mt-[39px]"
             name="basic"
             // labelCol={{
-              //   span: 8,
+            //   span: 8,
             // }}
             // wrapperCol={{
             //   span: 16,
             // }}
-            
+
             initialValues={{
               remember: true,
             }}
             // onFinish={onFinish}
             // onFinishFailed={onFinishFailed}
             autoComplete="off"
-            >
+          >
             <Row span="24" gutter={[36, 10]}>
-              <Col md={{ span: 12 }}>
+              <Col span={24} md={{ span: 12 }}>
                 <Form.Item
                   name="username"
                   rules={[
@@ -280,7 +291,7 @@ const services = () => {
                 </Form.Item>
               </Col>
 
-              <Col md={{ span: 12 }}>
+              <Col span={24} md={{ span: 12 }}>
                 <Form.Item
                   name="password"
                   rules={[
@@ -297,7 +308,7 @@ const services = () => {
                 </Form.Item>
               </Col>
 
-              <Col md={{ span: 12 }}>
+              <Col span={24} md={{ span: 12 }}>
                 <Form.Item
                   name="username"
                   rules={[
@@ -314,7 +325,7 @@ const services = () => {
                 </Form.Item>
               </Col>
 
-              <Col md={{ span: 12 }}>
+              <Col span={24} md={{ span: 12 }}>
                 <Form.Item
                   name="services"
                   rules={[
@@ -335,7 +346,7 @@ const services = () => {
                 </Form.Item>
               </Col>
 
-              <Col md={{ span: 24 }}>
+              <Col span={24} md={{ span: 12 }}>
                 <Form.Item
                   name="password"
                   rules={[
@@ -356,8 +367,8 @@ const services = () => {
               <Button
                 type="primary"
                 htmlType="submit"
-                className="md:w-[272px] md:h-[48px] bg-[#1768ac] rounded-[24px] text-[#fff] font-semibold text-[14px] p-[12px] flex justify-center items-center"
-                >
+                className="md:w-[272px] w-[126px]  h-[48px] bg-[#1768ac] rounded-[24px] text-[#fff] font-semibold text-[14px] p-[12px] flex justify-center items-center"
+              >
                 Send
               </Button>
             </Form.Item>
@@ -365,7 +376,7 @@ const services = () => {
       </div>
 
       <Footer />
-    </>
+    </div>
   );
 };
 
