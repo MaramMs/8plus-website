@@ -23,7 +23,7 @@ const Work = () => {
         </p>
        </div>
 
-       <div className='bg-[#F5F5F5] p-[13px] md:mt-[36px] mt-[9px]'>
+       <div className='bg-[#F5F5F5] md:p-[13px] md:mt-[36px] mt-[9px]'>
         <ul className='flex md:gap-[38px] list-disc list-inside'>
             <li className='text-[#000] md:text-[20px] text-[12px] font-medium'>
             Digital Sound Company
