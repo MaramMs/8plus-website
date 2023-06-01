@@ -7,8 +7,10 @@ const BlogDetails = () => {
   return (
     <div className="pt-[192px]">
       <Wrapper>
-        <Row gutter={[24]}>
+        <Row gutter={[24,24]}>
           <Col md={{ span: 14 }}>
+            <h1 className="text-[#03256C] md:text-[36px] font-semibold md:mb-[12px] text-center md:text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem</h1>
+
             <div className="flex flex-col">
               <img
                 src="/images/works/blog-details.png"
@@ -35,7 +37,7 @@ const BlogDetails = () => {
                 <span className="text-[#fff] text-[14px]">Share the blog</span>
               </div>
 
-              <p className="md:mt-[26px] text-[#808080] text-[16px] md:mb-[224px]">
+              <p className="md:mt-[26px] text-[#808080] text-[14px] md:text-[16px] md:mb-[224px]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
                 ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
                 dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
@@ -96,7 +98,7 @@ const BlogDetails = () => {
             </div>
           </Col>
 
-          <Col md={{ span: 9 }}>
+          <Col md={{ span: 9 }} className="md:pt-[7.5rem]">
             <div className="flex gap-[12px] mb-[24px]">
               <div className="flex-shrink-0">
                 <img src="/images/works/blog2.png"  className="w-[24] h-[24]"/>
