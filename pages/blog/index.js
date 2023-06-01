@@ -9,11 +9,11 @@ const Blog = () => {
   return (
     <div className='pt-[192px]'>
       <Wrapper>
-      <div className='flex items-center gap-[11px]'>
-            <h1 className='text-[#1768AC] md:text-[36px] font-semibold w-[15%]'>
+      <div className='md:flex items-center justify-center gap-[11px] text-center'>
+            <h1 className='text-[#1768AC] md:text-[36px] font-semibold md:w-[15%] w-[100%]'>
                 Last Blogs
                 </h1>    
-                <div className='bg-[#D1D1D1] h-[1px]  w-[85%]'></div>    
+                <div className='bg-[#D1D1D1] md:h-[1px]  w-[85%]'></div>    
                 
                 
     </div>
