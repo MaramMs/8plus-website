@@ -22,26 +22,26 @@ const Footer = () => {
     <p className='text-[8px] font-light md:text-[10px] md:font-medium text-[#fff] md:w-[277px] md:mt-[9px]'>{t('home-desc')}</p>
   </Col>
 
-  <Col span={4} md={{span:12}}>
-    <div className="flex flex-wrap justify-between md:space-y-[16px] space-y-[14px]">
+  <Col span={6} md={{span:12}}>
+    <div className="flex flex-wrap justify-between  md:space-y-[16px] space-y-[14px]">
     <div className="flex items-center gap-[4px] md:gap-[13px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2">
         <span className="text-[#fff] font-medium text-[8px] md:text-[19px]"> 8pluscompany@info</span>
         <IoMdMail className='text-[12px] md:text-[14px]'/>
       </div>
     
-      <div className='flex items-center gap-[4px] md:gap-[13px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2'>
+      <div className='flex items-center gap-[25px] md:gap-[13px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2'>
      <span className='text-[#fff] font-medium text-[8px] md:text-[19px]'>
      PalestineGaza</span>
 
       <HiLocationMarker className='text-[12px] md:text-[14px]'/>
    </div>
 
-   <div className="flex items-center gap-[4px] md:gap-[20px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2">
+   <div className="flex items-center gap-[12px] md:gap-[20px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2">
         <span className="text-[#fff] font-medium text-[8px] md:text-[19px]">+972595365842</span>
         <BsTelephoneFill className='text-[12px] md:text-[14px]'/>
       </div>
     
-      <div className='flex items-center gap-[4px] md:gap-[20px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2'>
+      <div className='flex items-center gap-[30px] md:gap-[20px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2'>
      <span className='text-[#fff] font-medium text-[8px] md:text-[19px]'>
       24hAtWork</span>
 
