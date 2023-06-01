@@ -18,7 +18,11 @@ const services = () => {
 
       <div className="ser md:mt-[66px] mt-[34px]">
   <Wrapper>
-          <Row gutter={[29,24]}>
+          <Row
+          gutter={{
+            sm:24
+          }}
+          >
             <Col
             span={12}
               md={{ span: 8 }}
@@ -55,8 +59,7 @@ const services = () => {
                   <p className="text-[#fff]  text-[9px] w-[123px]  md:text-[12px] font-medium md:w-[237px] break-words">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Quisquam, quos Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Quisquam, quos Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Quisquam, quos
+                 
                   </p>
                 </div>
               </div>
@@ -90,8 +93,7 @@ const services = () => {
                   <p className="text-[#fff]  text-[9px] w-[123px]  md:text-[12px] font-medium md:w-[237px] break-words">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Quisquam, quos Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Quisquam, quos Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Quisquam, quos
+                 
                   </p>
                 </div>
               </div>
@@ -129,12 +131,13 @@ const services = () => {
                   <p className="text-[#fff]  text-[9px] w-[123px]  md:text-[12px] font-medium md:w-[237px] break-words">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Quisquam, quos Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Quisquam, quos Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Quisquam, quos
+                    
                   </p>
                 </div>
               </div>
             </Col>
+
+            
 
             <Col
              span={12}
@@ -164,8 +167,7 @@ const services = () => {
                   <p className="text-[#fff]  text-[9px] w-[123px]  md:text-[12px] font-medium md:w-[237px] break-words">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Quisquam, quos Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Quisquam, quos Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Quisquam, quos
+                   
                   </p>
                 </div>
               </div>
@@ -200,8 +202,7 @@ const services = () => {
                   <p className="text-[#fff]  text-[9px] w-[123px]  md:text-[12px] font-medium md:w-[237px] break-words">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Quisquam, quos Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Quisquam, quos Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Quisquam, quos
+                  
                   </p>
                 </div>
               </div>
@@ -242,8 +243,7 @@ const services = () => {
                   <p className="text-[#fff]  text-[9px] md:text-[12px] w-[123px] font-medium md:w-[237px] break-words">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Quisquam, quos Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Quisquam, quos Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Quisquam, quos
+                  
                   </p>
                 </div>
               </div>
@@ -346,7 +346,7 @@ const services = () => {
                 </Form.Item>
               </Col>
 
-              <Col span={24} md={{ span: 12 }}>
+              <Col span={24} >
                 <Form.Item
                   name="password"
                   rules={[
