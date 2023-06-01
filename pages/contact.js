@@ -112,7 +112,7 @@ const contact = () => {
                 </Form.Item>
               </Col>
 
-              <Col span={24} md={{ span: 12 }}>
+              <Col span={24}>
                 <Form.Item
                   name="password"
                   rules={[
@@ -141,7 +141,7 @@ const contact = () => {
           </Form>
         </Col>
 
-        <Col span={24} md={{ span: 12 }} className="flex justify-end px-[19px]">
+        <Col span={24} md={{ span: 12 }} className="flex justify-end px-[19px] md:px-0 ">
           <ul className="bg-[#1768AC] md:h-[477px] h-[284px] px-[37px] py-[39px] rounded-[8px] w-[350px] md:rounded-r-[50px] flex md:py-[127px] md:px-[101px] flex-col md:gap-[71px] gap-[31px] md:w-[507px]">
             <li className="flex items-center gap-[13px]">
               <HiLocationMarker className="text-[#fff] text-[19px]" />

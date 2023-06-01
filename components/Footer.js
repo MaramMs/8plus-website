@@ -47,9 +47,6 @@ const Footer = () => {
 
       <MdAccessTimeFilled  className='text-[12px] md:text-[14px]'/>
    </div>
-
- 
-
     </div>
   </Col>
 </Row>

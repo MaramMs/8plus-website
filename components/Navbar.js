@@ -8,7 +8,8 @@ import Wrapper from "./Wrapper";
 
 const Navbar = () => {
   const router = useRouter();
-  const [meun, setMenu] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
+  console.log(showSidebar ,'show');
   const { t } = useTranslation();
   // const KEY_RIGHT_ARROW = 39;
   // const KEY_LEFT_ARROW = 37;
@@ -80,7 +81,7 @@ const handleWheel = (event) => {
                 viewBox="0 0 32 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                onClick={() => setMenu(!meun)}
+                onClick={() => setShowSidebar(!showSidebar)}
                 className="cursor-pointer"
               >
                 <path
@@ -98,7 +99,7 @@ const handleWheel = (event) => {
                 viewBox="0 0 32 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                onClick={() => setMenu(!meun)}
+                onClick={() => setShowSidebar(true)}
                 className="cursor-pointer"
               >
                 <path
@@ -114,7 +115,7 @@ const handleWheel = (event) => {
         </Wrapper>
       </nav>
 
-      {meun && (
+      {showSidebar && (
         <div className="bg-white w-[242px] md:w-[507px]  left-0 top-0 h-full flex px-[74px] md:px-[100px] absolute z-[100] items-center  text-right	">
           <AiOutlineClose
             className="top-[64px] left-[128px] absolute cursor-pointer text-[27px] text-[#03256c]"
@@ -126,7 +127,7 @@ const handleWheel = (event) => {
                 router.pathname === "/" ? "active" : ""
               } mb-[23px] text-[20px] md:text-[32px]  text-[#000] font-semibold`}
             >
-              <Link href="/" data-path="/">
+              <Link href="/" data-path="/" onClick={()=> setShowSidebar(false)}>
                 {t("home")}
               </Link>
             </li>
@@ -135,7 +136,7 @@ const handleWheel = (event) => {
                 router.pathname === "/services" ? "active" : ""
               } mb-[23px]  text-[20px] md:text-[32px] text-[#000] font-semibold`}
             >
-              <Link href="/services" data-path="/services">
+              <Link href="/services" data-path="/services" onClick={()=> setShowSidebar(false)}>
                 {t("services")}
               </Link>
             </li>
@@ -145,7 +146,7 @@ const handleWheel = (event) => {
                 router.pathname === "/about" ? "active" : ""
               } mb-[23px] text-[20px] md:text-[32px]  text-[#000] font-semibold`}
             >
-              <Link href="/about" data-path="/about">
+              <Link href="/about" data-path="/about" onClick={()=> setShowSidebar(false)}>
                 {t("about")}
               </Link>
             </li>
@@ -155,7 +156,7 @@ const handleWheel = (event) => {
                 router.pathname === "/contact" ? "active" : ""
               } mb-[23px]text-[20px] md:text-[32px]  text-[#000] font-semibold`}
             >
-              <Link href="/contact" data-path="/contact">
+              <Link href="/contact" data-path="/contact" onClick={()=> setShowSidebar(false)}>
                 {t("contact")}
               </Link>
             </li>
