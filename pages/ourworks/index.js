@@ -17,7 +17,7 @@ const index = () => {
     setActiveSlide(swiper.realIndex);
   };
   return (
-    <div className="pt-[162px]">
+    <div className="pt-[162px] our-work">
       <ul className="flex m-auto items-center justify-around border border-[#1768AC] rounded-[39.5px] md:w-[850px]">
         <Link href="/">
           <li className="p-4 text-[#000] text-[16px] font-medium">Home</li>
