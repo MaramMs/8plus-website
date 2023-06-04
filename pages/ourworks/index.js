@@ -38,7 +38,19 @@ const index = () => {
    <Select
       defaultValue="React Developer"
       onChange={handleChange}
-      className="border border-[#1768AC] rounded-[29.5px] m-auto  w-[242px] flex"
+      style={
+        {
+          border:'1px solid #1768AC',
+          borderRadius:'29.5px',
+          width:'242px',
+          display:'flex',
+          justifyContent:'center',
+          alignItems:'center',
+          margin:'auto'
+
+        }
+      }
+      // className="border border-[#1768AC] rounded-[29.5px] m-auto  w-[242px] flex"
       options={[
         {
           value: 'jack',
