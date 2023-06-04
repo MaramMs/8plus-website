@@ -118,7 +118,7 @@ const handleWheel = (event) => {
         <div className="bg-white w-[242px] md:w-[507px]  left-0 top-0 h-full flex px-[74px] md:px-[100px] absolute z-[100] items-center  text-right	">
           <AiOutlineClose
             className="top-[64px] left-[128px] absolute cursor-pointer text-[27px] text-[#03256c]"
-            onClick={() => setMenu(false)}
+            onClick={() => setShowSidebar(false)}
           />
           <ul>
             <li
@@ -132,6 +132,25 @@ const handleWheel = (event) => {
             </li>
             <li
               className={`${
+                router.pathname === "/about" ? "active" : ""
+              } mb-[23px] text-[20px] md:text-[32px]  text-[#000] font-semibold`}
+            >
+              <Link href="/about" data-path="/about" onClick={()=> setShowSidebar(false)}>
+                {t("about")}
+              </Link>
+            </li>
+            <li
+              className={`${
+                router.pathname === "/ourworks" ? "active" : ""
+              } mb-[23px] text-[20px] md:text-[32px]  text-[#000] font-semibold`}
+            >
+              <Link href="/ourworks" data-path="/ourworks" onClick={()=> setShowSidebar(false)}>
+                {t("ourwork")}
+              </Link>
+            </li>
+         
+            <li
+              className={`${
                 router.pathname === "/services" ? "active" : ""
               } mb-[23px]  text-[20px] md:text-[32px] text-[#000] font-semibold`}
             >
@@ -139,14 +158,14 @@ const handleWheel = (event) => {
                 {t("services")}
               </Link>
             </li>
-
+           
             <li
               className={`${
-                router.pathname === "/about" ? "active" : ""
-              } mb-[23px] text-[20px] md:text-[32px]  text-[#000] font-semibold`}
+                router.pathname === "/blog" ? "active" : ""
+              } mb-[23px]  text-[20px] md:text-[32px] text-[#000] font-semibold`}
             >
-              <Link href="/about" data-path="/about" onClick={()=> setShowSidebar(false)}>
-                {t("about")}
+              <Link href="/blog" data-path="/blog" onClick={()=> setShowSidebar(false)}>
+                {t("blog")}
               </Link>
             </li>
 
