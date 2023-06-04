@@ -206,3 +206,8 @@ margin-top: 217px;
 .our-work{
   background: linear-gradient(125.18deg, rgba(23, 104, 172, 0.09) 0%, rgba(217, 217, 217, 0) 99.41%);
 }
+
+:where(.css-dev-only-do-not-override-w8mnev).ant-select-single:not(.ant-select-customize-input) .ant-select-selector{
+  background: linear-gradient(90.94deg, rgba(23, 104, 172, 0.04) 3.43%, rgba(217, 217, 217, 0) 97.47%);
+  border: none;
+}
