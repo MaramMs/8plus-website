@@ -1,6 +1,5 @@
 import { Button } from "antd";
 import { useTranslation } from "react-i18next";
-import {CgScrollV} from 'react-icons/cg'
 
 export default function Home() {
   const {t} = useTranslation()

@@ -26,7 +26,7 @@ const services = () => {
             <Col
             span={12}
               md={{ span: 8 }}
-              className="md:border-r-[0.5px] md:border-r-[#fff] md:border-l-[0.5px] md:border-l-[#fff] md:border-b-[0.5px] md:border-b-[#fff] "
+              className="mb-[10px] md:border-r-[0.5px] md:border-r-[#fff] md:border-l-[0.5px] md:border-l-[#fff] md:border-b-[0.5px] md:border-b-[#fff] "
             >
               <div className="flex  gap-[8px] md:gap-[17px] md:px-[32px] md:pb-[76px] md:pt-[52px]">
                 <span>
@@ -68,7 +68,7 @@ const services = () => {
             <Col
              span={12}
               md={{ span: 8 }}
-              className="md:border-r-[0.5px] md:border-r-[#fff] md:border-l-[0.5px] md:border-l-[#fff] md:border-b-[0.5px] md:border-b-[#fff] "
+              className="mb-[10px] md:border-r-[0.5px] md:border-r-[#fff] md:border-l-[0.5px] md:border-l-[#fff] md:border-b-[0.5px] md:border-b-[#fff] "
             >
               <div className="flex gap-[8px] md:gap-[17px] md:px-[32px] md:pb-[76px] md:pt-[52px]">
                 <span >
@@ -102,7 +102,7 @@ const services = () => {
             <Col
              span={12}
               md={{ span: 8 }}
-              className="md:border-r-[0.5px] md:border-r-[#fff] md:border-l-[0.5px] md:border-l-[#fff] md:border-b-[0.5px] md:border-b-[#fff] "
+              className="md:border-r-[0.5px] md:border-r-[#fff] md:border-l-[0.5px] md:border-l-[#fff] md:border-b-[0.5px] md:border-b-[#fff] mb-[10px]"
             >
               <div className="flex  gap-[8px] md:gap-[17px] md:px-[32px] md:pb-[76px] md:pt-[52px]">
                 <span>
@@ -142,7 +142,7 @@ const services = () => {
             <Col
              span={12}
               md={{ span: 8 }}
-              className="md:border-r-[0.5px] md:border-r-[#fff] md:border-l-[0.5px] md:border-l-[#fff] md:border-b-[0.5px] md:border-b-[#fff] "
+              className="mb-[10px] md:border-r-[0.5px] md:border-r-[#fff] md:border-l-[0.5px] md:border-l-[#fff] md:border-b-[0.5px] md:border-b-[#fff] "
             >
               <div className="flex  gap-[8px] md:gap-[17px] md:px-[32px] md:pb-[76px] md:pt-[52px]">
                 <span>
@@ -175,7 +175,7 @@ const services = () => {
             <Col
              span={12}
               md={{ span: 8 }}
-              className="md:border-r-[0.5px] md:border-r-[#fff] md:border-l-[0.5px] md:border-l-[#fff] md:border-b-[0.5px] md:border-b-[#fff]"
+              className="mb-[10px] md:border-r-[0.5px] md:border-r-[#fff] md:border-l-[0.5px] md:border-l-[#fff] md:border-b-[0.5px] md:border-b-[#fff]"
             >
               <div className="flex gap-[8px] md:gap-[17px] md:px-[32px] md:pb-[76px] md:pt-[52px]">
                 <span>
@@ -210,7 +210,7 @@ const services = () => {
             <Col
              span={12}
               md={{ span: 8 }}
-              className="md:border-r-[0.5px] md:border-r-[#fff] md:border-l-[0.5px] md:border-l-[#fff] md:border-b-[0.5px] md:border-b-[#fff]"
+              className="mb-[10px] md:border-r-[0.5px] md:border-r-[#fff] md:border-l-[0.5px] md:border-l-[#fff] md:border-b-[0.5px] md:border-b-[#fff]"
             >
               <div className="flex gap-[8px] md:gap-[17px] md:px-[32px] md:pb-[76px] md:pt-[52px]">
                 <span>
