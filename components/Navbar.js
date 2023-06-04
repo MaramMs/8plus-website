@@ -7,37 +7,36 @@ import { useTranslation } from "react-i18next";
 import Wrapper from "./Wrapper";
 
 const Navbar = () => {
-  const router = useRouter();
   const [showSidebar, setShowSidebar] = useState(false);
-  console.log(showSidebar ,'show');
   const { t } = useTranslation();
-  // const KEY_RIGHT_ARROW = 39;
-  // const KEY_LEFT_ARROW = 37;
-
-  // const handleKeydown = (event) => {
-    //   if (event.keyCode === KEY_RIGHT_ARROW) {
-      //     const currentIndex = paths.indexOf(router.pathname);
-      //     if (currentIndex != -1) {
-        //       const nextPage = paths[currentIndex + 1];
-        //       if (nextPage) {
-          //         router.push(nextPage);
-  //       }
-  //     }
-  //   } else if (event.keyCode === KEY_LEFT_ARROW) {
-  //     const currentIndex = paths.indexOf(router.pathname);
-  //     const prevPage = paths[currentIndex - 1];
-  //     if (prevPage) {
-    //       router.push(prevPage);
-  //     }
-  //   }
-  // };
+  const router = useRouter();
+  const KEY_RIGHT_ARROW = 39;
+  const KEY_LEFT_ARROW = 37;
+const paths =['/','/about','/services','/contact']
+  const handleKeydown = (event) => {
+      if (event.keyCode === KEY_RIGHT_ARROW) {
+          const currentIndex = paths.indexOf(router.pathname);
+          if (currentIndex != -1) {
+              const nextPage = paths[currentIndex + 1];
+              if (nextPage) {
+                  router.push(nextPage);
+        }
+      }
+    } else if (event.keyCode === KEY_LEFT_ARROW) {
+      const currentIndex = paths.indexOf(router.pathname);
+      const prevPage = paths[currentIndex - 1];
+      if (prevPage) {
+          router.push(prevPage);
+      }
+    }
+  };
   
-  // useEffect(() => {
-  //   document.addEventListener("keydown", handleKeydown);
-  //   return () => {
-    //     document.removeEventListener("keydown", handleKeydown);
-    //   };
-    // }, [router.pathname]);
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeydown);
+    return () => {
+        document.removeEventListener("keydown", handleKeydown);
+      };
+    }, [router.pathname]);
 
 const handleWheel = (event) => {
     const delta = Math.sign(event.deltaY);

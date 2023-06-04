@@ -113,8 +113,8 @@ nav ul li {
 }
 
 .swiper-slide img {
-  width: 37rem;
-  height: 42rem;
+  /* width: 37rem;
+  height: 42rem; */
   border-radius: 2rem;
   object-fit: cover;
 }
@@ -200,3 +200,6 @@ nav ul li {
 
 }
 
+.swiper-slide-active{
+margin-top: 217px;
+}
