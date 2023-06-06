@@ -8,10 +8,10 @@ export default function Home() {
       <div className="absolute  home"></div>
 
 
-      <div className="bottom-0  md:block absolute  text-white hidden">
+      <div className="bottom-0 z-10 md:block absolute  text-white hidden">
         <motion.h1
           initial={{ opacity: 1, x: 0 }}
-          animate={{ opacity: 1, x: "100vw" }}
+          animate={{ opacity: 0, x: "100vw" }}
           transition={{ duration: 10, repeat: Infinity, repeatType: "loop" }}
           className="text-[96px] font-semibold text-neutral-200	"
         >
