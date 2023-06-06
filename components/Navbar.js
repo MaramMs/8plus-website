@@ -58,7 +58,7 @@ const handleWheel = (event) => {
 
   return (
     <>
-      <nav className="z-10 absolute w-full ">
+      <nav className="z-30 absolute w-full ">
         <img
           src="/images/plus.png"
           className=" absolute left-[36%]  top-[1%]"
