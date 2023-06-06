@@ -19,7 +19,7 @@ const Footer = () => {
 <Row className="md:mb-[12px]">
   <Col span={18} md={{span:12}}>
     <img src="/images/logo.png" width='80px' height='24.83px'/>
-    <p className='text-[8px] font-light md:text-[10px] md:font-medium text-[#fff] md:w-[277px] md:mt-[9px]'>{t('home-desc')}</p>
+    <p className='text-[8px] font-light md:text-[10px] md:font-medium text-[#fff] md:w-[277px] md:mt-[9px] w-[186px] h-[55px]'>{t('home-desc')}</p>
   </Col>
 
   <Col span={6} md={{span:12}}>
@@ -28,19 +28,19 @@ const Footer = () => {
         <span className="text-[#fff] font-medium text-[8px] md:text-[19px]"> 8pluscompany@info</span>
         <IoMdMail className='text-[12px] md:text-[14px]'/>
       </div>
-      <div className='flex items-center gap-[25px] md:gap-[13px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2 md:mt-[0px]'>
-     <span className='text-[#fff] font-medium text-[8px] md:text-[19px] '>PalestineGaza</span>
+      <div className='flex items-center gap-[5px] md:gap-[13px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2 md:mt-[0px]'>
+     <span className='text-[#fff] font-medium text-[8px] md:text-[19px] mr-[22px] md:mr-0'>PalestineGaza</span>
 
       <HiLocationMarker className='text-[12px] md:text-[14px]'/>
    </div>
 
-   <div className="flex items-center gap-[12px] md:gap-[15px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2">
-        <span className="text-[#fff] font-medium text-[8px] md:text-[19px] md:mr-[34px]">+972595365842</span>
+   <div className="flex items-center gap-[5px] md:gap-[15px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2">
+        <span className="text-[#fff] font-medium text-[8px] md:text-[19px] md:mr-[34px] mr-[13px]">+972595365842</span>
         <BsTelephoneFill className='text-[12px] md:text-[14px]'/>
       </div>
     
-      <div className='flex items-center gap-[30px] md:gap-[10px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2'>
-     <span className='text-[#fff] font-medium text-[8px] md:text-[19px] md:mr-[25px]'>
+      <div className='flex items-center gap-[5px] md:gap-[10px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2'>
+     <span className='text-[#fff] font-medium text-[8px] md:text-[19px] md:mr-[25px] mr-[28px]'>
       24hAtWork</span>
 
       <MdAccessTimeFilled  className='text-[12px] md:text-[14px]'/>
