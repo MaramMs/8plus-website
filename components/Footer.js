@@ -23,26 +23,24 @@ const Footer = () => {
   </Col>
 
   <Col span={6} md={{span:12}}>
-    <div className="flex flex-wrap justify-between  md:space-y-[16px] space-y-[14px]">
-    <div className="flex items-center gap-[4px] md:gap-[13px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2">
+    <div className="flex flex-wrap justify-between  md:space-y-[16px] space-y-[14px] md:m-0">
+    <div className="flex items-center gap-[4px] md:gap-[13px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2 md:mt-[12px]">
         <span className="text-[#fff] font-medium text-[8px] md:text-[19px]"> 8pluscompany@info</span>
         <IoMdMail className='text-[12px] md:text-[14px]'/>
       </div>
-    
-      <div className='flex items-center gap-[25px] md:gap-[13px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2'>
-     <span className='text-[#fff] font-medium text-[8px] md:text-[19px]'>
-     PalestineGaza</span>
+      <div className='flex items-center gap-[25px] md:gap-[13px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2 md:mt-[0px]'>
+     <span className='text-[#fff] font-medium text-[8px] md:text-[19px] '>PalestineGaza</span>
 
       <HiLocationMarker className='text-[12px] md:text-[14px]'/>
    </div>
 
-   <div className="flex items-center gap-[12px] md:gap-[20px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2">
-        <span className="text-[#fff] font-medium text-[8px] md:text-[19px]">+972595365842</span>
+   <div className="flex items-center gap-[12px] md:gap-[15px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2">
+        <span className="text-[#fff] font-medium text-[8px] md:text-[19px] md:mr-[34px]">+972595365842</span>
         <BsTelephoneFill className='text-[12px] md:text-[14px]'/>
       </div>
     
-      <div className='flex items-center gap-[30px] md:gap-[20px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2'>
-     <span className='text-[#fff] font-medium text-[8px] md:text-[19px]'>
+      <div className='flex items-center gap-[30px] md:gap-[10px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2'>
+     <span className='text-[#fff] font-medium text-[8px] md:text-[19px] md:mr-[25px]'>
       24hAtWork</span>
 
       <MdAccessTimeFilled  className='text-[12px] md:text-[14px]'/>
