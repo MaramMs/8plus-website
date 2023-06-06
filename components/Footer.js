@@ -18,7 +18,7 @@ const Footer = () => {
 
 <Row className="md:mb-[12px]">
   <Col span={18} md={{span:12}}>
-    <img src="/images/logo.png" />
+    <img src="/images/logo.png" width='80px' height='24.83px'/>
     <p className='text-[8px] font-light md:text-[10px] md:font-medium text-[#fff] md:w-[277px] md:mt-[9px]'>{t('home-desc')}</p>
   </Col>
 

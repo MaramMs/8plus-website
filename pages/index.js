@@ -8,7 +8,7 @@ export default function Home() {
       <div className="absolute  home"></div>
 
 
-      <div className="bottom-0 absolute  text-white">
+      <div className="bottom-0 md:absolute  text-white hidden">
         <motion.h1
           initial={{ opacity: 1, x: 0 }}
           animate={{ opacity: 1, x: "100vw" }}
