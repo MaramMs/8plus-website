@@ -18,7 +18,7 @@ const BlogDetails = () => {
     };
   }, []);
   return (
-    <div className="pt-[192px]">
+    <div className="pt-[160px]">
       <Wrapper>
         <div className="bg-[#F9F9F9] h-[71px] mb-[50px]  pr-[20px] py-[18px] hidden md:block">
           <div className="flex items-center gap-[13px]">
@@ -148,6 +148,7 @@ const BlogDetails = () => {
             <h5 className="text-[#000] font-semibold text-[20px] pb-[6px]">
               Related Blogs
             </h5>
+            <div className="w-full h-[1px] bg-[#D1D1D1] mb-[24px]"></div>
 
 
             {
@@ -170,7 +171,6 @@ const BlogDetails = () => {
         
               ) : (
                 <>
-   <div className="w-full h-[1px] bg-[#D1D1D1] mb-[24px]"></div>
             <div className="flex gap-[12px] mb-[24px]">
               <div className="flex-shrink-0">
                 <img src="/images/works/blog2.png" className="w-[24] h-[24]" />

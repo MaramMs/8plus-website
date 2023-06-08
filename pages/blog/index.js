@@ -37,27 +37,39 @@ Blogs
 
     <Row gutter={[24,35]} className='mt-[55px]'>
 <Col md={{span:8}}>
+<Link href='/blog/1'>
 <BlogCard />
+</Link>
 </Col>
 <Col md={{span:8}}>
 <BlogCard />
 </Col>
 <Col md={{span:8}}>
+<Link href='/blog/1'>
 <BlogCard />
-</Col>
-
-<Col md={{span:8}}>
-<BlogCard />
-</Col>
-<Col md={{span:8}}>
-<BlogCard />
-</Col>
-<Col md={{span:8}}>
-<BlogCard />
+</Link>
 </Col>
 
 <Col md={{span:8}}>
+<Link href='/blog/1'>
 <BlogCard />
+</Link>
+</Col>
+<Col md={{span:8}}>
+<Link href='/blog/1'>
+<BlogCard />
+</Link>
+</Col>
+<Col md={{span:8}}>
+<Link href='/blog/1'>
+<BlogCard />
+</Link>
+</Col>
+
+<Col md={{span:8}}>
+<Link href='/blog/1'>
+<BlogCard />
+</Link>
 </Col>
 <Col md={{span:8}}>
 <BlogCard />
