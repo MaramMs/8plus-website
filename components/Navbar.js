@@ -12,47 +12,45 @@ const Navbar = () => {
   const router = useRouter();
   const KEY_RIGHT_ARROW = 39;
   const KEY_LEFT_ARROW = 37;
-const paths =['/','/about','/services','/contact']
+  const paths = ["/", "/about", "/services", "/contact"];
   const handleKeydown = (event) => {
-      if (event.keyCode === KEY_RIGHT_ARROW) {
-          const currentIndex = paths.indexOf(router.pathname);
-          if (currentIndex != -1) {
-              const nextPage = paths[currentIndex + 1];
-              if (nextPage) {
-                  router.push(nextPage);
+    if (event.keyCode === KEY_RIGHT_ARROW) {
+      const currentIndex = paths.indexOf(router.pathname);
+      if (currentIndex != -1) {
+        const nextPage = paths[currentIndex + 1];
+        if (nextPage) {
+          router.push(nextPage);
         }
       }
     } else if (event.keyCode === KEY_LEFT_ARROW) {
       const currentIndex = paths.indexOf(router.pathname);
       const prevPage = paths[currentIndex - 1];
       if (prevPage) {
-          router.push(prevPage);
+        router.push(prevPage);
       }
     }
   };
-  
+
   useEffect(() => {
     document.addEventListener("keydown", handleKeydown);
     return () => {
-        document.removeEventListener("keydown", handleKeydown);
-      };
-    }, [router.pathname]);
+      document.removeEventListener("keydown", handleKeydown);
+    };
+  }, [router.pathname]);
 
-const handleWheel = (event) => {
+  const handleWheel = (event) => {
     const delta = Math.sign(event.deltaY);
-     if (delta < 0) {
-      if (router.pathname === '/') {
-          router.push('/about');
-        
+    if (delta < 0) {
+      if (router.pathname === "/") {
+        router.push("/about");
       }
     }
   };
 
-
   useEffect(() => {
-    document.addEventListener('wheel', handleWheel);
+    document.addEventListener("wheel", handleWheel);
     return () => {
-      document.removeEventListener('wheel', handleWheel);
+      document.removeEventListener("wheel", handleWheel);
     };
   }, [router.pathname]);
 
@@ -67,9 +65,13 @@ const handleWheel = (event) => {
           <div className="flex justify-between items-center">
             <div>
               {router.pathname === "/" ? (
-                <img src="/images/logo.png" />
+                <Link href="/">
+                  <img src="/images/logo.png" />
+                </Link>
               ) : (
-                <img src="/images/about-logo.png" />
+                <Link href="/">
+                  <img src="/images/about-logo.png" />
+                </Link>
               )}
             </div>
 
@@ -126,7 +128,11 @@ const handleWheel = (event) => {
                 router.pathname === "/" ? "active" : ""
               } mb-[23px] text-[20px] md:text-[32px]  text-[#000] font-semibold`}
             >
-              <Link href="/" data-path="/" onClick={()=> setShowSidebar(false)}>
+              <Link
+                href="/"
+                data-path="/"
+                onClick={() => setShowSidebar(false)}
+              >
                 {t("home")}
               </Link>
             </li>
@@ -135,7 +141,11 @@ const handleWheel = (event) => {
                 router.pathname === "/about" ? "active" : ""
               } mb-[23px] text-[20px] md:text-[32px]  text-[#000] font-semibold`}
             >
-              <Link href="/about" data-path="/about" onClick={()=> setShowSidebar(false)}>
+              <Link
+                href="/about"
+                data-path="/about"
+                onClick={() => setShowSidebar(false)}
+              >
                 {t("about")}
               </Link>
             </li>
@@ -144,27 +154,39 @@ const handleWheel = (event) => {
                 router.pathname === "/ourworks" ? "active" : ""
               } mb-[23px] text-[20px] md:text-[32px]  text-[#000] font-semibold`}
             >
-              <Link href="/ourworks" data-path="/ourworks" onClick={()=> setShowSidebar(false)}>
+              <Link
+                href="/ourworks"
+                data-path="/ourworks"
+                onClick={() => setShowSidebar(false)}
+              >
                 {t("ourwork")}
               </Link>
             </li>
-         
+
             <li
               className={`${
                 router.pathname === "/services" ? "active" : ""
               } mb-[23px]  text-[20px] md:text-[32px] text-[#000] font-semibold`}
             >
-              <Link href="/services" data-path="/services" onClick={()=> setShowSidebar(false)}>
+              <Link
+                href="/services"
+                data-path="/services"
+                onClick={() => setShowSidebar(false)}
+              >
                 {t("services")}
               </Link>
             </li>
-           
+
             <li
               className={`${
                 router.pathname === "/blog" ? "active" : ""
               } mb-[23px]  text-[20px] md:text-[32px] text-[#000] font-semibold`}
             >
-              <Link href="/blog" data-path="/blog" onClick={()=> setShowSidebar(false)}>
+              <Link
+                href="/blog"
+                data-path="/blog"
+                onClick={() => setShowSidebar(false)}
+              >
                 {t("blog")}
               </Link>
             </li>
@@ -174,7 +196,11 @@ const handleWheel = (event) => {
                 router.pathname === "/contact" ? "active" : ""
               } mb-[23px]text-[20px] md:text-[32px]  text-[#000] font-semibold`}
             >
-              <Link href="/contact" data-path="/contact" onClick={()=> setShowSidebar(false)}>
+              <Link
+                href="/contact"
+                data-path="/contact"
+                onClick={() => setShowSidebar(false)}
+              >
                 {t("contact")}
               </Link>
             </li>
