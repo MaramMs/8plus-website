@@ -1,31 +1,59 @@
+import BlogCard from "@/components/BlogCard";
 import Footer from "@/components/Footer";
 import Wrapper from "@/components/Wrapper";
 import { Col, Row } from "antd";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const BlogDetails = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 576);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <div className="pt-[192px]">
       <Wrapper>
-      <div className='bg-[#F9F9F9] h-[71px] mb-[50px]  pr-[20px] py-[18px] hidden md:block'>
-   
+        <div className="bg-[#F9F9F9] h-[71px] mb-[50px]  pr-[20px] py-[18px] hidden md:block">
+          <div className="flex items-center gap-[13px]">
+            <span className="text-[#808080] text-[20px] font-medium">
+              Blogs
+            </span>
 
-   <div className='flex items-center gap-[13px]'>
-  
-   <span className='text-[#808080] text-[20px] font-medium'>Blogs</span>
-  
-  <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M6.83301 12.6667L0.999674 6.83333L6.83301 1" stroke="#808080" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-  
-  <span className='text-[#000] text-[20px] font-medium'>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
-  </span>
-   </div>
+            <svg
+              width="8"
+              height="14"
+              viewBox="0 0 8 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.83301 12.6667L0.999674 6.83333L6.83301 1"
+                stroke="#808080"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <span className="text-[#000] text-[20px] font-medium">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
+            </span>
           </div>
-        <Row gutter={[24,24]}>
+        </div>
+        <Row gutter={[24, 24]}>
           <Col md={{ span: 14 }}>
-            <h1 className="text-[#03256C] md:text-[36px] font-semibold md:mb-[12px] text-center md:text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem</h1>
+
+          
+            <h1 className={isMobile ? 'text-[#000] text-[20px] font-semibold text-center mb-[35px]' :'text-[#03256C] md:text-[36px] font-semibold md:mb-[12px] text-center md:text-right'}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
+            </h1>
 
             <div className="flex flex-col">
               <img
@@ -115,14 +143,38 @@ const BlogDetails = () => {
           </Col>
 
           <Col md={{ span: 9 }} className="md:pt-[7.5rem]">
-            {/* <h5 className="text-[#000] font-semibold text-[20px] relative">Related Blogs</h5>
-            <span className="absolute bottom-0 "></span> */}
+        
 
-<h5 className="text-[#000] font-semibold text-[20px] pb-[6px]">Related Blogs</h5>
-<div className="w-full h-[1px] bg-[#D1D1D1] mb-[24px]"></div>
+            <h5 className="text-[#000] font-semibold text-[20px] pb-[6px]">
+              Related Blogs
+            </h5>
+            <div className="w-full h-[1px] bg-[#D1D1D1] mb-[24px]"></div>
+
+
+            {
+              isMobile ? (
+
+      <>
+        <div className="mb-[22px]">
+          <BlogCard />
+        </div>
+
+        <div className="mb-[22px]">
+          <BlogCard />
+        </div>
+
+        <div className="mb-[22px]">
+          <BlogCard />
+        </div>
+
+      </>
+        
+              ) : (
+                <>
+   <div className="w-full h-[1px] bg-[#D1D1D1] mb-[24px]"></div>
             <div className="flex gap-[12px] mb-[24px]">
               <div className="flex-shrink-0">
-                <img src="/images/works/blog2.png"  className="w-[24] h-[24]"/>
+                <img src="/images/works/blog2.png" className="w-[24] h-[24]" />
               </div>
 
               <div className="">
@@ -160,7 +212,7 @@ const BlogDetails = () => {
 
             <div className="flex gap-[12px] mb-[24px]">
               <div className="flex-shrink-0">
-                <img src="/images/works/blog2.png"  className="w-[24] h-[24]"/>
+                <img src="/images/works/blog2.png" className="w-[24] h-[24]" />
               </div>
 
               <div className="">
@@ -198,7 +250,7 @@ const BlogDetails = () => {
 
             <div className="flex gap-[12px] mb-[24px]">
               <div className="flex-shrink-0">
-                <img src="/images/works/blog2.png"  className="w-[24] h-[24]"/>
+                <img src="/images/works/blog2.png" className="w-[24] h-[24]" />
               </div>
 
               <div className="">
@@ -235,7 +287,7 @@ const BlogDetails = () => {
             </div>
             <div className="flex gap-[12px] mb-[24px]">
               <div className="flex-shrink-0">
-                <img src="/images/works/blog2.png"  className="w-[24] h-[24]"/>
+                <img src="/images/works/blog2.png" className="w-[24] h-[24]" />
               </div>
 
               <div className="">
@@ -272,7 +324,7 @@ const BlogDetails = () => {
             </div>
             <div className="flex gap-[12px] mb-[24px]">
               <div className="flex-shrink-0">
-                <img src="/images/works/blog2.png"  className="w-[24] h-[24]"/>
+                <img src="/images/works/blog2.png" className="w-[24] h-[24]" />
               </div>
 
               <div className="">
@@ -307,6 +359,10 @@ const BlogDetails = () => {
                 </div>
               </div>
             </div>
+                </>
+              )
+            }
+         
           </Col>
         </Row>
       </Wrapper>
