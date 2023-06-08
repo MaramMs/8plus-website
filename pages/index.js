@@ -8,7 +8,7 @@ export default function Home() {
     <div className="relative h-screen w-full bg-[url('/images/bg-home.png')] bg-cover flex justify-center items-center flex-col">
       <div className="absolute z-20  home"></div>
 
-      <div className="bottom-0 z-10 block absolute text-white  left-0 w-[476px]">
+      <div className="bottom-0 z-10 block absolute text-white  left-0 w-[476px] md:w-full">
         <motion.h1
           initial={{ opacity: 1, x: 0 }}
           animate={{ opacity: 1, x: "100vw" }}
