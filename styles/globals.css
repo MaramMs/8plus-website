@@ -229,4 +229,22 @@ margin-top: 217px;
 
 
 
+.category-active{
+  color:#1768AC;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  position: relative;
+}
+.category-active::after{
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: #1768AC;
+  border-radius: 50%;
+  right: 50%;
+  position: absolute;
+  bottom: 10%;
+}
+
 

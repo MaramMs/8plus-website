@@ -57,10 +57,19 @@ const Navbar = () => {
   return (
     <>
       <nav className="z-30 absolute w-full ">
-        <img
+       {
+        router.pathname === '/ourworks' ? (
+          <img
+          src="/images/plus.png"
+          className=" absolute left-[3%]  top-[1%]"
+        />
+        ) : (
+          <img
           src="/images/plus.png"
           className=" absolute left-[36%]  top-[1%]"
         />
+        )
+       }
         <Wrapper>
           <div className="flex justify-between items-center">
             <div>
