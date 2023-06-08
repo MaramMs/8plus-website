@@ -11,11 +11,12 @@ const about = () => {
   const { t } = useTranslation();
   const settings = {
     dots: false,
-    infinite: false,
-    speed: 500,
+    infinite: true,
     slidesToShow: 6,
     slidesToScroll: 6,
     initialSlide: 0,
+    autoplay:true,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 1024,
