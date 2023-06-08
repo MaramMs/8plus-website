@@ -1,19 +1,19 @@
 import { Button } from "antd";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import Link from "next/link";
 export default function Home() {
   const { t } = useTranslation();
   return (
     <div className="relative h-screen w-full bg-[url('/images/bg-home.png')] bg-cover flex justify-center items-center flex-col">
       <div className="absolute z-20  home"></div>
 
-
-      <div className="bottom-0 z-10 md:block absolute  text-white hidden">
+      <div className="bottom-0 z-10 block absolute text-white  left-0 w-[476px]">
         <motion.h1
           initial={{ opacity: 1, x: 0 }}
-          animate={{ opacity: 0, x: "100vw" }}
-          transition={{ duration: 10, repeat: Infinity, repeatType: "loop" }}
-          className="text-[96px] font-semibold text-neutral-200	"
+          animate={{ opacity: 1, x: "100vw" }}
+          transition={{ duration: 6, repeat: Infinity, repeatType: "loop" }}
+          className="md:text-[96px] text-[32px] font-semibold text-neutral-200"
         >
           ثمانية بلس منظومة تكنولوجية متكاملة
         </motion.h1>
@@ -27,15 +27,19 @@ export default function Home() {
           {t("home-desc")}
         </p>
         <div className="flex justify-center items-center gap-[11px]">
-          <Button className="rounded-[24px] bg-[#fff] border-none p-[16px] flex justify-center items-center text-[#1768ac] text-[12px] font-semibold ">
+       <Link href='/contact'>
+       <Button className="rounded-[24px] bg-[#fff] border-none p-[16px] flex justify-center items-center text-[#1768ac] text-[12px] font-semibold ">
             {t("home-btn-start-project")}
           </Button>
-          <Button className="rounded-[24px] border border-[#fff] bg-transparent p-[16px] text-[12px] font-semibold flex justify-center items-center text-[#fff]">
+       </Link>
+        <Link href='/about'>
+        <Button className="rounded-[24px] border border-[#fff] bg-transparent p-[16px] text-[12px] font-semibold flex justify-center items-center text-[#fff]">
             {t("home-btn-more")}
           </Button>
+        </Link>
         </div>
 
-        <div className="flex flex-col absolute bottom-[5%] items-center">
+        <div className="flex flex-col absolute bottom-[5%] items-center  md:block hidden">
           <svg
             width="14"
             height="36"
@@ -49,7 +53,7 @@ export default function Home() {
             />
           </svg>
 
-          <span className="text-[#fff] text-[14px] font-medium"> scroll</span>
+          <span className="text-[#fff] text-[14px] font-medium "> scroll</span>
         </div>
       </div>
     </div>
