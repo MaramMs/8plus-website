@@ -148,7 +148,6 @@ const BlogDetails = () => {
             <h5 className="text-[#000] font-semibold text-[20px] pb-[6px]">
               Related Blogs
             </h5>
-            <div className="w-full h-[1px] bg-[#D1D1D1] mb-[24px]"></div>
 
 
             {
