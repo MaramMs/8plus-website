@@ -40,7 +40,7 @@ const Navbar = () => {
 
   const handleWheel = (event) => {
     const delta = Math.sign(event.deltaY);
-    if (delta < 0) {
+    if (delta > 0) {
       if (router.pathname === "/") {
         router.push("/about");
       }

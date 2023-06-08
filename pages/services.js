@@ -285,8 +285,8 @@ const services = () => {
                     },
                   ]}
                 >
+                  <label className="text-[#949494] text-[16px]">Name</label>
                   <Input
-                    placeholder="Name"
                     className="border-b-[#D1D1D1] border-t-0 border-r-0 border-l-0 rounded-none"
                   />
                 </Form.Item>
@@ -306,8 +306,8 @@ const services = () => {
                     },
                   ]}
                 >
+                  <label className="text-[#949494] text-[16px]">Email</label>
                   <Input
-                    placeholder="Email"
                     className="border-b-[#D1D1D1] border-t-0 border-r-0 border-l-0 rounded-none"
                   />
                 </Form.Item>
@@ -327,9 +327,9 @@ const services = () => {
                     },
                   ]}
                 >
+                  <label className="text-[#949494] text-[16px]">Phone Number</label>
                   <Input
-                    placeholder="Phone Number"
-                    className="border-b-[#D1D1D1] border-t-0 border-r-0 border-l-0 rounded-none"
+                    className="border-b-[#D1D1D1] border-t-0 border-r-0 border-l-0 rounded-none outline-0"
                   />
                 </Form.Item>
               </Col>
@@ -344,10 +344,13 @@ const services = () => {
                     },
                   ]}
                 >
+                  <label className="text-[#949494] text-[16px]">Type of Services</label>
                   <Select
-                    placeholder="Type of Services"
+                        defaultValue="Front End"
+
                     className="border-b-[#D1D1D1] border-t-0 border-r-0 border-l-0 rounded-none"
                   >
+
                     <Option value="male">marketing</Option>
                     <Option value="female">web</Option>
                     <Option value="other">mobile</Option>
@@ -365,8 +368,9 @@ const services = () => {
                   //   },
                   // ]}
                 >
+                                    <label className="text-[#949494] text-[16px]">Note</label>
+
                   <Input
-                    placeholder="Notes"
                     className="border-b-[#D1D1D1] border-t-0 border-r-0 border-l-0 rounded-none"
                   />
                 </Form.Item>
