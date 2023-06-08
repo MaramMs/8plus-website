@@ -213,8 +213,10 @@ const index = () => {
               modules={[EffectCoverflow, Pagination, Navigation]}
               className="swiper_container"
             >
-              <SwiperSlide>
+           <SwiperSlide>
+           <Link href='/ourworks/1'>
                 <img src="/images/works/work3.png" alt="slide_image" />
+           </Link>
                 <div className="flex justify-center items-center flex-col mt-[61px] mb-[261px] ">
                   <h3 className="text-[#000] text-[15px] font-semibold">
                     marketing
