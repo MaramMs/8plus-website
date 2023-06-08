@@ -9,6 +9,23 @@ const Blog = () => {
   return (
     <div className='pt-[192px]'>
       <Wrapper>
+
+        <div className='bg-[#F9F9F9] h-[71px] mb-[50px]  pr-[20px] py-[18px] hidden md:block'>
+   
+
+ <div className='flex items-center gap-[13px]'>
+
+ <span className='text-[#808080] text-[20px] font-medium'>Home</span>
+
+<svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.83301 12.6667L0.999674 6.83333L6.83301 1" stroke="#808080" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+<span className='text-[#808080] text-[20px] font-medium'>
+Blogs
+</span>
+ </div>
+        </div>
       <div className='md:flex items-center justify-center gap-[11px] text-center'>
             <h1 className='text-[#1768AC] md:text-[36px] font-semibold md:w-[15%] w-[100%]'>
                 Last Blogs
