@@ -247,4 +247,11 @@ margin-top: 217px;
   bottom: 10%;
 }
 
+:where(.css-dev-only-do-not-override-w8mnev).ant-image .ant-image-mask{
+  background-color: transparent;
+}
+:where(.css-dev-only-do-not-override-w8mnev) .ant-image-preview-operations {
+  display: none;
+
+}
 

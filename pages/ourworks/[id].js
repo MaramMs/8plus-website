@@ -1,6 +1,6 @@
 import Footer from '@/components/Footer'
 import Wrapper from '@/components/Wrapper'
-import { Col, Row ,Container} from 'antd'
+import { Col, Row ,Container, Image} from 'antd'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import {AiFillCaretLeft} from 'react-icons/ai'
@@ -44,7 +44,13 @@ const Work = () => {
       <Row gutter={[24,24]} className='md:mt-[84.74px] md:mb-[127.23px] mt-[31px]' >
         <Col md={{span:12}}>
             <div className='rounded-[100px]'>
-                <img src='/images/works/work1.png' className='w-[100%] h-[100%] object-cover'/>
+            <Image
+    className='w-[100%] h-[100%] object-cover'
+    src="/images/works/work1.png"
+    preview={{
+      src: '/images/works/work1.png',
+    }}
+  />
             </div>
 
         </Col>
