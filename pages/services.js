@@ -277,11 +277,11 @@ const services = () => {
             <Row span="24" gutter={[36, 10]}>
               <Col span={24} md={{ span: 12 }}>
                 <Form.Item
-                  name="username"
+                  name="name"
                   rules={[
                     {
                       required: true,
-                      message: "Please input your username!",
+                      message: "The filed is require",
                     },
                   ]}
                 >
@@ -294,16 +294,20 @@ const services = () => {
 
               <Col span={24} md={{ span: 12 }}>
                 <Form.Item
-                  name="password"
+                  name="email"
                   rules={[
                     {
                       required: true,
-                      message: "Please input your password!",
+                      message: "The filed is require",
+                    },
+                    {
+                      type: 'email',
+                      message: "The email address is not valid",
                     },
                   ]}
                 >
                   <Input
-                    placeholder="Email / Phone Number"
+                    placeholder="Email"
                     className="border-b-[#D1D1D1] border-t-0 border-r-0 border-l-0 rounded-none"
                   />
                 </Form.Item>
@@ -311,16 +315,20 @@ const services = () => {
 
               <Col span={24} md={{ span: 12 }}>
                 <Form.Item
-                  name="username"
+                  name="phone"
                   rules={[
                     {
                       required: true,
-                      message: "Please input your username!",
+                      message: "The filed is require",
+                    },
+                    {
+                      pattern: /^\d+$/,
+                      message: "The phone number must only contain digits",
                     },
                   ]}
                 >
                   <Input
-                    placeholder="Company/Organization"
+                    placeholder="Phone Number"
                     className="border-b-[#D1D1D1] border-t-0 border-r-0 border-l-0 rounded-none"
                   />
                 </Form.Item>
@@ -332,7 +340,7 @@ const services = () => {
                   rules={[
                     {
                       required: true,
-                      message: "Please select gender!",
+                      message: "The filed is require",
                     },
                   ]}
                 >
@@ -349,13 +357,13 @@ const services = () => {
 
               <Col span={24} >
                 <Form.Item
-                  name="password"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please input your password!",
-                    },
-                  ]}
+                  name="note"
+                  // rules={[
+                  //   {
+                  //     required: true,
+                  //     message: "Please input your password!",
+                  //   },
+                  // ]}
                 >
                   <Input
                     placeholder="Notes"
