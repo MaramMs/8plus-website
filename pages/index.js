@@ -39,8 +39,16 @@ export default function Home() {
         </Link>
         </div>
 
-        <div className="flex flex-col absolute bottom-[5%] items-center  md:block hidden">
-          <svg
+
+          
+<motion.div
+  animate={{ y: [0, -20, 0] }}
+  transition={{ duration: 2, repeat: Infinity }}
+  className="absolute bottom-[0%] items-center  md:flex hidden "
+>
+
+  <div className="md:flex flex-col justify-center items-center">
+  <svg
             width="14"
             height="36"
             viewBox="0 0 14 36"
@@ -55,8 +63,12 @@ export default function Home() {
 
           <span className="text-[#fff] text-[14px] font-medium "> scroll</span>
         </div>
-      </div>
+  
+
+</motion.div>
+</div>
     </div>
+       
   );
 }
 
