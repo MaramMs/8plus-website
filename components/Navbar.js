@@ -61,12 +61,12 @@ const Navbar = () => {
         router.pathname === '/ourworks' ? (
           <img
           src="/images/plus.png"
-          className=" absolute left-[3%]  top-[1%]"
+          className=" absolute left-[3%]  top-[1%] hidden md:block"
         />
         ) : (
           <img
           src="/images/plus.png"
-          className=" absolute left-[36%]  top-[1%]"
+          className=" absolute left-[36%]  top-[1%] hidden md:block"
         />
         )
        }
@@ -92,7 +92,7 @@ const Navbar = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 onClick={() => setShowSidebar(!showSidebar)}
-                className="cursor-pointer"
+                className="cursor-pointer z-10"
               >
                 <path
                   d="M1.33331 1H30.6666M1.33331 12H30.6666M1.33331 23H14.1666"
@@ -110,7 +110,7 @@ const Navbar = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 onClick={() => setShowSidebar(true)}
-                className="cursor-pointer"
+                className="cursor-pointer z-10"
               >
                 <path
                   d="M1 1H30.3333M1 12H30.3333M1 23H13.8333"
