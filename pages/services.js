@@ -293,25 +293,34 @@ const services = () => {
               </Col>
 
               <Col span={24} md={{ span: 12 }}>
-                <Form.Item
-                  name="email"
-                  rules={[
-                    {
-                      required: true,
-                      message: "The filed is require",
-                    },
-                    {
-                      type: 'email',
-                      message: "The email address is not valid",
-                    },
-                  ]}
-                >
-                  <label className="text-[#949494] text-[16px]">Email</label>
-                  <Input
-                    className="border-b-[#D1D1D1] border-t-0 border-r-0 border-l-0 rounded-none"
-                  />
-                </Form.Item>
+              <Form.Item
+        name="email"
+        rules={[
+          {
+            type: 'email',
+            message: 'The input is not valid E-mail!',
+          },
+          {
+            required: true,
+            message: 'Please input your E-mail!',
+          },
+        ]}
+      >
+
+<div className="flex flex-col">
+<label className="text-[#949494] text-[16px]">E-mail</label>
+
+        <Input 
+        
+        className="border-b-[#D1D1D1] border-t-0 border-r-0 border-l-0 rounded-none outline-0"
+
+        />
+
+        </div>
+      </Form.Item>
               </Col>
+
+
 
               <Col span={24} md={{ span: 12 }}>
                 <Form.Item
@@ -327,10 +336,13 @@ const services = () => {
                     },
                   ]}
                 >
-                  <label className="text-[#949494] text-[16px]">Phone Number</label>
+                <div className="flex flex-col">
+
+                <label className="text-[#949494] text-[16px] ">Phone Number</label>
                   <Input
                     className="border-b-[#D1D1D1] border-t-0 border-r-0 border-l-0 rounded-none outline-0"
                   />
+                </div>
                 </Form.Item>
               </Col>
 
