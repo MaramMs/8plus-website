@@ -4,6 +4,36 @@ import { Button, Col, Form, Input, Row, Select } from "antd";
 import React from "react";
 
 const services = () => {
+  const [form] = Form.useForm();
+
+  const handlePhoneChange = (e) => {
+    const { value } = e.target;
+    if (/^\d*$/.test(value)) {
+      form.setFieldsValue({ phone: value });
+    } else {
+      form.setFields([
+        {
+          name: 'phone',
+          errors: ['رقم الهاتف يجب أن يحتوي على أرقام فقط'],
+        },
+      ]);
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    const charCode = e.which || e.keyCode;
+    if ((charCode < 48 || charCode > 57) && charCode !== 46) {
+      e.preventDefault();
+      form.setFields([
+        {
+          name: 'phone',
+          errors: ['رقم الهاتف يجب أن يحتوي على أرقام فقط'],
+        },
+      ]);
+    
+    }
+    
+  };
   return (
     <div className="overflow-x-hidden pt-[162px]">
 
@@ -258,6 +288,7 @@ const services = () => {
       <div className="flex justify-center items-center flex-col mt-[59px] md:mt-[119px] md:mb-[90px] px-[19px]">
         <h2 className="text-[#1768AC] font-medium text-[20px] md:text-center text-right md:text-[32px] mb-[4px]">Services Request</h2>
         <Form
+        form={form}
             className="md:mt-[39px]"
             name="basic"
             // labelCol={{
@@ -341,6 +372,8 @@ const services = () => {
                 <label className="text-[#949494] text-[16px] ">Phone Number</label>
                   <Input
                     className="border-b-[#D1D1D1] border-t-0 border-r-0 border-l-0 rounded-none outline-0"
+                    onChange={handlePhoneChange}
+                    onKeyPress={handleKeyPress}
                   />
                 </div>
                 </Form.Item>
