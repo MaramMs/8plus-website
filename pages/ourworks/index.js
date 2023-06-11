@@ -103,8 +103,11 @@ const index = () => {
             />
 
             <div className="flex flex-col mt-[75px]">
-              <img src="/images/works/mb-work.png" alt="slide_image" />
 
+<Link href='/ourworks/1'>
+<img src="/images/works/mb-work.png" alt="slide_image" />
+
+</Link>
               <div className="flex justify-center items-center flex-col mt-[43.5px] mb-[63px] ">
                 <h3 className="text-[#000] text-[15px] font-semibold">
                   marketing
@@ -116,8 +119,11 @@ const index = () => {
             </div>
 
             <div className="flex flex-col ">
-              <img src="/images/works/mb-work.png" alt="slide_image" />
 
+<Link href='/ourworks/1'>
+<img src="/images/works/mb-work.png" alt="slide_image" />
+
+</Link>
               <div className="flex justify-center items-center flex-col mt-[43.5px] mb-[63px]  ">
                 <h3 className="text-[#000] text-[15px] font-semibold">
                   marketing
@@ -129,8 +135,11 @@ const index = () => {
             </div>
 
             <div className="flex flex-col">
-              <img src="/images/works/mb-work.png" alt="slide_image" />
 
+<Link href='/ourworks/1'>
+<img src="/images/works/mb-work.png" alt="slide_image" />
+
+</Link>
               <div className="flex justify-center items-center flex-col mt-[43.5px] mb-[63px]  ">
                 <h3 className="text-[#000] text-[15px] font-semibold">
                   marketing
@@ -142,7 +151,10 @@ const index = () => {
             </div>
 
             <div className="flex flex-col ">
+              <Link href='/ourworks/1'>
+
               <img src="/images/works/mb-work.png" alt="slide_image" />
+              </Link>
 
               <div className="flex justify-center items-center flex-col mt-[43.5px] mb-[63px]  ">
                 <h3 className="text-[#000] text-[15px] font-semibold">
