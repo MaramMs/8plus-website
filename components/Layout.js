@@ -3,7 +3,6 @@ import Navbar from './Navbar'
 import Footer from './Footer';
 
 const Layout = ({children}) => {
-  
   const [hydrated, setHydrated] = useState(false);
   useEffect(() => {
         setHydrated(true);
@@ -12,7 +11,6 @@ const Layout = ({children}) => {
         return null;
     }
   return (
-    //1920
     <div>
      <Navbar />
      <main>

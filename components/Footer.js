@@ -23,8 +23,12 @@ const router = useRouter();
     
     <Row className="md:mb-[12px]">
       <Col span={18} md={{span:12}}>
-        <img src="/images/logo.png" width='80px' height='24.83px'/>
-        <p className='text-[8px] font-light md:text-[10px] md:font-medium text-[#fff] md:w-[277px] md:mt-[9px] w-[186px] h-[55px]'>{t('home-desc')}</p>
+        <img src="/images/logo.png" 
+        
+        className='md:w-[140px] md:h-[43px] w-[80px] h-[24.83px] object-cover'
+        
+        />
+        <p className='text-[8px] font-light md:text-[12px] md:font-medium text-[#fff] md:w-[300px] md:mt-[9px] w-[186px] h-[55px]'>{t('home-desc')}</p>
       </Col>
     
       <Col span={6} md={{span:12}}>
