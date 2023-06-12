@@ -1,50 +1,80 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { EffectCoverflow, Pagination, Navigation } from "swiper";
 import Wrapper from "@/components/Wrapper";
 import { Select } from "antd";
 import Footer from "@/components/Footer";
+import CustomSwiper from "@/components/CustomSwiper";
+import CardProject from "@/components/CardProject";
 
 const index = () => {
   const [isMobile, setIsMobile] = useState(false);
 
- 
-
+  const projects = [
+    {
+      img: "/images/works/work3.png",
+      title: "React Project",
+      desc: "web site description",
+    },
+    {
+      img: "/images/works/work3.png",
+      title: "React Project",
+      desc: "web site description",
+    },
+    {
+      img: "/images/works/work3.png",
+      title: "React Project",
+      desc: "web site description",
+    },
+    {
+      img: "/images/works/work3.png",
+      title: "React Project",
+      desc: "web site description",
+    },
+    {
+      img: "/images/works/work3.png",
+      title: "React Project",
+      desc: "web site description",
+    },
+    {
+      img: "/images/works/work3.png",
+      title: "React Project",
+      desc: "web site description",
+    },
+  ];
 
   const categories = [
-  {
-    id: 1,
-    category:'Front End'
-  },
-  {
-    id: 2,
-    category:'UI/UX'
-  },
-  {
-    id: 3,
-    category:'Back End'
-  },
+    {
+      id: 1,
+      category: "Front End",
+    },
+    {
+      id: 2,
+      category: "UI/UX",
+    },
+    {
+      id: 3,
+      category: "Back End",
+    },
 
-  {
-    id: 4,
-    category:'Marketing'
-  },
+    {
+      id: 4,
+      category: "Marketing",
+    },
 
-  {
-    id: 5,
-    category:'Mobile App'
-  },
-  {
-    id: 6,
-    category:'Social'
-  }
-  ]
+    {
+      id: 5,
+      category: "Mobile App",
+    },
+    {
+      id: 6,
+      category: "Social",
+    },
+  ];
   const [activeCategory, setActiveCategory] = useState(null);
 
   const handleCategoryClick = (id) => {
@@ -78,9 +108,8 @@ const index = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                margin: "auto",
+                margin: "auto auto 89px auto",
               }}
-              // className="border border-[#1768AC] rounded-[29.5px] m-auto  w-[242px] flex"
               options={[
                 {
                   value: "jack",
@@ -102,69 +131,13 @@ const index = () => {
               ]}
             />
 
-            <div className="flex flex-col mt-[75px]">
-
-<Link href='/ourworks/1'>
-<img src="/images/works/mb-work.png" alt="slide_image" />
-
-</Link>
-              <div className="flex justify-center items-center flex-col mt-[43.5px] mb-[63px] ">
-                <h3 className="text-[#000] text-[15px] font-semibold">
-                  marketing
-                </h3>
-                <span className="text-[#1768AC] text-[24px] font-medium">
-                  design
-                </span>
-              </div>
-            </div>
-
-            <div className="flex flex-col ">
-
-<Link href='/ourworks/1'>
-<img src="/images/works/mb-work.png" alt="slide_image" />
-
-</Link>
-              <div className="flex justify-center items-center flex-col mt-[43.5px] mb-[63px]  ">
-                <h3 className="text-[#000] text-[15px] font-semibold">
-                  marketing
-                </h3>
-                <span className="text-[#1768AC] text-[24px] font-medium">
-                  design
-                </span>
-              </div>
-            </div>
-
-            <div className="flex flex-col">
-
-<Link href='/ourworks/1'>
-<img src="/images/works/mb-work.png" alt="slide_image" />
-
-</Link>
-              <div className="flex justify-center items-center flex-col mt-[43.5px] mb-[63px]  ">
-                <h3 className="text-[#000] text-[15px] font-semibold">
-                  marketing
-                </h3>
-                <span className="text-[#1768AC] text-[24px] font-medium">
-                  design
-                </span>
-              </div>
-            </div>
-
-            <div className="flex flex-col ">
-              <Link href='/ourworks/1'>
-
-              <img src="/images/works/mb-work.png" alt="slide_image" />
-              </Link>
-
-              <div className="flex justify-center items-center flex-col mt-[43.5px] mb-[63px]  ">
-                <h3 className="text-[#000] text-[15px] font-semibold">
-                  marketing
-                </h3>
-                <span className="text-[#1768AC] text-[24px] font-medium">
-                  design
-                </span>
-              </div>
-            </div>
+            {projects.map((project) => {
+              return (
+                <div className="flex flex-col ">
+                  <CardProject project={project} />
+                </div>
+              );
+            })}
           </Wrapper>
 
           <Footer />
@@ -172,142 +145,22 @@ const index = () => {
       ) : (
         <>
           <ul className="flex m-auto items-center justify-around border border-[#1768AC] rounded-[39.5px] md:w-[850px]">
-            {
-              categories.map(({id,category}) => {
-                return (
-                   <li
-                   key={id}
-                   className={`${
-                     activeCategory === id? "category-active" : ""
-                   } p-4 text-[#000] text-[16px] font-medium cursor-pointer`}
-                   onClick={() => handleCategoryClick(id)}
-
-            >
-              {category}
-            </li>
-                )
-              })
-            }
-
+            {categories.map(({ id, category }) => {
+              return (
+                <li
+                  key={id}
+                  className={`${
+                    activeCategory === id ? "category-active" : ""
+                  } p-4 text-[#000] text-[16px] font-medium cursor-pointer`}
+                  onClick={() => handleCategoryClick(id)}
+                >
+                  {category}
+                </li>
+              );
+            })}
           </ul>
           <Wrapper>
-            <Swiper
-              spaceBetween={24}
-              grabCursor={true}
-              centeredSlides={true}
-              loop={true}
-              slidesPerView={3}
-              navigation={{
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-                clickable: true,
-              }}
-              pagination={{
-                el: ".swiper-pagination",
-                clickable: true,
-                dynamicBullets: true, // Add this line for dots pagination
-              }}
-              breakpoints={{
-                // For screens smaller than 640px
-                640: {
-                  slidesPerView: 1,
-                },
-                // For screens between 640px and 768px
-                768: {
-                  slidesPerView: 2,
-                },
-                // For larger screens
-                1024: {
-                  slidesPerView: 3,
-                },
-              }}
-              // onSlideChange={handleSlideChange}
-              modules={[EffectCoverflow, Pagination, Navigation]}
-              className="swiper_container"
-            >
-           <SwiperSlide>
-           <Link href='/ourworks/1'>
-                <img src="/images/works/work3.png" alt="slide_image" />
-           </Link>
-                <div className="flex justify-center items-center flex-col mt-[61px] mb-[261px] ">
-                  <h3 className="text-[#000] text-[15px] font-semibold">
-                    marketing
-                  </h3>
-                  <span className="text-[#1768AC] text-[24px] font-medium">
-                    design
-                  </span>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/images/works/work4.png" alt="slide_image" />
-
-                <div className="flex justify-center items-center flex-col mt-[61px] mb-[261px] ">
-                  <h3 className="text-[#000] text-[15px] font-semibold">
-                    marketing
-                  </h3>
-                  <span className="text-[#1768AC] text-[24px] font-medium">
-                    design
-                  </span>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/images/works/work5.png" alt="slide_image" />
-                <div className="flex justify-center items-center flex-col mt-[61px] mb-[261px] ">
-                  <h3 className="text-[#000] text-[15px] font-semibold">
-                    marketing
-                  </h3>
-                  <span className="text-[#1768AC] text-[24px] font-medium">
-                    design
-                  </span>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/images/works/work4.png" alt="slide_image" />
-                <div className="flex justify-center items-center flex-col mt-[61px] mb-[261px] ">
-                  <h3 className="text-[#000] text-[15px] font-semibold">
-                    marketing
-                  </h3>
-                  <span className="text-[#1768AC] text-[24px] font-medium">
-                    design
-                  </span>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/images/works/work5.png" alt="slide_image" />
-                <div className="flex justify-center items-center flex-col mt-[61px] mb-[261px] ">
-                  <h3 className="text-[#000] text-[15px] font-semibold">
-                    marketing
-                  </h3>
-                  <span className="text-[#1768AC] text-[24px] font-medium">
-                    design
-                  </span>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/images/works/work3.png" alt="slide_image" />
-                <div className="flex justify-center items-center flex-col mt-[61px] mb-[261px] ">
-                  <h3 className="text-[#000] text-[15px] font-semibold">
-                    marketing
-                  </h3>
-                  <span className="text-[#1768AC] text-[24px] font-medium">
-                    design
-                  </span>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/images/works/work4.png" alt="slide_image" />
-                <div className="flex justify-center items-center flex-col mt-[61px] mb-[261px] ">
-                  <h3 className="text-[#000] text-[15px] font-semibold">
-                    marketing
-                  </h3>
-                  <span className="text-[#1768AC] text-[24px] font-medium">
-                    design
-                  </span>
-                </div>
-              </SwiperSlide>
-
-              <div className="swiper-pagination"></div>
-            </Swiper>
+            <CustomSwiper projects={projects} />
           </Wrapper>
         </>
       )}

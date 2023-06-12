@@ -1,3 +1,4 @@
+import CustomSlider from "@/components/CustomSlider";
 import Footer from "@/components/Footer";
 import Wrapper from "@/components/Wrapper";
 import { Col, Row } from "antd";
@@ -5,84 +6,9 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { GoMail } from "react-icons/go";
 import { RxEyeOpen } from "react-icons/rx";
-import Slider from "react-slick";
 
 const about = () => {
   const { t } = useTranslation();
-  const settings = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 6,
-    slidesToScroll: 6,
-    initialSlide: 0,
-    autoplay:true,
-    autoplaySpeed: 3000,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-  const partners = [
-    {
-      img: "/images/parenter.png",
-    },
-    {
-      img: "/images/parenter.png",
-    },
-    {
-      img: "/images/parenter.png",
-    },
-    {
-      img: "/images/parenter.png",
-    },
-    {
-      img: "/images/parenter.png",
-    },
-    {
-      img: "/images/parenter.png",
-    },
-
-    {
-      img: "/images/parenter.png",
-    },
-    {
-      img: "/images/parenter.png",
-    },
-    {
-      img: "/images/parenter.png",
-    },
-    {
-      img: "/images/parenter.png",
-    },
-    {
-      img: "/images/parenter.png",
-    },
-    {
-      img: "/images/parenter.png",
-    },
-  ];
   return (
     <div className="about">
       <Wrapper className="md:pt-[162px] pt-[162px]">
@@ -95,7 +21,7 @@ const about = () => {
             lg: 72,
           }}
         >
-          <Col md={{ span: 12 }} className="md:pt-[119px] gutter-row mb-[65px]" >
+          <Col md={{ span: 12 }} className="md:pt-[119px] gutter-row mb-[65px]">
             <h3 className="text-[#1768ac] text-[20px] md:text-[36px]  font-medium mb-[13px]">
               {t("about")}
             </h3>
@@ -110,15 +36,7 @@ const about = () => {
               className="w-[100%] h-[100%] object-cover"
             />
           </Col>
-        </Row>
-        <Row
-          gutter={{
-            xs: 66,
-            sm: 66,
-            md: 72,
-            lg: 72,
-          }}
-        >
+
           <Col md={{ span: 12 }} className="mb-[65px]">
             <div className="flex items-center gap-[17px]">
               <GoMail className="text-[#1768ac] text-[26px] md:text-[35px]" />
@@ -145,17 +63,12 @@ const about = () => {
             </p>
           </Col>
         </Row>
-
         <div className="md:mt-[65px] md:mb-[160px]">
           <h2 className="text-center text-[20px] md:text-[36px] text-[#1768ac] font-medium md:mb-[57px] mb-[7px]">
             {t("about-partners")}
           </h2>
 
-          <Slider {...settings}>
-            {partners.map((partner, index) => (
-              <img src={partner.img} key={index} />
-            ))}
-          </Slider>
+          <CustomSlider />
         </div>
       </Wrapper>
       <Footer />
