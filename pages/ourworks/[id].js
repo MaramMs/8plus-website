@@ -187,7 +187,6 @@ const Work = () => {
         </div>
       </Wrapper>
 
-      <Footer />
     </>
   );
 };

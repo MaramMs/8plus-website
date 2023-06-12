@@ -71,7 +71,6 @@ const about = () => {
           <CustomSlider />
         </div>
       </Wrapper>
-      <Footer />
     </div>
   );
 };

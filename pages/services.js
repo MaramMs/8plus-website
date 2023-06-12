@@ -251,7 +251,6 @@ const services = () => {
         <FormContact />
       </div>
 
-      <Footer />
     </div>
   );
 };

@@ -366,7 +366,6 @@ const BlogDetails = () => {
         </Row>
       </Wrapper>
 
-      <Footer />
     </div>
   );
 };
