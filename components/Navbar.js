@@ -42,7 +42,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={router.pathname ==='/' ? "z-30  w-full  fixed " : "z-30  w-full  fixed "}>
+      <nav className={router.pathname ==='/' ? "z-30  w-full  fixed " : "z-30  w-full  fixed  bg-[#fff]"}>
         {router.pathname === "/ourworks" ? (
           <img
             src="/images/plus.png"

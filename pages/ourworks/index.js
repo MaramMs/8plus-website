@@ -140,7 +140,6 @@ const index = () => {
             })}
           </Wrapper>
 
-          <Footer />
         </>
       ) : (
         <>
