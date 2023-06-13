@@ -39,41 +39,41 @@ const CustomSlider = () => {
       };
       const partners = [
         {
-          img: "/images/parenter.png",
+          img: "/images/works/client-1.png",
         },
         {
-          img: "/images/parenter.png",
+          img: "/images/works/client-2.png",
         },
         {
-          img: "/images/parenter.png",
+          img: "/images/works/client-3.png",
         },
         {
-          img: "/images/parenter.png",
+          img: "/images/works/client-4.png",
         },
         {
-          img: "/images/parenter.png",
+          img: "/images/works/client-5.png",
         },
         {
-          img: "/images/parenter.png",
+          img: "/images/works/client-6.png",
         },
     
         {
-          img: "/images/parenter.png",
+          img: "/images/works/client-7.png",
         },
         {
-          img: "/images/parenter.png",
+          img: "/images/works/client-8.png",
         },
         {
-          img: "/images/parenter.png",
+          img: "/images/works/client-10.png",
         },
         {
-          img: "/images/parenter.png",
+          img: "/images/works/client-11.png",
         },
         {
-          img: "/images/parenter.png",
+          img: "/images/works/client-12.png",
         },
         {
-          img: "/images/parenter.png",
+          img: "/images/works/client-13.png",
         },
       ];
   return (
