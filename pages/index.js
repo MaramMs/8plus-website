@@ -8,21 +8,11 @@ export default function Home() {
     <div className="relative h-screen w-full bg-[url('/images/bg-home.png')] bg-cover flex justify-center items-center flex-col">
       <div className="absolute z-20  home"></div>
 
-      {/* <div className="bottom-0 z-10 block absolute text-white  left-0 w-[476px] md:w-full">
-        <motion.h1
-          initial={{ opacity: 1, x: 0 }}
-          animate={{ opacity: 1, x: "100vw" }}
-          transition={{ duration: 6, repeat: Infinity, repeatType: "loop" }}
-          className="md:text-[96px] text-[32px] font-semibold text-neutral-200"
-        >
-          ثمانية بلس منظومة تكنولوجية متكاملة
-        </motion.h1>
-      </div> */}
 
 <motion.div
   initial={{ opacity: 1, x: 0 }}
   animate={{ opacity: 1, x: "100vw" }}
-  transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
+  transition={{ duration: 5, repeat: Infinity, repeatType: "loop" }}
   className="bottom-0 z-10 block absolute text-white left-0 w-[476px] md:w-full"
 >
   <h1 className="md:text-[96px] text-[32px] font-semibold text-neutral-200">

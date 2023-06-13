@@ -10,39 +10,25 @@ const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const { t } = useTranslation();
   const router = useRouter();
-  const KEY_RIGHT_ARROW = 39;
-  const KEY_LEFT_ARROW = 37;
-  const paths = ["/", "/about", "/services", "/contact"];
-  const handleKeydown = (event) => {
-    if (event.keyCode === KEY_RIGHT_ARROW) {
+  const paths = ["/", "/about", "/ourworks", "/services", "/contact", "/blog"];
+
+  const handleWheel = (event) => {
+    const delta = Math.sign(event.deltaY);
+    if (delta > 0) {
       const currentIndex = paths.indexOf(router.pathname);
+      console.log(currentIndex, "+ index");
       if (currentIndex != -1) {
         const nextPage = paths[currentIndex + 1];
         if (nextPage) {
           router.push(nextPage);
         }
       }
-    } else if (event.keyCode === KEY_LEFT_ARROW) {
+    } else if (delta < 0) {
       const currentIndex = paths.indexOf(router.pathname);
+      console.log(currentIndex, "- index");
       const prevPage = paths[currentIndex - 1];
       if (prevPage) {
         router.push(prevPage);
-      }
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("keydown", handleKeydown);
-    return () => {
-      document.removeEventListener("keydown", handleKeydown);
-    };
-  }, [router.pathname]);
-
-  const handleWheel = (event) => {
-    const delta = Math.sign(event.deltaY);
-    if (delta > 0) {
-      if (router.pathname === "/") {
-        router.push("/about");
       }
     }
   };
@@ -56,20 +42,18 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="z-30 absolute w-full ">
-       {
-        router.pathname === '/ourworks' ? (
+      <nav className="z-30  w-full  fixed">
+        {router.pathname === "/ourworks" ? (
           <img
-          src="/images/plus.png"
-          className=" absolute left-[3%]  top-[1%] hidden md:block"
-        />
+            src="/images/plus.png"
+            className=" absolute left-[3%]  top-[1%] hidden md:block"
+          />
         ) : (
           <img
-          src="/images/plus.png"
-          className=" absolute left-[36%]  top-[1%] hidden md:block"
-        />
-        )
-       }
+            src="/images/plus.png"
+            className=" absolute left-[36%]  top-[1%] hidden md:block"
+          />
+        )}
         <Wrapper>
           <div className="flex justify-between items-center">
             <div>
@@ -185,6 +169,19 @@ const Navbar = () => {
                 {t("services")}
               </Link>
             </li>
+            <li
+              className={`${
+                router.pathname === "/contact" ? "active" : ""
+              } mb-[23px]text-[20px] md:text-[32px]  text-[#000] font-semibold`}
+            >
+              <Link
+                href="/contact"
+                data-path="/contact"
+                onClick={() => setShowSidebar(false)}
+              >
+                {t("contact")}
+              </Link>
+            </li>
 
             <li
               className={`${
@@ -197,20 +194,6 @@ const Navbar = () => {
                 onClick={() => setShowSidebar(false)}
               >
                 {t("blog")}
-              </Link>
-            </li>
-
-            <li
-              className={`${
-                router.pathname === "/contact" ? "active" : ""
-              } mb-[23px]text-[20px] md:text-[32px]  text-[#000] font-semibold`}
-            >
-              <Link
-                href="/contact"
-                data-path="/contact"
-                onClick={() => setShowSidebar(false)}
-              >
-                {t("contact")}
               </Link>
             </li>
           </ul>
