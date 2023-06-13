@@ -42,7 +42,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="z-30  w-full  fixed">
+      <nav className={router.pathname ==='/' ? "z-30  w-full  fixed " : "z-30  w-full  fixed "}>
         {router.pathname === "/ourworks" ? (
           <img
             src="/images/plus.png"
@@ -110,7 +110,7 @@ const Navbar = () => {
       </nav>
 
       {showSidebar && (
-        <div className="bg-white w-[242px] md:w-[507px]  left-0 top-0 h-full flex px-[74px] md:px-[100px] absolute z-[100] items-center  text-right	">
+        <div className="bg-white w-[242px] md:w-[507px]  left-0 top-0 h-full flex px-[74px] md:px-[100px] fixed z-[100] items-center  text-right	">
           <AiOutlineClose
             className="top-[64px] left-[128px] absolute cursor-pointer text-[27px] text-[#03256c]"
             onClick={() => setShowSidebar(false)}

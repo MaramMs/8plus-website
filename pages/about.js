@@ -37,7 +37,20 @@ const about = () => {
             />
           </Col>
 
-          <Col md={{ span: 12 }} className="mb-[65px]">
+       
+        </Row>
+
+        <Row  
+        
+        gutter={{
+          xs: 66,
+          sm: 66,
+          md: 72,
+          lg: 72,
+        }}
+        >
+
+        <Col md={{ span: 12 }} className="mb-[65px]">
             <div className="flex items-center gap-[17px]">
               <GoMail className="text-[#1768ac] text-[26px] md:text-[35px]" />
               <h3 className="text-[#1768ac] text-[20px] md:text-[36px]  font-medium mb-[13px] ">
@@ -63,6 +76,8 @@ const about = () => {
             </p>
           </Col>
         </Row>
+
+
         <div className="md:mt-[65px] md:mb-[160px]">
           <h2 className="text-center text-[20px] md:text-[36px] text-[#1768ac] font-medium md:mb-[57px] mb-[7px]">
             {t("about-partners")}
