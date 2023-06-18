@@ -4,7 +4,8 @@ import { EffectCoverflow, Pagination, Navigation } from "swiper";
 import Link from "next/link";
 import CardProject from "./CardProject";
 
-const CustomSwiper = ({projects}) => {
+const CustomSwiper = ({portfolios}) => {
+  
  
 
   return (
@@ -38,10 +39,10 @@ const CustomSwiper = ({projects}) => {
       modules={[EffectCoverflow, Pagination, Navigation]}
       className="swiper_container"
     >
-      {projects.map((project, index) => {
+      {portfolios.map((protfolio, index) => {
         return (
           <SwiperSlide key={index}>
-            <CardProject project={project}/>
+            <CardProject protfolio={protfolio}/>
           </SwiperSlide>
         );
       })}

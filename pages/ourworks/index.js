@@ -11,7 +11,8 @@ import Footer from "@/components/Footer";
 import CustomSwiper from "@/components/CustomSwiper";
 import CardProject from "@/components/CardProject";
 
-const index = () => {
+const index = ({resData:{data:{portfolios,categories}}}) => {
+
   const [isMobile, setIsMobile] = useState(false);
 
   const projects = [
@@ -47,34 +48,34 @@ const index = () => {
     },
   ];
 
-  const categories = [
-    {
-      id: 1,
-      category: "Front End",
-    },
-    {
-      id: 2,
-      category: "UI/UX",
-    },
-    {
-      id: 3,
-      category: "Back End",
-    },
+  // const categories = [
+  //   {
+  //     id: 1,
+  //     category: "Front End",
+  //   },
+  //   {
+  //     id: 2,
+  //     category: "UI/UX",
+  //   },
+  //   {
+  //     id: 3,
+  //     category: "Back End",
+  //   },
 
-    {
-      id: 4,
-      category: "Marketing",
-    },
+  //   {
+  //     id: 4,
+  //     category: "Marketing",
+  //   },
 
-    {
-      id: 5,
-      category: "Mobile App",
-    },
-    {
-      id: 6,
-      category: "Social",
-    },
-  ];
+  //   {
+  //     id: 5,
+  //     category: "Mobile App",
+  //   },
+  //   {
+  //     id: 6,
+  //     category: "Social",
+  //   },
+  // ];
   const [activeCategory, setActiveCategory] = useState(null);
 
   const handleCategoryClick = (id) => {
@@ -144,22 +145,23 @@ const index = () => {
       ) : (
         <>
           <ul className="flex m-auto items-center justify-around border border-[#1768AC] rounded-[39.5px] md:w-[850px]">
-            {categories.map(({ id, category }) => {
+            {categories.map((category) => {
+              console.log(category.image , 'category');
               return (
                 <li
-                  key={id}
+                  key={category.id}
                   className={`${
-                    activeCategory === id ? "category-active" : ""
+                    activeCategory === category.id ? "category-active" : ""
                   } p-4 text-[#000] text-[16px] font-medium cursor-pointer`}
-                  onClick={() => handleCategoryClick(id)}
+                  onClick={() => handleCategoryClick(category.id )}
                 >
-                  {category}
+                  {category.name}
                 </li>
               );
             })}
           </ul>
           <Wrapper>
-            <CustomSwiper projects={projects} />
+            <CustomSwiper portfolios={portfolios} />
           </Wrapper>
         </>
       )}
@@ -168,3 +170,10 @@ const index = () => {
 };
 
 export default index;
+
+export async function getServerSideProps() {
+  const res = await fetch('https://new.8plusit.com/api');
+  const resData= await res.json()
+ 
+  return { props: { resData } }
+}
