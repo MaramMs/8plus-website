@@ -7,7 +7,9 @@ import { useTranslation } from "react-i18next";
 import { GoMail } from "react-icons/go";
 import { RxEyeOpen } from "react-icons/rx";
 
-const about = () => {
+const about = ({resData:{data:data}}) => {
+  const {site:{about_page}} =data
+  console.log(about_page , 'about');
   const { t } = useTranslation();
   return (
     <div className="about">
@@ -26,7 +28,7 @@ const about = () => {
               {t("about")}
             </h3>
             <p className="text-[#000]  text-[14px] md:text-[18px] md:w-[503px] break-words text-right font-medium">
-              {t("home-desc")}
+            {about_page.about}
             </p>
           </Col>
 
@@ -54,12 +56,12 @@ const about = () => {
             <div className="flex items-center gap-[17px]">
               <GoMail className="text-[#1768ac] text-[26px] md:text-[35px]" />
               <h3 className="text-[#1768ac] text-[20px] md:text-[36px]  font-medium mb-[13px] ">
-                {t("about")}
+                {t("our_message")}
               </h3>
             </div>
 
             <p className="text-[#000] text-[14px] md:text-[18px] md:w-[503px] md:h-[211px] break-words text-right font-medium">
-              {t("home-desc")}
+             {about_page.our_message}
             </p>
           </Col>
 
@@ -67,12 +69,12 @@ const about = () => {
             <div className="flex items-center gap-[17px]">
               <RxEyeOpen className="text-[#1768ac] text-[26px] md:text-[35px]" />
               <h3 className="text-[#1768ac] text-[20px] md:text-[36px] font-medium mb-[13px] ">
-                {t("about")}
+                {t("our_vision")}
               </h3>
             </div>
 
             <p className="text-[#000] text-[14px] md:text-[18px] md:w-[503px] md:h-[211px] break-words text-right font-medium">
-              {t("home-desc")}
+           {about_page.our_vision}
             </p>
           </Col>
         </Row>
@@ -91,3 +93,10 @@ const about = () => {
 };
 
 export default about;
+
+export async function getServerSideProps() {
+  const res = await fetch('https://new.8plusit.com/api');
+  const resData= await res.json()
+ 
+  return { props: { resData } }
+}
