@@ -2,7 +2,9 @@ import { Button } from "antd";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import Link from "next/link";
-export default function Home() {
+export default function Home({resData:{data:data}}) {
+  const {site:{home_page}} = data
+  console.log(home_page , 'data');
   const { t } = useTranslation();
   return (
     <div className="relative h-screen w-full bg-[url('/images/bg-home.png')] bg-cover flex justify-center items-center flex-col">
@@ -23,10 +25,10 @@ export default function Home() {
 
       <div className="container flex justify-center items-center flex-col z-20">
         <h1 className="text-[#fff] md:text-[30px] text-[20px] font-semibold text-center md:w-[782px] break-words md:mb-[15px] mb-[9px]">
-          {t("home-title")}
+          {home_page.title}
         </h1>
         <p className="text-[14px] font-medium text-[#fff] text-center md:w-[580px] break-words md:mb-[64px] mb-[42px]">
-          {t("home-desc")}
+          {home_page.descreption}
         </p>
         <div className="flex justify-center items-center gap-[11px]">
        <Link href='/contact'>
@@ -74,3 +76,10 @@ export default function Home() {
   );
 }
 
+
+export async function getServerSideProps() {
+  const res = await fetch('https://new.8plusit.com/api');
+  const resData= await res.json()
+ 
+  return { props: { resData } }
+}
