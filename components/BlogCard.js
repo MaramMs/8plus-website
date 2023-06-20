@@ -1,9 +1,10 @@
 import { Button, Card, Col } from "antd";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-const BlogCard = ({blog:{img,date,title,desc}}) => {
+const BlogCard = ({item:{image,created_at,title,description,id}}) => {
   const { t } = useTranslation();
   return (
     <Col md={{span:8}}>
@@ -19,8 +20,8 @@ const BlogCard = ({blog:{img,date,title,desc}}) => {
         
         cover={
 
-          <Link href='/blog/1'>
-          <img alt="example" src={img} />
+          <Link href={`/blog/${id}`}>
+          <Image alt="example" src={image}  width={379} height={284} className="object-cover w-[379px] h-[284px]"/>
           </Link>
         }
       
@@ -32,7 +33,7 @@ const BlogCard = ({blog:{img,date,title,desc}}) => {
 <path d="M9.5 0C4.26138 0 0 4.26138 0 9.5C0 14.7386 4.26138 19 9.5 19C14.7386 19 19 14.7386 19 9.5C19 4.26138 14.7386 0 9.5 0ZM9.5 17.5283C5.07378 17.5283 1.47172 13.9262 1.47172 9.5C1.47172 5.07378 5.07378 1.47172 9.5 1.47172C13.927 1.47172 17.5283 5.07378 17.5283 9.5C17.5283 13.9262 13.9262 17.5283 9.5 17.5283Z" fill="#949494"/>
 </svg>
 <span>
-   {date}
+   {created_at.split('T')[0]}
 </span>
    </div>
 
@@ -45,9 +46,10 @@ const BlogCard = ({blog:{img,date,title,desc}}) => {
     
 
         <p className="md:mb-[13px] text-[#808080] text-[12px] font-[450]">
-          {desc}
+          {description.slice(0,300)}
         </p>
-        <Button className="bg-[#03256C]  flex justify-between items-center gap-[5px] text-right rounded-none text-[#fff] font-[450] text-[12px]">
+      <Link href={`/blog/${id}`}>
+      <Button className="bg-[#03256C]  flex justify-between items-center gap-[5px] text-right rounded-none text-[#fff] font-[450] text-[12px]">
           learn more
           <svg
             width="28"
@@ -66,6 +68,7 @@ const BlogCard = ({blog:{img,date,title,desc}}) => {
             />
           </svg>
         </Button>
+      </Link>
       </Card>
     </Col>
   );
