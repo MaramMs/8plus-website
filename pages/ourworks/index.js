@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -7,83 +6,18 @@ import "swiper/css/navigation";
 
 import Wrapper from "@/components/Wrapper";
 import { Select } from "antd";
-import Footer from "@/components/Footer";
 import CustomSwiper from "@/components/CustomSwiper";
 import CardProject from "@/components/CardProject";
 
-const index = ({resData:{data:{portfolios,categories}}}) => {
+const index = ({
+  resData: {
+    data: { portfolios, categories },
+  },
+}) => {
 
+  console.log(portfolios , 'portfolios');
+  console.log(categories , 'categories');
   const [isMobile, setIsMobile] = useState(false);
-
-  const projects = [
-    {
-      img: "/images/works/work3.png",
-      title: "React Project",
-      desc: "web site description",
-    },
-    {
-      img: "/images/works/work3.png",
-      title: "React Project",
-      desc: "web site description",
-    },
-    {
-      img: "/images/works/work3.png",
-      title: "React Project",
-      desc: "web site description",
-    },
-    {
-      img: "/images/works/work3.png",
-      title: "React Project",
-      desc: "web site description",
-    },
-    {
-      img: "/images/works/work3.png",
-      title: "React Project",
-      desc: "web site description",
-    },
-    {
-      img: "/images/works/work3.png",
-      title: "React Project",
-      desc: "web site description",
-    },
-  ];
-
-  // const categories = [
-  //   {
-  //     id: 1,
-  //     category: "Front End",
-  //   },
-  //   {
-  //     id: 2,
-  //     category: "UI/UX",
-  //   },
-  //   {
-  //     id: 3,
-  //     category: "Back End",
-  //   },
-
-  //   {
-  //     id: 4,
-  //     category: "Marketing",
-  //   },
-
-  //   {
-  //     id: 5,
-  //     category: "Mobile App",
-  //   },
-  //   {
-  //     id: 6,
-  //     category: "Social",
-  //   },
-  // ];
-  const [activeCategory, setActiveCategory] = useState(null);
-
-  const handleCategoryClick = (id) => {
-    setActiveCategory(id);
-  };
-  const handleChange = (value) => {
-    console.log(`selected ${value}`);
-  };
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 576);
@@ -94,8 +28,32 @@ const index = ({resData:{data:{portfolios,categories}}}) => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  const [activeCategory, setActiveCategory] = useState(1);
+  
+  const [filterProjects, setFilteredProjects] = useState([]);
+
+ 
+const handleCategoryClick = (id) => {
+  setActiveCategory(id);
+  if (id === 1) {
+    setFilteredProjects(portfolios);
+  } else {
+    const filter = portfolios.filter(
+      (portfolio) => portfolio.category_id === id
+    );
+    setFilteredProjects(filter);
+  }
+};
+useEffect(()=>{
+  setFilteredProjects(portfolios);
+
+},[])
+  const handleChange = (value) => {
+    console.log(`selected ${value}`);
+  };
+
   return (
-    <div className="pt-[162px] our-work">
+    <div className="pt-[162px] our-work ">
       {isMobile ? (
         <>
           <Wrapper>
@@ -140,20 +98,18 @@ const index = ({resData:{data:{portfolios,categories}}}) => {
               );
             })}
           </Wrapper>
-
         </>
       ) : (
         <>
           <ul className="flex m-auto items-center justify-around border border-[#1768AC] rounded-[39.5px] md:w-[850px]">
             {categories.map((category) => {
-              console.log(category.image , 'category');
               return (
                 <li
                   key={category.id}
                   className={`${
                     activeCategory === category.id ? "category-active" : ""
                   } p-4 text-[#000] text-[16px] font-medium cursor-pointer`}
-                  onClick={() => handleCategoryClick(category.id )}
+                  onClick={() => handleCategoryClick(category.id)}
                 >
                   {category.name}
                 </li>
@@ -161,7 +117,15 @@ const index = ({resData:{data:{portfolios,categories}}}) => {
             })}
           </ul>
           <Wrapper>
-            <CustomSwiper portfolios={portfolios} />
+            {
+              filterProjects ? (
+                <CustomSwiper
+                filterProjects={filterProjects}
+              />
+              )
+              : 'no data'
+            }
+          
           </Wrapper>
         </>
       )}
@@ -172,8 +136,8 @@ const index = ({resData:{data:{portfolios,categories}}}) => {
 export default index;
 
 export async function getServerSideProps() {
-  const res = await fetch('https://new.8plusit.com/api');
-  const resData= await res.json()
- 
-  return { props: { resData } }
+  const res = await fetch("https://new.8plusit.com/api");
+  const resData = await res.json();
+
+  return { props: { resData } };
 }

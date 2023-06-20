@@ -16,7 +16,7 @@ const router = useRouter();
 <>
 {
   router.pathname === '/' ? '' :(
-    <footer className='bg-[#1768ac] bg-[url("/images/footer-img.png")] md:py-[70px]'>
+    <footer className='bg-[#1768ac] bg-[url("/images/footer-img.png")] md:py-[70px] '>
 
 
     <Wrapper>

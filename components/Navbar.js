@@ -12,33 +12,36 @@ const Navbar = () => {
   const router = useRouter();
   const paths = ["/", "/about", "/ourworks", "/services", "/contact", "/blog"];
 
-  const handleWheel = (event) => {
-    const delta = Math.sign(event.deltaY);
-    if (delta > 0) {
-      const currentIndex = paths.indexOf(router.pathname);
-      console.log(currentIndex, "+ index");
-      if (currentIndex != -1) {
-        const nextPage = paths[currentIndex + 1];
-        if (nextPage) {
-          router.push(nextPage);
-        }
-      }
-    } else if (delta < 0) {
-      const currentIndex = paths.indexOf(router.pathname);
-      console.log(currentIndex, "- index");
-      const prevPage = paths[currentIndex - 1];
-      if (prevPage) {
-        router.push(prevPage);
-      }
-    }
-  };
+  // const handleWheel = (event) => {
+  //   console.log(event , 'event');
+  //   const delta = Math.sign(event.deltaY);
+  //   console.log(delta , 'delta');
+  //  if (delta > 0) {
 
-  useEffect(() => {
-    document.addEventListener("wheel", handleWheel);
-    return () => {
-      document.removeEventListener("wheel", handleWheel);
-    };
-  }, [router.pathname]);
+  //     const currentIndex = paths.indexOf(router.pathname);
+  //    console.log(currentIndex, "+ index");
+  //   if (currentIndex != -1) {
+  //   const nextPage = paths[currentIndex + 1];
+  //   if (nextPage) {
+  //  router.push(nextPage);
+  //    }
+  //    }
+  //   } else if (delta === 0) {
+  //   const currentIndex = paths.indexOf(router.pathname);
+  // console.log(currentIndex, "- index");
+  //   const prevPage = paths[currentIndex - 1];
+  //   if (prevPage) {
+  //    router.push(prevPage);
+  //    }
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   document.addEventListener("wheel", handleWheel);
+  //   return () => {
+  //     document.removeEventListener("wheel", handleWheel);
+  //   };
+  // }, [router.pathname]);
 
   return (
     <>
