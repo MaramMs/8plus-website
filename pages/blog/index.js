@@ -1,55 +1,10 @@
 import BlogCard from "@/components/BlogCard";
-import Footer from "@/components/Footer";
 import Wrapper from "@/components/Wrapper";
 import { Row } from "antd";
 import Link from "next/link";
 import React from "react";
 
-const Blog = () => {
-  const blogs = [
-    {
-      img: "/images/works/blog1.png",
-      date: " 31-5-2023",
-      title:
-        "Means of transportation between the client and the senior financial management",
-      desc: "Means of transportation between the client and the senior financial managementMeans of transportation between the client and the senior financial management",
-    },
-    {
-      img: "/images/works/blog1.png",
-      date: " 31-5-2023",
-      title:
-        "Means of transportation between the client and the senior financial management",
-      desc: "Means of transportation between the client and the senior financial managementMeans of transportation between the client and the senior financial management",
-    },
-    {
-      img: "/images/works/blog1.png",
-      date: " 31-5-2023",
-      title:
-        "Means of transportation between the client and the senior financial management",
-      desc: "Means of transportation between the client and the senior financial managementMeans of transportation between the client and the senior financial management",
-    },
-    {
-      img: "/images/works/blog1.png",
-      date: " 31-5-2023",
-      title:
-        "Means of transportation between the client and the senior financial management",
-      desc: "Means of transportation between the client and the senior financial managementMeans of transportation between the client and the senior financial management",
-    },
-    {
-      img: "/images/works/blog1.png",
-      date: " 31-5-2023",
-      title:
-        "Means of transportation between the client and the senior financial management",
-      desc: "Means of transportation between the client and the senior financial managementMeans of transportation between the client and the senior financial management",
-    },
-    {
-      img: "/images/works/blog1.png",
-      date: " 31-5-2023",
-      title:
-        "Means of transportation between the client and the senior financial management",
-      desc: "Means of transportation between the client and the senior financial managementMeans of transportation between the client and the senior financial management",
-    },
-  ];
+const Blog = ({ resData: { data } }) => {
   return (
     <div className="pt-[192px]">
       <Wrapper>
@@ -86,8 +41,8 @@ const Blog = () => {
         </div>
 
         <Row gutter={[24, 35]} className="mt-[55px]">
-          {blogs.map((blog) => {
-            return <BlogCard blog={blog} blogTitle="blog" />;
+          {data.map((item) => {
+            return <BlogCard item={item} blogTitle="blog" />;
           })}
         </Row>
 
@@ -102,3 +57,9 @@ const Blog = () => {
   );
 };
 export default Blog;
+
+export async function getServerSideProps() {
+  const res = await fetch("https://new.8plusit.com/api/posts");
+  const resData = await res.json();
+  return { props: { resData } };
+}

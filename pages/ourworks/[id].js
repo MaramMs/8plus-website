@@ -207,14 +207,14 @@ export default Work;
 
 export async function getServerSideProps(context) {
   const {params} = context; 
-  // const res = await fetch(`https://new.8plusit.com/api/portfolio/${params.id}`);
-  // const resData = await res.json();
-
-
+  console.log(params,'params');
   const res = await fetch(`https://new.8plusit.com/api/portfolios/${params.id}`);
-const text = await res.text();
-console.log(text);
-const resData = JSON.parse(text);
+  const resData = await res.json();
+
+
+//   const res = await fetch(`https://new.8plusit.com/api/portfolios/${params.id}`);
+// const text = await res.text();
+// const resData = JSON.parse(text);
   return { props: { resData } };
 }
 
