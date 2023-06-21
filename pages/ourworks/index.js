@@ -15,6 +15,8 @@ const index = ({
   },
 }) => {
 
+
+  console.log(portfolios , 'portfolios');
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {

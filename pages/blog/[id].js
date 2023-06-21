@@ -123,7 +123,7 @@ const BlogDetails = ({
               {
                 data.post_related.map((post)=>{
                   return (
-               <Link href={`/ourworks/${post.id}`}>
+               <Link href={`/blog/${post.id}`}>
                 <div className="flex gap-[12px] mb-[24px]">
                   <div className="flex-shrink-0">
                    
