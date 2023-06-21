@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import Wrapper from "@/components/Wrapper";
-import { Select } from "antd";
+import { Empty, Select } from "antd";
 import CustomSwiper from "@/components/CustomSwiper";
 import CardProject from "@/components/CardProject";
 
@@ -15,8 +15,6 @@ const index = ({
   },
 }) => {
 
-  console.log(portfolios , 'portfolios');
-  console.log(categories , 'categories');
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
@@ -118,12 +116,12 @@ useEffect(()=>{
           </ul>
           <Wrapper>
             {
-              filterProjects ? (
+              filterProjects.length != 0 ? (
                 <CustomSwiper
                 filterProjects={filterProjects}
               />
               )
-              : 'no data'
+              : <Empty />
             }
           
           </Wrapper>
