@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Wrapper from "@/components/Wrapper";
 import { Col, Row } from "antd";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const BlogDetails = ({
@@ -122,6 +123,7 @@ const BlogDetails = ({
               {
                 data.post_related.map((post)=>{
                   return (
+               <Link href={`/ourworks/${post.id}`}>
                 <div className="flex gap-[12px] mb-[24px]">
                   <div className="flex-shrink-0">
                    
@@ -134,7 +136,7 @@ const BlogDetails = ({
                       {post.title}
                     </h3>
 
-                    <p className="text-[#808080] text-[10px]" dangerouslySetInnerHTML={{__html:post.description}}>
+                    <p className="text-[#808080] text-[10px]" dangerouslySetInnerHTML={{__html:post.description.slice(0,300)}}>
                       
                     </p>
 
@@ -161,6 +163,7 @@ const BlogDetails = ({
                     </div>
                   </div>
                 </div>
+               </Link>
 
                   )
                 })
