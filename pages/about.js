@@ -8,8 +8,7 @@ import { GoMail } from "react-icons/go";
 import { RxEyeOpen } from "react-icons/rx";
 
 const about = ({resData:{data:data}}) => {
-  const {site:{about_page}} =data
-  console.log(about_page , 'about');
+  const {site:{about_page},partners} =data;
   const { t } = useTranslation();
   return (
     <div className="about">
@@ -85,7 +84,7 @@ const about = ({resData:{data:data}}) => {
             {t("about-partners")}
           </h2>
 
-          <CustomSlider />
+          <CustomSlider partners={partners}/>
         </div>
       </Wrapper>
     </div>
@@ -100,3 +99,5 @@ export async function getServerSideProps() {
  
   return { props: { resData } }
 }
+
+

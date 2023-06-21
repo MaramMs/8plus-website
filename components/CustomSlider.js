@@ -1,12 +1,13 @@
+import Image from 'next/image';
 import React from 'react'
 import Slider from 'react-slick'
 
-const CustomSlider = () => {
+const CustomSlider = ({partners}) => {
     const settings = {
         dots: false,
         infinite: true,
-        slidesToShow: 6,
-        slidesToScroll: 6,
+        slidesToShow: 3,
+        slidesToScroll: 3,
         initialSlide: 0,
         autoplay:true,
         autoplaySpeed: 3000,
@@ -37,52 +38,19 @@ const CustomSlider = () => {
           },
         ],
       };
-      const partners = [
-        {
-          img: "/images/works/client-1.png",
-        },
-        {
-          img: "/images/works/client-2.png",
-        },
-        {
-          img: "/images/works/client-3.png",
-        },
-        {
-          img: "/images/works/client-4.png",
-        },
-        {
-          img: "/images/works/client-5.png",
-        },
-        {
-          img: "/images/works/client-6.png",
-        },
-    
-        {
-          img: "/images/works/client-7.png",
-        },
-        {
-          img: "/images/works/client-8.png",
-        },
-        {
-          img: "/images/works/client-10.png",
-        },
-        {
-          img: "/images/works/client-11.png",
-        },
-        {
-          img: "/images/works/client-12.png",
-        },
-        {
-          img: "/images/works/client-13.png",
-        },
-      ];
+
   return (
     <Slider {...settings}>
-    {partners.map((partner, index) => (
-      <img src={partner.img} key={index} />
+    {partners.map((partner) => (
+      <Image src={partner.image} key={partner.id} width={179} height={100} />
     ))}
   </Slider>
   )
 }
 
 export default CustomSlider
+
+
+
+
+
