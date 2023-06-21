@@ -2,6 +2,7 @@ import BlogCard from "@/components/BlogCard";
 import Footer from "@/components/Footer";
 import Wrapper from "@/components/Wrapper";
 import { Col, Row } from "antd";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 const BlogDetails = ({
@@ -9,7 +10,7 @@ const BlogDetails = ({
     data
   },
 }) => {
-  console.log(data, "titleeeeee");
+  console.log(data.description, "titleeeeee");
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -48,7 +49,7 @@ const BlogDetails = ({
             </svg>
 
             <span className="text-[#000] text-[20px] font-medium">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
+              {data.title}
             </span>
           </div>
         </div>
@@ -65,10 +66,10 @@ const BlogDetails = ({
             </h1>
 
             <div className="flex flex-col">
-              <img
-                src="/images/works/blog-details.png"
-                className="	object-contain	"
-              />
+         
+
+<Image src={data.image} width={781} height={423}  className="	object-contain"/>
+
 
               <div className="bg-[#1768AC] px-[19px] py-[12px] flex items-center justify-end gap-[6px]">
                 <svg
@@ -87,11 +88,12 @@ const BlogDetails = ({
                     fill="white"
                   />
                 </svg>
+
                 <span className="text-[#fff] text-[14px]">Share the blog</span>
               </div>
 
               <p className="md:mt-[26px] text-[#808080] text-[14px] md:text-[16px] md:mb-[224px]">
-                {data.description}
+                {/* {data.description} */}
               </p>
             </div>
           </Col>

@@ -23,7 +23,7 @@ const Work = ({
               <div className="flex gap-[5px] ">
                 <AiFillCaretLeft className="text-[#03256C] text-[31px]" />
                 <p className="text-[#949494] text-[12px] md:text-[16px] font-medium break-words ">
-                  {description.replace(/<p>|<\/p>/g ,'')}
+                  {description?.replace(/<p>|<\/p>/g ,'')}
                 </p>
               </div>
 
