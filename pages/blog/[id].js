@@ -10,7 +10,7 @@ const BlogDetails = ({
     data
   },
 }) => {
-  console.log(data.description, "titleeeeee");
+  console.log(data.post_related, "titleeeeee");
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -91,10 +91,9 @@ const BlogDetails = ({
 
                 <span className="text-[#fff] text-[14px]">Share the blog</span>
               </div>
+              <div dangerouslySetInnerHTML={{ __html: data.description }} className="md:mt-[26px] text-[#808080] text-[14px] md:text-[16px] md:mb-[224px]"/>
 
-              <p className="md:mt-[26px] text-[#808080] text-[14px] md:text-[16px] md:mb-[224px]">
-                {/* {data.description} */}
-              </p>
+           
             </div>
           </Col>
 
@@ -120,23 +119,23 @@ const BlogDetails = ({
               </>
             ) : (
               <>
+              {
+                data.post_related.map((post)=>{
+                  return (
                 <div className="flex gap-[12px] mb-[24px]">
                   <div className="flex-shrink-0">
-                    <img
-                      src="/images/works/blog2.png"
-                      className="w-[24] h-[24]"
-                    />
+                   
+                    <Image src={post.image} width={179} height={109}   className="w-[178px] h-[109px] object-cover"/>
                   </div>
 
                   <div className="">
                     <h3 className="text-[#0A0A0A] text-opacity-[90] text-[14px]">
                       {" "}
-                      consectetur adipiscing elit. Lorem ipsum dolor sit amet,
+                      {post.title}
                     </h3>
 
-                    <p className="text-[#808080] text-[10px]">
-                      consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-                      consectetur adipiscing elit. Lorem ipsum dolor sit amet,
+                    <p className="text-[#808080] text-[10px]" dangerouslySetInnerHTML={{__html:post.description}}>
+                      
                     </p>
 
                     <div className="flex mb-[6px] mt-[16px] gap-[4px] items-center">
@@ -157,181 +156,16 @@ const BlogDetails = ({
                         />
                       </svg>
                       <span className="text-[10px] text-[#949494]">
-                        31-5-2023
+                      {post.created_at.split(' ').slice(0,3)}
                       </span>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex gap-[12px] mb-[24px]">
-                  <div className="flex-shrink-0">
-                    <img
-                      src="/images/works/blog2.png"
-                      className="w-[24] h-[24]"
-                    />
-                  </div>
+                  )
+                })
+              }
 
-                  <div className="">
-                    <h3 className="text-[#0A0A0A] text-opacity-[90] text-[14px]">
-                      {" "}
-                      consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-                    </h3>
-
-                    <p className="text-[#808080] text-[10px]">
-                      consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-                      consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-                    </p>
-
-                    <div className="flex mb-[6px] mt-[16px] gap-[4px] items-center">
-                      <svg
-                        width="19"
-                        height="19"
-                        viewBox="0 0 19 19"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12.8846 11.1777L10.2354 9.19091V5.14369C10.2354 4.73674 9.90649 4.40781 9.49955 4.40781C9.09261 4.40781 8.76367 4.73674 8.76367 5.14369V9.55889C8.76367 9.79067 8.87259 10.0092 9.05802 10.1476L12.0015 12.3552C12.1285 12.4509 12.2832 12.5025 12.4422 12.5024C12.6667 12.5024 12.8875 12.4015 13.0317 12.2073C13.2761 11.8827 13.2098 11.4213 12.8846 11.1777Z"
-                          fill="#949494"
-                        />
-                        <path
-                          d="M9.5 0C4.26138 0 0 4.26138 0 9.5C0 14.7386 4.26138 19 9.5 19C14.7386 19 19 14.7386 19 9.5C19 4.26138 14.7386 0 9.5 0ZM9.5 17.5283C5.07378 17.5283 1.47172 13.9262 1.47172 9.5C1.47172 5.07378 5.07378 1.47172 9.5 1.47172C13.927 1.47172 17.5283 5.07378 17.5283 9.5C17.5283 13.9262 13.9262 17.5283 9.5 17.5283Z"
-                          fill="#949494"
-                        />
-                      </svg>
-                      <span className="text-[10px] text-[#949494]">
-                        31-5-2023
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex gap-[12px] mb-[24px]">
-                  <div className="flex-shrink-0">
-                    <img
-                      src="/images/works/blog2.png"
-                      className="w-[24] h-[24]"
-                    />
-                  </div>
-
-                  <div className="">
-                    <h3 className="text-[#0A0A0A] text-opacity-[90] text-[14px]">
-                      {" "}
-                      consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-                    </h3>
-
-                    <p className="text-[#808080] text-[10px]">
-                      consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-                      consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-                    </p>
-
-                    <div className="flex mb-[6px] mt-[16px] gap-[4px] items-center">
-                      <svg
-                        width="19"
-                        height="19"
-                        viewBox="0 0 19 19"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12.8846 11.1777L10.2354 9.19091V5.14369C10.2354 4.73674 9.90649 4.40781 9.49955 4.40781C9.09261 4.40781 8.76367 4.73674 8.76367 5.14369V9.55889C8.76367 9.79067 8.87259 10.0092 9.05802 10.1476L12.0015 12.3552C12.1285 12.4509 12.2832 12.5025 12.4422 12.5024C12.6667 12.5024 12.8875 12.4015 13.0317 12.2073C13.2761 11.8827 13.2098 11.4213 12.8846 11.1777Z"
-                          fill="#949494"
-                        />
-                        <path
-                          d="M9.5 0C4.26138 0 0 4.26138 0 9.5C0 14.7386 4.26138 19 9.5 19C14.7386 19 19 14.7386 19 9.5C19 4.26138 14.7386 0 9.5 0ZM9.5 17.5283C5.07378 17.5283 1.47172 13.9262 1.47172 9.5C1.47172 5.07378 5.07378 1.47172 9.5 1.47172C13.927 1.47172 17.5283 5.07378 17.5283 9.5C17.5283 13.9262 13.9262 17.5283 9.5 17.5283Z"
-                          fill="#949494"
-                        />
-                      </svg>
-                      <span className="text-[10px] text-[#949494]">
-                        31-5-2023
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex gap-[12px] mb-[24px]">
-                  <div className="flex-shrink-0">
-                    <img
-                      src="/images/works/blog2.png"
-                      className="w-[24] h-[24]"
-                    />
-                  </div>
-
-                  <div className="">
-                    <h3 className="text-[#0A0A0A] text-opacity-[90] text-[14px]">
-                      {" "}
-                      consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-                    </h3>
-
-                    <p className="text-[#808080] text-[10px]">
-                      consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-                      consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-                    </p>
-
-                    <div className="flex mb-[6px] mt-[16px] gap-[4px] items-center">
-                      <svg
-                        width="19"
-                        height="19"
-                        viewBox="0 0 19 19"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12.8846 11.1777L10.2354 9.19091V5.14369C10.2354 4.73674 9.90649 4.40781 9.49955 4.40781C9.09261 4.40781 8.76367 4.73674 8.76367 5.14369V9.55889C8.76367 9.79067 8.87259 10.0092 9.05802 10.1476L12.0015 12.3552C12.1285 12.4509 12.2832 12.5025 12.4422 12.5024C12.6667 12.5024 12.8875 12.4015 13.0317 12.2073C13.2761 11.8827 13.2098 11.4213 12.8846 11.1777Z"
-                          fill="#949494"
-                        />
-                        <path
-                          d="M9.5 0C4.26138 0 0 4.26138 0 9.5C0 14.7386 4.26138 19 9.5 19C14.7386 19 19 14.7386 19 9.5C19 4.26138 14.7386 0 9.5 0ZM9.5 17.5283C5.07378 17.5283 1.47172 13.9262 1.47172 9.5C1.47172 5.07378 5.07378 1.47172 9.5 1.47172C13.927 1.47172 17.5283 5.07378 17.5283 9.5C17.5283 13.9262 13.9262 17.5283 9.5 17.5283Z"
-                          fill="#949494"
-                        />
-                      </svg>
-                      <span className="text-[10px] text-[#949494]">
-                        31-5-2023
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex gap-[12px] mb-[24px]">
-                  <div className="flex-shrink-0">
-                    <img
-                      src="/images/works/blog2.png"
-                      className="w-[24] h-[24]"
-                    />
-                  </div>
-
-                  <div className="">
-                    <h3 className="text-[#0A0A0A] text-opacity-[90] text-[14px]">
-                      {" "}
-                      consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-                    </h3>
-
-                    <p className="text-[#808080] text-[10px]">
-                      consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-                      consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-                    </p>
-
-                    <div className="flex mb-[6px] mt-[16px] gap-[4px] items-center">
-                      <svg
-                        width="19"
-                        height="19"
-                        viewBox="0 0 19 19"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12.8846 11.1777L10.2354 9.19091V5.14369C10.2354 4.73674 9.90649 4.40781 9.49955 4.40781C9.09261 4.40781 8.76367 4.73674 8.76367 5.14369V9.55889C8.76367 9.79067 8.87259 10.0092 9.05802 10.1476L12.0015 12.3552C12.1285 12.4509 12.2832 12.5025 12.4422 12.5024C12.6667 12.5024 12.8875 12.4015 13.0317 12.2073C13.2761 11.8827 13.2098 11.4213 12.8846 11.1777Z"
-                          fill="#949494"
-                        />
-                        <path
-                          d="M9.5 0C4.26138 0 0 4.26138 0 9.5C0 14.7386 4.26138 19 9.5 19C14.7386 19 19 14.7386 19 9.5C19 4.26138 14.7386 0 9.5 0ZM9.5 17.5283C5.07378 17.5283 1.47172 13.9262 1.47172 9.5C1.47172 5.07378 5.07378 1.47172 9.5 1.47172C13.927 1.47172 17.5283 5.07378 17.5283 9.5C17.5283 13.9262 13.9262 17.5283 9.5 17.5283Z"
-                          fill="#949494"
-                        />
-                      </svg>
-                      <span className="text-[10px] text-[#949494]">
-                        31-5-2023
-                      </span>
-                    </div>
-                  </div>
-                </div>
               </>
             )}
           </Col>
