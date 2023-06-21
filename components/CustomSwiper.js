@@ -5,10 +5,8 @@ import Link from "next/link";
 import CardProject from "./CardProject";
 import { Empty } from "antd";
 
-const CustomSwiper = ({portfolios,filterProjects}) => {
-  console.log(filterProjects , 'filter');
-  
- 
+const CustomSwiper = ({ portfolios, filterProjects }) => {
+  console.log(filterProjects, "filter");
 
   return (
     <Swiper
@@ -41,19 +39,14 @@ const CustomSwiper = ({portfolios,filterProjects}) => {
       modules={[EffectCoverflow, Pagination, Navigation]}
       className="swiper_container"
     >
-{
+      {filterProjects.map((filterProject, index) => {
+        return (
+          <SwiperSlide key={index}>
+            <CardProject filterProject={filterProject} />
+          </SwiperSlide>
+        );
+      })}
 
-filterProjects.length  !=0 ?
-     (
-      filterProjects.map((filterProject , index)=>{
-        return    <SwiperSlide key={index}>
-        <CardProject filterProject={filterProject}/>
-      </SwiperSlide>
-      })
-     ) : <Empty />
-      
-      }
-      
       <div className="swiper-pagination"></div>
     </Swiper>
   );
