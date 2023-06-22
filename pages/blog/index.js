@@ -1,12 +1,17 @@
 import BlogCard from "@/components/BlogCard";
 import Wrapper from "@/components/Wrapper";
-import { Row } from "antd";
+import { Button, Row } from "antd";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const Blog = ({ resData: { data } }) => {
-  const {t} = useTranslation()
+  const {t} = useTranslation();
+  const [numItemsToShow , setNumItemsToShow] = useState(6);
+  const handleShowMore =() =>{
+    setNumItemsToShow(data.length);
+    console.log('maram');
+  }
   return (
     <div className="pt-[192px]">
       <Wrapper>
@@ -43,17 +48,19 @@ const Blog = ({ resData: { data } }) => {
         </div>
 
         <Row gutter={[24, 35]} className="mt-[55px]">
-          {data.map((item) => {
+          {data.slice(0,numItemsToShow).map((item) => {
             return <BlogCard item={item} blogTitle="blog" />;
           })}
         </Row>
 
-        <Link
-          href={"/"}
-          className="flex justify-center items-center my-20 mx-auto border cursor-pointer border-[#03256C] py-[9px] px-[29px] text-[#03256C] text-[14px] font-400 w-[130px] h-[50px]"
-        >
-          {t('show_more')}
-        </Link>
+        <Button
+        onClick={handleShowMore}
+        className="flex justify-center items-center my-20 mx-auto border cursor-pointer border-[#03256C] py-[9px] px-[29px] text-[#03256C] text-[14px] font-400 w-[130px] h-[50px]"
+      >
+        {t('show_more')}
+      </Button>
+
+     
       </Wrapper>
     </div>
   );

@@ -37,7 +37,7 @@ const BlogCard = ({ item: { image, created_at, title, description, id } }) => {
             src={image}
             width={379}
             height={284}
-            className="object-cover w-[379px] h-[284px]"
+            className="object-cover w-[100%] h-[284px]"
           />
         </Link>
       }
@@ -62,16 +62,14 @@ const BlogCard = ({ item: { image, created_at, title, description, id } }) => {
         <span>{created_at.split("T")[0]}</span>
       </div>
 
-      <h2 className="relative text-[#0A0A0A] text-opacity-90 text-19 font-450 break-words leading-35 pb-[7px] mb-[7px]">
+      <h2 className="relative text-[#0A0A0A] text-opacity-90 text-19 font-[600] break-words leading-35 pb-[7px] mb-[7px]">
         <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[#C8BFB0]"></span>
         {title}
       </h2>
 
-      <p className="md:mb-[13px] text-[#808080] text-[12px] font-[450]">
-        {description
-          .replace(/<p>|<\/p>|<strong>|<\/strong>/g, "")
-          .slice(0, 300)}
-      </p>
+      <p className="md:mb-[13px] text-[#808080] text-[12px] font-[450] break-words" dangerouslySetInnerHTML={{ __html: description.slice(0,300) }} >
+    
+</p>
       <Link href={`/blog/${id}`}>
         <Button className="bg-[#03256C]  flex justify-between items-center gap-[5px] text-right rounded-none text-[#fff] font-[450] text-[12px]">
         {t('learn_more')}
