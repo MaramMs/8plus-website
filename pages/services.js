@@ -28,7 +28,6 @@ const services = ({resData:{data}}) => {
 
             {
               data.map((item) => {
-                console.log(item.image , 'item');
                 return (
                   <Col
                   span={12}
@@ -61,7 +60,7 @@ const services = ({resData:{data}}) => {
         <h2 className="text-[#1768AC] font-medium text-[20px] md:text-center text-right md:text-[32px] mb-[4px]">
           Services Request
         </h2>
-        <FormContact />
+        <FormContact data={data}/>
       </div>
 
     </div>
