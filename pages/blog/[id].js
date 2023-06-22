@@ -1,5 +1,4 @@
 import BlogCard from "@/components/BlogCard";
-import Footer from "@/components/Footer";
 import Wrapper from "@/components/Wrapper";
 import { Col, Row } from "antd";
 import Image from "next/image";
@@ -71,7 +70,7 @@ const {t} = useTranslation()
             <div className="flex flex-col">
          
 
-<Image src={data.image} width={781} height={423}  className="	object-contain"/>
+<Image src={data.image} width={781} height={423}  className="	object-cover w-[781px] h-[423px]"/>
 
 
               <div className="bg-[#1768AC] px-[19px] py-[12px] flex items-center justify-end gap-[6px]">
@@ -94,13 +93,13 @@ const {t} = useTranslation()
 
                 <span className="text-[#fff] text-[14px]">Share the blog</span>
               </div>
-              <div dangerouslySetInnerHTML={{ __html: data.description }} className="md:mt-[26px] text-[#808080] text-[14px] md:text-[16px] md:mb-[224px]"/>
+              <div dangerouslySetInnerHTML={{ __html: data.description }} className="md:mt-[26px] text-[#808080] text-[14px] md:text-[16px] md:mb-[224px] break-words"/>
 
            
             </div>
           </Col>
 
-          <Col md={{ span: 9 }} className="md:pt-[7.5rem]">
+          <Col md={{ span: 9 }} className="md:pt-[5rem]">
             <h5 className="text-[#000] font-semibold text-[20px] pb-[6px]">
               Related Blogs
             </h5>
@@ -126,23 +125,23 @@ const {t} = useTranslation()
                 data.post_related.map((post)=>{
                   return (
                <Link href={`/blog/${post.id}`}>
-                <div className="flex gap-[12px] mb-[24px]">
+                <div className="flex gap-[12px] mb-[25px] h-[109px]">
                   <div className="flex-shrink-0">
                    
                     <Image src={post.image} width={179} height={109}   className="w-[178px] h-[109px] object-cover"/>
                   </div>
 
-                  <div className="">
+                  <div className="flex flex-col">
                     <h3 className="text-[#0A0A0A] text-opacity-[90] text-[14px]">
                       {" "}
                       {post.title}
                     </h3>
 
-                    <p className="text-[#808080] text-[10px]" dangerouslySetInnerHTML={{__html:post.description.slice(0,300)}}>
+                    <p className="text-[#808080] text-[10px] break-all	" dangerouslySetInnerHTML={{__html:post.description.slice(0,287)}}>
                       
                     </p>
 
-                    <div className="flex mb-[6px] mt-[16px] gap-[4px] items-center">
+                    <div className="flex mb-[6px] gap-[4px] items-center">
                       <svg
                         width="19"
                         height="19"

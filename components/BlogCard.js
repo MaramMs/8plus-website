@@ -59,7 +59,10 @@ const BlogCard = ({ item: { image, created_at, title, description, id } }) => {
             fill="#949494"
           />
         </svg>
-        <span>{created_at.split("T")[0]}</span>
+        <span>
+          {created_at.split(' ').slice(0,3)}
+
+          </span>
       </div>
 
       <h2 className="relative text-[#0A0A0A] text-opacity-90 text-19 font-[600] break-words leading-35 pb-[7px] mb-[7px]">
@@ -67,9 +70,9 @@ const BlogCard = ({ item: { image, created_at, title, description, id } }) => {
         {title}
       </h2>
 
-      <p className="md:mb-[13px] text-[#808080] text-[12px] font-[450] break-words" dangerouslySetInnerHTML={{ __html: description.slice(0,300) }} >
+      <div className="md:mb-[13px] text-[#808080] text-[12px] font-[450] break-words" dangerouslySetInnerHTML={{ __html: description.slice(0,300) }} >
     
-</p>
+</div>
       <Link href={`/blog/${id}`}>
         <Button className="bg-[#03256C]  flex justify-between items-center gap-[5px] text-right rounded-none text-[#fff] font-[450] text-[12px]">
         {t('learn_more')}
