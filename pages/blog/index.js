@@ -3,14 +3,16 @@ import Wrapper from "@/components/Wrapper";
 import { Row } from "antd";
 import Link from "next/link";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Blog = ({ resData: { data } }) => {
+  const {t} = useTranslation()
   return (
     <div className="pt-[192px]">
       <Wrapper>
         <div className="bg-[#F9F9F9] h-[71px] mb-[50px]  pr-[20px] py-[18px] hidden md:block">
           <div className="flex items-center gap-[13px]">
-            <span className="text-[#808080] text-[20px] font-medium">Home</span>
+            <span className="text-[#808080] text-[20px] font-medium">{t('home')}</span>
 
             <svg
               width="8"
@@ -29,13 +31,13 @@ const Blog = ({ resData: { data } }) => {
             </svg>
 
             <span className="text-[#808080] text-[20px] font-medium">
-              Blogs
+              {t('blogs')}
             </span>
           </div>
         </div>
         <div className="md:flex items-center justify-center gap-[11px] text-center">
           <h1 className="text-[#1768AC] md:text-[36px] font-semibold md:w-[15%] w-[100%]">
-            Last Blogs
+            {t('last_blogs')}
           </h1>
           <div className="bg-[#D1D1D1] md:h-[1px]  w-[85%]"></div>
         </div>
@@ -50,7 +52,7 @@ const Blog = ({ resData: { data } }) => {
           href={"/"}
           className="flex justify-center items-center my-20 mx-auto border cursor-pointer border-[#03256C] py-[9px] px-[29px] text-[#03256C] text-[14px] font-400 w-[130px] h-[50px]"
         >
-          Show More
+          {t('show_more')}
         </Link>
       </Wrapper>
     </div>

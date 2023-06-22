@@ -59,7 +59,7 @@ const BlogCard = ({ item: { image, created_at, title, description, id } }) => {
         </p>
         <Link href={`/blog/${id}`}>
           <Button className="bg-[#03256C]  flex justify-between items-center gap-[5px] text-right rounded-none text-[#fff] font-[450] text-[12px]">
-            learn more
+          {t('learn_more')}
             <svg
               width="28"
               height="9"

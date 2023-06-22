@@ -5,15 +5,15 @@ import { Col, Row } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const BlogDetails = ({
   resData: {
     data
   },
 }) => {
-  console.log(data.post_related, "titleeeeee");
   const [isMobile, setIsMobile] = useState(false);
-
+const {t} = useTranslation()
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 576);
@@ -29,9 +29,11 @@ const BlogDetails = ({
       <Wrapper>
         <div className="bg-[#F9F9F9] h-[71px] mb-[50px]  pr-[20px] py-[18px] hidden md:block">
           <div className="flex items-center gap-[13px]">
-            <span className="text-[#808080] text-[20px] font-medium">
-              Blogs
-            </span>
+          <Link href='/blog'>
+          
+          <span className="text-[#808080] text-[20px] font-medium">
+              {t('blogs')}
+            </span></Link>
 
             <svg
               width="8"
