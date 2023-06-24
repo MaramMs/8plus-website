@@ -42,7 +42,7 @@ const CustomSlider = ({partners}) => {
   return (
     <Slider {...settings}>
     {partners.map((partner) => (
-      <Image src={partner.image} key={partner.id} width={178} height={100} className='w-[178px] h-[100px] max-w-[100%] max-h-[100%] object-contain'/>
+      <Image src={partner.image} key={partner.id} width={178} height={100} className='w-[178px] h-[200px] object-contain'/>
     ))}
   </Slider>
   )

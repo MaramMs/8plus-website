@@ -70,7 +70,7 @@ const {t} = useTranslation()
             <div className="flex flex-col">
          
 
-<Image src={data.image} width={781} height={423}  className="	object-cover w-[781px] h-[423px]"/>
+<Image src={data.image} width={781} height={423}  className="	object-cover max-w-[100%] w-[100%] h-[423px]"/>
 
 
               <div className="bg-[#1768AC] px-[19px] py-[12px] flex items-center justify-end gap-[6px]">

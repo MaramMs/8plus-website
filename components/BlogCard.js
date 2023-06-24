@@ -70,9 +70,10 @@ const BlogCard = ({ item: { image, created_at, title, description, id } }) => {
         {title}
       </h2>
 
-      <div className="md:mb-[13px] text-[#808080] text-[12px] font-[450] break-words" dangerouslySetInnerHTML={{ __html: description.slice(0,300) }} >
+      <div className="md:mb-[13px] text-[#808080] text-[12px] font-[450] break-words" dangerouslySetInnerHTML={{ __html: description.replace(/\<br\s*\/?\>/gi, '').slice(0,390)}} >
+        </div>
     
-</div>
+
       <Link href={`/blog/${id}`}>
         <Button className="bg-[#03256C]  flex justify-between items-center gap-[5px] text-right rounded-none text-[#fff] font-[450] text-[12px]">
         {t('learn_more')}
