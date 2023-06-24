@@ -53,7 +53,7 @@ useEffect(()=>{
   };
 
   return (
-    <div className="pt-[162px] our-work ">
+    <div className="pt-[162px] our-work min-h-screen">
       {isMobile ? (
         <>
           <Wrapper>
@@ -123,7 +123,7 @@ useEffect(()=>{
                 filterProjects={filterProjects}
               />
               )
-              : <Empty />
+              : <Empty className="flex justify-center items-center flex-col"/>
             }
           
           </Wrapper>

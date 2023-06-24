@@ -11,11 +11,11 @@ const Layout = ({children}) => {
         return null;
     }
   return (
-    <div>
+    <div className='flex justify-between flex-col min-h-screen'>
      <Navbar />
-     <main>
+    
       {children}
-     </main>
+   
      <Footer />
     </div>
   )

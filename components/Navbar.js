@@ -59,7 +59,7 @@ const Navbar = () => {
         )}
         <Wrapper>
           <div className="flex justify-between items-center">
-            <div>
+            <>
               {router.pathname === "/" ? (
                 <Link href="/">
                   <img src="/images/logo.png" />
@@ -69,7 +69,7 @@ const Navbar = () => {
                   <img src="/images/about-logo.png" />
                 </Link>
               )}
-            </div>
+            </>
 
             {router.pathname === "/" ? (
               <svg
