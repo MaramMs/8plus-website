@@ -1,4 +1,4 @@
-import { Button, Modal } from "antd";
+import { Button, Modal, message } from "antd";
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -9,6 +9,7 @@ import {
   TelegramShareButton,
   TelegramIcon,
 } from "next-share";
+import { FaRegCopy } from "react-icons/fa";
 
 const CustomModal = ({ setIsModalOpen, isModalOpen, url, title }) => {
   const handleCancel = () => {
@@ -17,10 +18,21 @@ const CustomModal = ({ setIsModalOpen, isModalOpen, url, title }) => {
   const handleCancelIcon = () => {
     setIsModalOpen(false);
   };
+  const copyToClipboard = (url) => {
+    navigator.clipboard
+      .writeText(url)
+      .then(() => {
+        message.success("URL copied to clipboard!");
+      })
+      .catch((error) => {
+        message.error(error);
+      });
+  };
+
   return (
     <>
       <Modal
-        title="Share On Social Media"
+        title="Share On Social Media Or Copy Link"
         open={isModalOpen}
         onCancel={handleCancelIcon}
         centered
@@ -62,6 +74,8 @@ const CustomModal = ({ setIsModalOpen, isModalOpen, url, title }) => {
           >
             <TelegramIcon size={32} round />
           </TelegramShareButton>
+
+          <FaRegCopy onClick={() => copyToClipboard(url)} className="text-[25px] cursor-pointer" />
         </div>
       </Modal>
     </>
