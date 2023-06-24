@@ -1,18 +1,17 @@
 import BlogCard from "@/components/BlogCard";
+import CustomModal from "@/components/CustomModal";
 import Wrapper from "@/components/Wrapper";
-import { Col, Row } from "antd";
+import { Button, Col, Row } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const BlogDetails = ({
-  resData: {
-    data
-  },
-}) => {
+const BlogDetails = ({ resData: { data } }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const [isMobile, setIsMobile] = useState(false);
-const {t} = useTranslation()
+  const { t } = useTranslation();
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 576);
@@ -23,16 +22,20 @@ const {t} = useTranslation()
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const handleClick = () => {
+    setIsModalOpen(true);
+  };
   return (
     <div className="pt-[160px]">
       <Wrapper>
         <div className="bg-[#F9F9F9] h-[71px] mb-[50px]  pr-[20px] py-[18px] hidden md:block">
           <div className="flex items-center gap-[13px]">
-          <Link href='/blog'>
-          
-          <span className="text-[#808080] text-[20px] font-medium">
-              {t('blogs')}
-            </span></Link>
+            <Link href="/blog">
+              <span className="text-[#808080] text-[20px] font-medium">
+                {t("blogs")}
+              </span>
+            </Link>
 
             <svg
               width="8"
@@ -68,12 +71,18 @@ const {t} = useTranslation()
             </h1>
 
             <div className="flex flex-col">
-         
-
-<Image src={data.image} width={781} height={423}  className="	object-cover max-w-[100%] w-[100%] h-[423px]"/>
-
+              <Image
+                src={data.image}
+                width={781}
+                height={423}
+                className="	object-cover max-w-[100%] w-[100%] h-[423px]"
+              />
 
               <div className="bg-[#1768AC] px-[19px] py-[12px] flex items-center justify-end gap-[6px]">
+                <Button 
+                onClick={handleClick}
+                className="border-none"
+                >
                 <svg
                   width="16"
                   height="16"
@@ -91,11 +100,22 @@ const {t} = useTranslation()
                   />
                 </svg>
 
-                <span className="text-[#fff] text-[14px]">Share the blog</span>
-              </div>
-              <div dangerouslySetInnerHTML={{ __html: data.description }} className="md:mt-[26px] text-[#808080] text-[14px] md:text-[16px] md:mb-[224px] break-words"/>
+                </Button>
 
-           
+                <span
+                  className="text-[#fff] text-[14px]"
+               
+                >
+                  Share the blog
+                </span>
+              </div>
+              {
+                isModalOpen && <CustomModal setIsModalOpen={setIsModalOpen} handleClick={handleClick} isModalOpen={isModalOpen} url={`https://gleaming-crumble-a6b5ed.netlify.app/blog/${data.id}`} title={data.title}/>
+              }
+              <div
+                dangerouslySetInnerHTML={{ __html: data.description }}
+                className="md:mt-[26px] text-[#808080] text-[14px] md:text-[16px] md:mb-[224px] break-words"
+              />
             </div>
           </Col>
 
@@ -106,69 +126,69 @@ const {t} = useTranslation()
             <div className="w-full h-[1px] bg-[#D1D1D1] mb-[24px]"></div>
 
             {isMobile ? (
-              <>{
-                data.post_related.map((item) => {
+              <>
+                {data.post_related.map((item) => {
                   return (
-                <div className="mb-[22px]" key={item.id}>
-                  <BlogCard item={item}/>
-                </div>
-
-                  )
-                })
-              }
-
+                    <div className="mb-[22px]" key={item.id}>
+                      <BlogCard item={item} />
+                    </div>
+                  );
+                })}
               </>
             ) : (
               <>
-              {
-                data.post_related.map((post)=>{
+                {data.post_related.map((post) => {
                   return (
-               <Link href={`/blog/${post.id}`}>
-                <div className="flex gap-[12px] mb-[25px] h-[109px]">
-                  <div className="flex-shrink-0">
-                   
-                    <Image src={post.image} width={179} height={109}   className="w-[178px] h-[109px] object-cover"/>
-                  </div>
+                    <Link href={`/blog/${post.id}`}>
+                      <div className="flex gap-[12px] mb-[25px] h-[109px]">
+                        <div className="flex-shrink-0">
+                          <Image
+                            src={post.image}
+                            width={179}
+                            height={109}
+                            className="w-[178px] h-[109px] object-cover"
+                          />
+                        </div>
 
-                  <div className="flex flex-col">
-                    <h3 className="text-[#0A0A0A] text-opacity-[90] text-[14px]">
-                      {" "}
-                      {post.title}
-                    </h3>
+                        <div className="flex flex-col">
+                          <h3 className="text-[#0A0A0A] text-opacity-[90] text-[14px]">
+                            {" "}
+                            {post.title}
+                          </h3>
 
-                    <p className="text-[#808080] text-[10px] break-all	" dangerouslySetInnerHTML={{__html:post.description.slice(0,287)}}>
-                      
-                    </p>
+                          <p
+                            className="text-[#808080] text-[10px] break-all	"
+                            dangerouslySetInnerHTML={{
+                              __html: post.description.slice(0, 287),
+                            }}
+                          ></p>
 
-                    <div className="flex mb-[6px] gap-[4px] items-center">
-                      <svg
-                        width="19"
-                        height="19"
-                        viewBox="0 0 19 19"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12.8846 11.1777L10.2354 9.19091V5.14369C10.2354 4.73674 9.90649 4.40781 9.49955 4.40781C9.09261 4.40781 8.76367 4.73674 8.76367 5.14369V9.55889C8.76367 9.79067 8.87259 10.0092 9.05802 10.1476L12.0015 12.3552C12.1285 12.4509 12.2832 12.5025 12.4422 12.5024C12.6667 12.5024 12.8875 12.4015 13.0317 12.2073C13.2761 11.8827 13.2098 11.4213 12.8846 11.1777Z"
-                          fill="#949494"
-                        />
-                        <path
-                          d="M9.5 0C4.26138 0 0 4.26138 0 9.5C0 14.7386 4.26138 19 9.5 19C14.7386 19 19 14.7386 19 9.5C19 4.26138 14.7386 0 9.5 0ZM9.5 17.5283C5.07378 17.5283 1.47172 13.9262 1.47172 9.5C1.47172 5.07378 5.07378 1.47172 9.5 1.47172C13.927 1.47172 17.5283 5.07378 17.5283 9.5C17.5283 13.9262 13.9262 17.5283 9.5 17.5283Z"
-                          fill="#949494"
-                        />
-                      </svg>
-                      <span className="text-[10px] text-[#949494]">
-                      {post.created_at.split(' ').slice(0,3)}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-               </Link>
-
-                  )
-                })
-              }
-
+                          <div className="flex mb-[6px] gap-[4px] items-center">
+                            <svg
+                              width="19"
+                              height="19"
+                              viewBox="0 0 19 19"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M12.8846 11.1777L10.2354 9.19091V5.14369C10.2354 4.73674 9.90649 4.40781 9.49955 4.40781C9.09261 4.40781 8.76367 4.73674 8.76367 5.14369V9.55889C8.76367 9.79067 8.87259 10.0092 9.05802 10.1476L12.0015 12.3552C12.1285 12.4509 12.2832 12.5025 12.4422 12.5024C12.6667 12.5024 12.8875 12.4015 13.0317 12.2073C13.2761 11.8827 13.2098 11.4213 12.8846 11.1777Z"
+                                fill="#949494"
+                              />
+                              <path
+                                d="M9.5 0C4.26138 0 0 4.26138 0 9.5C0 14.7386 4.26138 19 9.5 19C14.7386 19 19 14.7386 19 9.5C19 4.26138 14.7386 0 9.5 0ZM9.5 17.5283C5.07378 17.5283 1.47172 13.9262 1.47172 9.5C1.47172 5.07378 5.07378 1.47172 9.5 1.47172C13.927 1.47172 17.5283 5.07378 17.5283 9.5C17.5283 13.9262 13.9262 17.5283 9.5 17.5283Z"
+                                fill="#949494"
+                              />
+                            </svg>
+                            <span className="text-[10px] text-[#949494]">
+                              {post.created_at.split(" ").slice(0, 3)}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  );
+                })}
               </>
             )}
           </Col>
