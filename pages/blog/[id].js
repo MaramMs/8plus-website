@@ -106,18 +106,17 @@ const {t} = useTranslation()
             <div className="w-full h-[1px] bg-[#D1D1D1] mb-[24px]"></div>
 
             {isMobile ? (
-              <>
-                <div className="mb-[22px]">
-                  <BlogCard />
+              <>{
+                data.post_related.map((item) => {
+                  return (
+                <div className="mb-[22px]" key={item.id}>
+                  <BlogCard item={item}/>
                 </div>
 
-                <div className="mb-[22px]">
-                  <BlogCard />
-                </div>
+                  )
+                })
+              }
 
-                <div className="mb-[22px]">
-                  <BlogCard />
-                </div>
               </>
             ) : (
               <>
