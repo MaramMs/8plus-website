@@ -1,4 +1,3 @@
-import Footer from "@/components/Footer";
 import Wrapper from "@/components/Wrapper";
 import { Col, Row, Container, Image } from "antd";
 import React from "react";
@@ -54,11 +53,11 @@ const Work = ({
                   <div className="rounded-[100px]">
                     <Image
                       width="100%"
-                      height="100%"
-                      className="w-[100%] h-[100%] object-cover"
+                      height={600}
+                      className="w-[100%] max-h-[100%] h-[600px] object-cover"
                       src={photo.image}
                       preview={{
-                        src: `{photo.image}`,
+                        src: photo.image,
                       }}
                     />
                   </div>

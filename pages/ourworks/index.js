@@ -14,9 +14,7 @@ const index = ({
     data: { portfolios, categories },
   },
 }) => {
-
-
-  console.log(portfolios , 'portfolios');
+  console.log(categories, "categoruws");
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
@@ -29,27 +27,25 @@ const index = ({
     };
   }, []);
   const [activeCategory, setActiveCategory] = useState(1);
-  
+
   const [filterProjects, setFilteredProjects] = useState([]);
 
- 
-const handleCategoryClick = (id) => {
-  setActiveCategory(id);
-  if (id === 1) {
+  const handleCategoryClick = (id) => {
+    setActiveCategory(id);
+    if (id === 1) {
+      setFilteredProjects(portfolios);
+    } else {
+      const filter = portfolios.filter(
+        (portfolio) => portfolio.category_id === id
+      );
+      setFilteredProjects(filter);
+    }
+  };
+  useEffect(() => {
     setFilteredProjects(portfolios);
-  } else {
-    const filter = portfolios.filter(
-      (portfolio) => portfolio.category_id === id
-    );
-    setFilteredProjects(filter);
-  }
-};
-useEffect(()=>{
-  setFilteredProjects(portfolios);
-
-},[])
+  }, []);
   const handleChange = (value) => {
-    console.log(`selected ${value}`);
+   handleCategoryClick(value)
   };
 
   return (
@@ -58,7 +54,7 @@ useEffect(()=>{
         <>
           <Wrapper>
             <Select
-              defaultValue="React Developer"
+              defaultValue="الكل"
               onChange={handleChange}
               style={{
                 border: "1px solid #1768AC",
@@ -69,34 +65,21 @@ useEffect(()=>{
                 alignItems: "center",
                 margin: "auto auto 89px auto",
               }}
-              options={[
-                {
-                  value: "jack",
-                  label: "Jack",
-                },
-                {
-                  value: "lucy",
-                  label: "Lucy",
-                },
-                {
-                  value: "Yiminghe",
-                  label: "yiminghe",
-                },
-                {
-                  value: "disabled",
-                  label: "Disabled",
-                  disabled: true,
-                },
-              ]}
-            />
+            >
+              {categories.map((item) => {
+                return <Option value={item.id} >{item.name}</Option>;
+              })}
+            </Select>
 
-            {projects.map((project) => {
-              return (
-                <div className="flex flex-col ">
-                  <CardProject project={project} />
-                </div>
-              );
-            })}
+            {filterProjects.length != 0
+              ? filterProjects.map((filterProject) => {
+                  return (
+                    <div className="flex flex-col ">
+                      <CardProject filterProject={filterProject} />
+                    </div>
+                  );
+                })
+              :<Empty className="flex justify-center items-center flex-col" />}
           </Wrapper>
         </>
       ) : (
@@ -117,15 +100,11 @@ useEffect(()=>{
             })}
           </ul>
           <Wrapper>
-            {
-              filterProjects.length != 0 ? (
-                <CustomSwiper
-                filterProjects={filterProjects}
-              />
-              )
-              : <Empty className="flex justify-center items-center flex-col"/>
-            }
-          
+            {filterProjects.length != 0 ? (
+              <CustomSwiper filterProjects={filterProjects} />
+            ) : (
+              <Empty className="flex justify-center items-center flex-col" />
+            )}
           </Wrapper>
         </>
       )}
