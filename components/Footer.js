@@ -54,7 +54,7 @@ const Footer = () => {
                     </span>
                     <IoMdMail className="text-[12px] md:text-[14px]" />
                   </div>
-                  <div className="flex items-center gap-[5px] md:gap-[13px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2 md:mt-[0px]">
+                  <div className="flex items-center gap-[5px] md:gap-[13px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2 md:mt-[0px] justify-end">
                     <span className="text-[#fff] font-medium text-[8px] md:text-[19px] mr-[22px] md:mr-0">
                       {siteData.site_address}
                     </span>
@@ -62,14 +62,14 @@ const Footer = () => {
                     <HiLocationMarker className="text-[12px] md:text-[14px]" />
                   </div>
 
-                  <div className="flex items-center gap-[5px] md:gap-[15px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2">
+                  <div className="flex items-center gap-[4px] md:gap-[15px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2">
                     <span className="text-[#fff] font-medium text-[8px] md:text-[19px] md:mr-[34px] mr-[13px]">
                       {siteData.site_phone}
                     </span>
                     <BsTelephoneFill className="text-[12px] md:text-[14px]" />
                   </div>
 
-                  <div className="flex items-center gap-[5px] md:gap-[10px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2">
+                  <div className="flex items-center gap-[5px] md:gap-[10px] text-[#fff] text-[8px] md:text-[19px] md:w-1/2 justify-end">
                     <span className="text-[#fff] font-medium text-[8px] md:text-[19px] md:mr-[25px] mr-[28px]">
                       {siteData.work_hours}
                     </span>
