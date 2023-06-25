@@ -10,7 +10,6 @@ const Blog = ({ resData: { data } }) => {
   const [numItemsToShow , setNumItemsToShow] = useState(6);
   const handleShowMore =() =>{
     setNumItemsToShow(data.length);
-    console.log('maram');
   }
   return (
     <div className="pt-[192px]">

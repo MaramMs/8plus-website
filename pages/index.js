@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 export default function Home({resData:{data:data}}) {
   const {site:{home_page}} = data
-  console.log(home_page , 'data');
   const { t } = useTranslation();
   return (
     <div className="relative h-screen w-full bg-[url('/images/bg-home.png')] bg-cover flex justify-center items-center flex-col">
