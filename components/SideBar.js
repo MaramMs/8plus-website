@@ -9,7 +9,7 @@ const SideBar = ({setShowSidebar}) => {
     const {t} = useTranslation();
     const router = useRouter()
   return (
-    <div className="bg-white w-[242px] md:w-[300px]  left-0 top-0 h-full flex px-[74px] md:px-[90px] fixed z-[100] items-center  text-right	">
+    <div className="bg-white w-[242px] md:w-[300px]  left-0 top-0 h-[100vh] flex px-[74px] md:px-[90px] fixed z-[100] items-center  text-right	">
           <AiOutlineClose
             className="top-[64px] left-[128px] absolute cursor-pointer text-[27px] text-[#03256c]"
             onClick={() => setShowSidebar(false)}
