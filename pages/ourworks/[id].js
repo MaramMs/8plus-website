@@ -21,7 +21,7 @@ const Work = ({
               </h1>
               <div className="flex gap-[5px] ">
                 <AiFillCaretLeft className="text-[#03256C] text-[31px]" />
-                <p className="text-[#949494] text-[12px] md:text-[16px] font-medium break-words ">
+                <p className="text-[#949494] text-[12px] md:text-[16px] font-medium break-all	">
                   {description?.replace(/<p>|<\/p>/g ,'')}
                 </p>
               </div>
@@ -49,17 +49,18 @@ const Work = ({
           >
             {photos.map((photo) => {
               return (
-                <Col md={{ span: 12 }}>
+                <Col md={{ span: 12 }} className="hover:drop-shadow-[0px_12px_10px_rgba(0,0,0,0.15)] transition-all ease-in-out duration-[1000ms] hover:mt-[-20px]">
                   <div className="rounded-[100px]">
                     <Image
                       width="100%"
                       height={600}
-                      className="w-[100%] max-h-[100%] h-[600px] object-cover"
+                      className="w-[100%] max-h-[100%] h-[600px] object-cover rounded-[100px]"
                       src={photo.image}
                       preview={{
                         src: photo.image,
                       }}
                     />
+
                   </div>
                 </Col>
               );

@@ -34,7 +34,7 @@ const about = ({resData:{data:data}}) => {
           <Col md={{ span: 12 }} className="mb-[65px]">
             <img
               src="/images/about-img.png"
-              className="w-[100%] h-[100%] object-cover"
+              className="w-[100%] h-[100%] object-cover hover:drop-shadow-[0_12px_12px_rgba(0,0,0,0.15)] transition-all ease duration-[1000ms] hover:scale-x-[-1]"
             />
           </Col>
 

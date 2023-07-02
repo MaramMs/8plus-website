@@ -2,6 +2,7 @@ import { Button } from "antd";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 export default function Home({resData:{data:data}}) {
   const {site:{home_page}} = data
   const { t } = useTranslation();
@@ -31,12 +32,13 @@ export default function Home({resData:{data:data}}) {
         </p>
         <div className="flex justify-center items-center gap-[11px]">
        <Link href='/contact'>
-       <Button className="rounded-[24px] bg-[#fff] border-none p-[16px] flex justify-center items-center text-[#1768ac] text-[12px] font-semibold ">
+       <Button className="rounded-[24px] bg-[#fff]  p-[16px] relative flex justify-center items-center hover:bg-transparent hover:border-[#fff] hover:border hover:text-[#fff] text-[#1768ac] text-[12px] font-semibold  transition-all    duration-[2s] ease ">
             {t("home-btn-start-project")}
+          <Image  src='/images/arrow-gif.gif' width={125.5} height={125.5} alt=''  className="absolute top-[50px] right-[-10px] transform scale-y-[-1] rotate-x-[180deg]"/>
           </Button>
        </Link>
         <Link href='/about'>
-        <Button className="rounded-[24px] border border-[#fff] bg-transparent p-[16px] text-[12px] font-semibold flex justify-center items-center text-[#fff]">
+        <Button className="rounded-[24px] border border-[#fff] bg-transparent hover:bg-white hover:text-[#1768ac] p-[16px] text-[12px] transition-all    duration-[2s] ease font-semibold flex justify-center items-center text-[#fff]">
             {t("home-btn-more")}
           </Button>
         </Link>

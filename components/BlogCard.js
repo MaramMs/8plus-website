@@ -23,10 +23,9 @@ const BlogCard = ({ item: { image, created_at, title, description, id } }) => {
   transition={{ duration: 0.5 }}
   >
   <Card
+  className="cardBlog"
       
-      style={{
-        border: 0,
-      }}
+    
       bodyStyle={{
         padding: 0,
       }}
