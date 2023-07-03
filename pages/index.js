@@ -34,7 +34,7 @@ export default function Home({resData:{data:data}}) {
        <Link href='/contact'>
        <Button className="rounded-[24px] bg-[#fff]  p-[16px] relative flex justify-center items-center hover:bg-transparent hover:border-[#fff] hover:border hover:text-[#fff] text-[#1768ac] text-[12px] font-semibold  transition-all    duration-[2s] ease ">
             {t("home-btn-start-project")}
-          <Image  src='/images/arrow-gif.gif' width={125.5} height={125.5} alt=''  className="absolute top-[50px] right-[-10px] transform scale-y-[-1] rotate-x-[180deg]"/>
+          <Image  src='/images/arrow-gif.gif' width={125.5} height={125.5} alt=''  className="absolute top-[30px] right-[-50px] transform scale-x-[-1] rotate-[120deg]"/>
           </Button>
        </Link>
         <Link href='/about'>
