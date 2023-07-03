@@ -13,8 +13,9 @@ const NavbarPages = ({setShowSidebar}) => {
         <Link href="/" >
                   <img src="/images/about-logo.png" />
                 </Link>
-                <ul className='flex-1 flex-row flex justify-center gap-[90px] bg-transparent items-center'>
-            <li
+                <ul className='flex-1 flex-row flex justify-center gap-[150px] bg-transparent items-center'>
+        <div className='flex-1 flex-row flex justify-center gap-[90px] bg-transparent items-center'>
+        <li
               className={`${
                 router.pathname === "/" ? "active" : ""
               } text-[18px] md:text-[20px]  text-[#000] font-semibold`}
@@ -54,7 +55,10 @@ const NavbarPages = ({setShowSidebar}) => {
               </Link>
             </li>
 
-            <li
+        </div>
+
+<div className='flex-1 flex-row flex justify-center gap-[90px] bg-transparent items-center'>
+<li
               className={`${
                 router.pathname === "/services" ? "active" : ""
               }   text-[15px] md:text-[20px] text-[#000] font-semibold`}
@@ -94,6 +98,8 @@ const NavbarPages = ({setShowSidebar}) => {
                 {t("blog")}
               </Link>
             </li>
+</div>
+            
           </ul>
     </div>
         
