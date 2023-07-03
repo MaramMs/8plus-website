@@ -1,7 +1,6 @@
 import BlogCard from "@/components/BlogCard";
 import Wrapper from "@/components/Wrapper";
 import { Button, Row } from "antd";
-import Link from "next/link";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -34,7 +33,7 @@ const Blog = ({ resData: { data } }) => {
               />
             </svg>
 
-            <span className="text-[#808080] text-[20px] font-medium">
+            <span className="text-[#1768AC] text-[20px] font-medium">
               {t('blogs')}
             </span>
           </div>

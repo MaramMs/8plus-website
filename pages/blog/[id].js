@@ -53,7 +53,7 @@ const BlogDetails = ({ resData: { data } }) => {
               />
             </svg>
 
-            <span className="text-[#000] text-[20px] font-medium">
+            <span className="text-[#1768AC] text-[20px] font-medium">
               {data.title}
             </span>
           </div>
