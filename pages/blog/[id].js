@@ -140,7 +140,7 @@ const BlogDetails = ({ resData: { data } }) => {
                 {data.post_related.map((post) => {
                   return (
                     <Link href={`/blog/${post.id}`}>
-                      <div className="flex gap-[12px] mb-[25px] h-[109px]">
+                      <div className="flex gap-[12px] mb-[25px] h-[150px] hover:border p-2 transition-all ease-in-out duration-[4000ms]">
                         <div className="flex-shrink-0">
                           <Image
                             src={post.image}
