@@ -1,16 +1,22 @@
 import Wrapper from "@/components/Wrapper";
 import { Col, Row, Image } from "antd";
+import Head from "next/head";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 const Work = ({
   resData: {
-    data: { name, description, photos, client, category_name, service_name },
+    data: { name, description, photos, client, category_name, service_name,meta_title,meta_description,meta_keywords },
   },
 }) => {
   const { t } = useTranslation();
   return (
     <>
+    <Head >
+      <title>{meta_title}</title>
+      <meta name="description" content={meta_description}/>
+      <meta name="keywords" content={meta_keywords}/>
+    </Head>
       <Wrapper>
         <div className="md:pt-[162px] pt-[85px]">
           <Row>

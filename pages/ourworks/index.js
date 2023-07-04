@@ -14,7 +14,7 @@ const index = ({
     data: { portfolios, categories },
   },
 }) => {
-  console.log(categories, "categoruws");
+  console.log(portfolios, "categoruws");
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {

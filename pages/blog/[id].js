@@ -2,6 +2,7 @@ import BlogCard from "@/components/BlogCard";
 import CustomModal from "@/components/CustomModal";
 import Wrapper from "@/components/Wrapper";
 import { Button, Col, Row } from "antd";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -9,6 +10,7 @@ import { useTranslation } from "react-i18next";
 
 const BlogDetails = ({ resData: { data } }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  console.log(data.meta_description,'data');
 
   const [isMobile, setIsMobile] = useState(false);
   const { t } = useTranslation();
@@ -27,7 +29,15 @@ const BlogDetails = ({ resData: { data } }) => {
     setIsModalOpen(true);
   };
   return (
-    <div className="pt-[160px]">
+    <>
+        <Head>
+      <title>{data.meta_title}</title>
+      <meta name="description" content={data.meta_description}/>
+      <meta name="keywords" content={data.meta_keywords}/>
+    </Head>
+
+    <div className="md:pt-[160px] pt-[85px]">
+      
       <Wrapper>
         <div className="bg-[#F9F9F9] h-[71px] mb-[50px]  pr-[20px] py-[18px] hidden md:block">
           <div className="flex items-center gap-[13px]">
@@ -195,6 +205,8 @@ const BlogDetails = ({ resData: { data } }) => {
         </Row>
       </Wrapper>
     </div>
+    </>
+   
   );
 };
 
