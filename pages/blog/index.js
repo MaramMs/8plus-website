@@ -11,7 +11,7 @@ const Blog = ({ resData: { data } }) => {
     setNumItemsToShow(data.length);
   }
   return (
-    <div className="pt-[192px]">
+    <div className="pt-[85px] md:pt-[192px]">
       <Wrapper>
         <div className="bg-[#F9F9F9] h-[71px] mb-[50px]  pr-[20px] py-[18px] hidden md:block">
           <div className="flex items-center gap-[13px]">
@@ -39,7 +39,7 @@ const Blog = ({ resData: { data } }) => {
           </div>
         </div>
         <div className="md:flex items-center justify-center gap-[11px] text-center">
-          <h1 className="text-[#1768AC] md:text-[36px] font-semibold md:w-[15%] w-[100%]">
+          <h1 className="text-[#1768AC] text-[36px] font-semibold md:w-[15%] w-[100%]">
             {t('last_blogs')}
           </h1>
           <div className="bg-[#D1D1D1] md:h-[1px]  w-[85%]"></div>
