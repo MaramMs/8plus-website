@@ -38,7 +38,7 @@ const Footer = () => {
               <Col span={16} md={{ span: 12 }}>
                 <img
                   src={siteData.site_logo}
-                  className="md:w-[140px] md:h-[43px] w-[80px] h-[24.83px] object-cover"
+                  className="md:w-[140px] md:h-[43px] w-[80px] h-[24.83px] object-cover mb-[13px]"
                 />
                 <p className="text-[8px] font-light md:text-[12px] md:font-medium text-[#fff] md:w-[300px] md:mt-[9px] w-[186px] h-[55px] break-words">
                   {siteData.site_description}
