@@ -54,7 +54,12 @@ nav ul li {
   
   }
 }
-
+/* .swiper-wrapper{
+  transform: none !important;
+}
+.swiper-slide:nth-child(2){
+  margin-top: 217px;
+} */
 .home {
   background: linear-gradient(
     108.92deg,
@@ -203,12 +208,7 @@ nav ul li {
 
 
 
-:where(.css-dev-only-do-not-override-w8mnev).ant-select-single:not(.ant-select-customize-input) .ant-select-selector ,
-:where(.css-w8mnev).ant-select:not(.ant-select-customize-input) .ant-select-selector 
-{
-  background: linear-gradient(90.94deg, rgba(23, 104, 172, 0.04) 3.43%, rgba(217, 217, 217, 0) 97.47%);
-  border: none;
-} */
+*/
 
 /* .swiper-wrapper 
 {
@@ -234,9 +234,9 @@ nav ul li {
 .our-work{
   background: linear-gradient(125.18deg, rgba(23, 104, 172, 0.09) 0%, rgba(217, 217, 217, 0) 99.41%);
 }
-.swiper-slide-active{
+/* .swiper-slide-active{
   margin-top: 217px;
-  }
+  } */
 .category-active{
   color:#1768AC;
   font-size: 16px;
@@ -295,3 +295,10 @@ nav ul li {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   margin-top: -10px;
 }
+
+:where(.css-dev-only-do-not-override-w8mnev).ant-select-single:not(.ant-select-customize-input) .ant-select-selector ,
+:where(.css-w8mnev).ant-select:not(.ant-select-customize-input) .ant-select-selector 
+{
+  background: linear-gradient(90.94deg, rgba(23, 104, 172, 0.04) 3.43%, rgba(217, 217, 217, 0) 97.47%);
+  border: none;
+} 
