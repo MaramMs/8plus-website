@@ -56,10 +56,13 @@ const services = ({resData:{data}}) => {
           </Row>
         </Wrapper>
       </div>
-      <div className="flex justify-center items-center flex-col mt-[59px] md:mt-[119px] md:mb-[90px] px-[19px]">
+      <div className="flex  flex-col mt-[59px] md:mt-[119px] md:mb-[90px] px-[19px]">
         <h2 className="text-[#1768AC] font-medium text-[20px] md:text-center text-right md:text-[32px] mb-[4px]">
-          Services Request
+          Contact Us
         </h2>
+        <p className="text-[#949494] text-[14px] font-[450] text-right break-all mb-[24px]">
+          LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem
+        </p>
         <FormContact data={data}/>
       </div>
 
