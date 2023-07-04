@@ -15,7 +15,7 @@ export default function Home({resData:{data:data}}) {
   initial={{ opacity: 1, x: 0 }}
   animate={{ opacity: 1, x: "100vw" }}
   transition={{ duration: 5, repeat: Infinity, repeatType: "loop" }}
-  className="md:bottom-0 bottom-[30%] z-10 block absolute text-white left-0 w-[476px] md:w-full"
+  className="md:bottom-0 bottom-[10%] z-10 block absolute text-white left-0 w-[476px] md:w-full"
 >
   <h1 className="md:text-[96px] text-[32px] font-semibold text-neutral-200">
     ثمانية بلس منظومة تكنولوجية متكاملة
