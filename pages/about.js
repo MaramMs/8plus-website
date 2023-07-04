@@ -27,7 +27,7 @@ const about = ({ resData: { data: data } }) => {
           }}
         >
           <Col md={{ span: 12 }} className="md:pt-[119px] gutter-row mb-[65px]">
-            <h3 className="text-[#1768ac] text-[20px] md:text-[36px]  font-medium mb-[13px]">
+            <h3 className="text-[#1768ac] text-[20px] md:text-[36px]  font-[900] mb-[13px] ">
               {t("about")}
             </h3>
             <motion.p 
@@ -61,7 +61,7 @@ const about = ({ resData: { data: data } }) => {
             >
               <div className="flex items-center gap-[17px]">
                 <GoMail className="text-[#1768ac] text-[26px] md:text-[35px]" />
-                <h3 className="text-[#1768ac] text-[20px] md:text-[36px]  font-medium mb-[13px] ">
+                <h3 className="text-[#1768ac] text-[20px] md:text-[36px]  font-[900] mb-[13px] ">
                   {t("our_message")}
                 </h3>
               </div>
@@ -78,7 +78,7 @@ const about = ({ resData: { data: data } }) => {
           <Col md={{ span: 12 }} className="mb-[65px]">
             <div className="flex items-center gap-[17px]">
               <RxEyeOpen className="text-[#1768ac] text-[26px] md:text-[35px]" />
-              <h3 className="text-[#1768ac] text-[20px] md:text-[36px] font-medium mb-[13px] ">
+              <h3 className="text-[#1768ac] text-[20px] md:text-[36px] font-[900] mb-[13px] ">
                 {t("our_vision")}
               </h3>
             </div>
@@ -87,7 +87,7 @@ const about = ({ resData: { data: data } }) => {
              initial={{ x: "-1000" }}
              animate={{ x: 0 }}
              transition={{ duration: 2 , delay:'1' }}
-            className="text-[#000] text-[14px] md:text-[18px] md:w-[503px] md:h-[211px] break-words text-right font-medium">
+            className="text-[#000] text-[14px] md:text-[18px] md:w-[503px] md:h-[211px] break-words text-right font-[900]">
               {about_page.our_vision}
             </motion.p>
           </Col>
