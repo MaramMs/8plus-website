@@ -13,12 +13,19 @@ import 'swiper/css/pagination';
 
 const CustomSwiper = ({ portfolios, filterProjects }) => {
   console.log(filterProjects, "filter");
+  console.log(filterProjects.length,'filterProjects.length');
+  const num =Math.floor(filterProjects.length / 2);
+ 
+  console.log(num , 'num');
 
   return (
     <Swiper
+    initialSlide={num}
     pagination={{
       clickable: true,
     }}
+    centeredSlidesBounds={true}
+    centeredSlides={true}
     spaceBetween={50}
     // grabCursor={true}
     // centeredSlides={true}
