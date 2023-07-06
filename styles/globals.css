@@ -234,9 +234,9 @@ nav ul li {
 .our-work{
   background: linear-gradient(125.18deg, rgba(23, 104, 172, 0.09) 0%, rgba(217, 217, 217, 0) 99.41%);
 }
-/* .swiper-slide-active{
+.swiper-slide-active{
   margin-top: 217px;
-  } */
+  }
 .category-active{
   color:#1768AC;
   font-size: 16px;
