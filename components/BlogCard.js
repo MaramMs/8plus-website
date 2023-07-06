@@ -12,8 +12,8 @@ const BlogCard = ({ item: { image, created_at, title, description, id } }) => {
         
    
     
-<Col md={{ span: 8 }}
 
+<Col md={{ span: 8 }}
 
 >
 
@@ -28,6 +28,7 @@ const BlogCard = ({ item: { image, created_at, title, description, id } }) => {
     
       bodyStyle={{
         padding: 0,
+       
       }}
       cover={
         <Link href={`/blog/${id}`}>
@@ -71,34 +72,37 @@ const BlogCard = ({ item: { image, created_at, title, description, id } }) => {
 
 
 
-        <div className="md:mb-[13px] text-[#808080] text-[12px] font-[450] break-words" dangerouslySetInnerHTML={{ __html: description.replace(/\<br\s*\/?\>/gi, '').slice(0,300)}} dangerouslySetInnerHTMLAs="p" />
+ <div className="flex flex-col justify-between">
 
+ <div className="md:mb-[13px] text-[#808080] text-[12px] font-[450] break-words h-20 overflow-hidden" dangerouslySetInnerHTML={{ __html: description.replace(/\<br\s*\/?\>/gi, '').slice(0,500)}} dangerouslySetInnerHTMLAs="p" />
 
-      <Link href={`/blog/${id}`}>
-        <Button className="bg-[#03256C]  flex justify-between items-center gap-[5px] text-right rounded-none text-[#fff] font-[450] text-[12px]">
-        {t('learn_more')}
-          <svg
-            width="28"
-            height="9"
-            viewBox="0 0 28 9"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5.28062 4.59945L27.5625 4.58151C27.6785 4.58151 27.7898 4.53542 27.8719 4.45337C27.9539 4.37132 28 4.26004 28 4.14401C28 4.02798 27.9539 3.9167 27.8719 3.83465C27.7898 3.75261 27.6785 3.70651 27.5625 3.70651L5.28019 3.72445C5.16416 3.72445 5.05288 3.77054 4.97083 3.85259C4.88878 3.93464 4.84269 4.04592 4.84269 4.16195C4.84269 4.27798 4.88878 4.38926 4.97083 4.47131C5.05288 4.55336 5.16459 4.59945 5.28062 4.59945Z"
-              fill="white"
-            />
-            <path
-              d="M0.00019547 4.16719C2.48563 5.08594 5.57001 6.65744 7.48145 8.32344L5.97382 4.16194L7.47576 0C5.56607 1.66819 2.48432 3.24319 0.00019547 4.16719Z"
-              fill="white"
-            />
-          </svg>
-        </Button>
-      </Link>
+<Link href={`/blog/${id}`}>
+  <Button className="bg-[#03256C]  flex justify-between items-center gap-[5px] text-right rounded-none text-[#fff] font-[450] text-[12px]">
+  {t('learn_more')}
+    <svg
+      width="28"
+      height="9"
+      viewBox="0 0 28 9"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.28062 4.59945L27.5625 4.58151C27.6785 4.58151 27.7898 4.53542 27.8719 4.45337C27.9539 4.37132 28 4.26004 28 4.14401C28 4.02798 27.9539 3.9167 27.8719 3.83465C27.7898 3.75261 27.6785 3.70651 27.5625 3.70651L5.28019 3.72445C5.16416 3.72445 5.05288 3.77054 4.97083 3.85259C4.88878 3.93464 4.84269 4.04592 4.84269 4.16195C4.84269 4.27798 4.88878 4.38926 4.97083 4.47131C5.05288 4.55336 5.16459 4.59945 5.28062 4.59945Z"
+        fill="white"
+      />
+      <path
+        d="M0.00019547 4.16719C2.48563 5.08594 5.57001 6.65744 7.48145 8.32344L5.97382 4.16194L7.47576 0C5.56607 1.66819 2.48432 3.24319 0.00019547 4.16719Z"
+        fill="white"
+      />
+    </svg>
+  </Button>
+</Link>
+ </div>
     </Card>
   </motion.div>
     
     </Col>
+
 
   
 

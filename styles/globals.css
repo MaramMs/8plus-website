@@ -286,9 +286,13 @@ nav ul li {
 }
 
 .cardBlog{
+  height:100%;
   border:none;
   transition:  all  1s;
   padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
 }
 .cardBlog:hover{
@@ -302,3 +306,7 @@ nav ul li {
   background: linear-gradient(90.94deg, rgba(23, 104, 172, 0.04) 3.43%, rgba(217, 217, 217, 0) 97.47%);
   border: none;
 } 
+
+::marker {
+  margin: 0px !important;
+}
