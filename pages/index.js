@@ -3,18 +3,35 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-export default function Home({resData:{data:data}}) {
-  const {site:{home_page}} = data
+import { useEffect, useState } from "react";
+export default function Home() {
+ 
   const { t } = useTranslation();
+
+  const [dataHome , setDataHome] = useState({});
+  const [loading ,setLoading] = useState(true)
+
+  useEffect(() =>{
+    const getHome = async() =>{
+      const res = await fetch("https://new.8plusit.com/api/home");
+    const resData = await res.json();
+    setDataHome(resData.data.home_page);
+    setLoading(false);
+  }
+  getHome();
+  },[])
   return (
-    <div className="relative h-screen w-full bg-[url('/images/bg-home.png')] bg-cover flex justify-center items-center flex-col">
+    <>
+    {
+      loading ? <p> Loading ....</p> : (
+        <div className="relative h-screen w-full bg-[url('/images/bg-home.png')] bg-cover flex justify-center items-center flex-col">
       <div className="absolute z-20  home"></div>
 
 
 <motion.div
-  initial={{ opacity: 1, x: -9000}}
+  initial={{ opacity: 1, x: -6000}}
   animate={{ opacity: 1, x: "100vw" }}
-  transition={{ duration: 5, repeat: Infinity, repeatType: "loop" }}
+  transition={{ duration: 3, repeat: Infinity, repeatType: "loop" }}
   className="md:bottom-0 bottom-[10%] z-10 block absolute text-white left-0 w-[476px] md:w-full"
 >
   <h1 className="md:text-[96px] text-[32px] font-semibold text-neutral-200">
@@ -25,10 +42,10 @@ export default function Home({resData:{data:data}}) {
 
       <div className="container flex justify-center items-center flex-col z-20">
         <h1 className="text-[#fff] md:text-[30px] text-[20px] font-semibold text-center md:w-[782px] break-words md:mb-[15px] mb-[9px]">
-          {home_page.title}
+          {dataHome.title}
         </h1>
         <p className="text-[14px] font-medium text-[#fff] text-center md:w-[580px] break-words md:mb-[64px] mb-[42px]">
-          {home_page.descreption}
+          {dataHome.descreption}
         </p>
         <div className="flex justify-center items-center gap-[11px]">
        <Link href='/contact'>
@@ -73,14 +90,17 @@ export default function Home({resData:{data:data}}) {
 </motion.div>
 </div>
     </div>
+      )
+    }
+    </>
        
   );
 }
 
 
-export async function getServerSideProps() {
-  const res = await fetch('https://new.8plusit.com/api');
-  const resData= await res.json()
+// export async function getServerSideProps() {
+//   const res = await fetch('https://new.8plusit.com/api');
+//   const resData= await res.json()
  
-  return { props: { resData } }
-}
+//   return { props: { resData } }
+// }

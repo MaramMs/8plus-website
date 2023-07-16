@@ -1,28 +1,42 @@
 import Wrapper from "@/components/Wrapper";
 import { Col, Row, Image } from "antd";
 import Head from "next/head";
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const Work = ({
-  resData: {
-    data: { name, description, photos, client, category_name, service_name,meta_title,meta_description,meta_keywords },
-  },
-}) => {
+const Work = () => {
   const { t } = useTranslation();
+
+  const router = useRouter();
+  const {id}= router.query
+  console.log(id , 'params');
+
+  const [data , setData] = useState([]);
+
+  console.log(data, 'data');
+  useEffect(() => {
+    const postData = async () => {
+      const res = await fetch(`https://new.8plusit.com/api/portfolios/${id}`);
+      const resData = await res.json();
+      setData(resData.data);
+    };
+    postData();
+  }, [id]);
+
   return (
     <>
     <Head >
-      <title>{meta_title}</title>
-      <meta name="description" content={meta_description}/>
-      <meta name="keywords" content={meta_keywords}/>
+      <title>{data.meta_title}</title>
+      <meta name="description" content={data.meta_description}/>
+      <meta name="keywords" content={data.meta_keywords}/>
     </Head>
       <Wrapper>
         <div className="md:pt-[162px] pt-[85px]">
           <Row>
             <Col span={24} md={{ span: 18 }}>
               <h1 className="text-[#1768ac] text-[16px] md:text-[36px] font-medium mb-[5px]">
-                {name}
+                {data.name}
               </h1>
               <div className="flex gap-[5px] justify-center">
                 <svg
@@ -41,7 +55,7 @@ const Work = ({
                 </svg>
 
                 <p className="text-[#949494] text-[12px] md:text-[16px] font-medium break-all flex-1	m-0">
-                  {description?.replace(/<p>|<\/p>/g, "")}
+                  {data.description?.replace(/<p>|<\/p>/g, "")}
                 </p>
               </div>
 
@@ -49,32 +63,32 @@ const Work = ({
                 <div className="flex gap-[6px] items-center ">
                   <span className="w-[6px] h-[6px] bg-[#000] rounded-[6px]"></span>
                   <li className="text-[#000] md:text-[20px] text-[12px] font-medium">
-                    {client}
+                    {data.client}
                   </li>
                 </div>
 
                 <div className="flex gap-[6px] items-center ">
                   <span className="w-[6px] h-[6px] bg-[#000] rounded-[6px]"></span>
                   <li className="text-[#000] md:text-[20px] text-[12px] font-medium">
-                    {category_name}
+                    {data.category_name}
                   </li>
                 </div>
 
                 <div className="flex gap-[6px] items-center ">
                   <span className="w-[6px] h-[6px] bg-[#000] rounded-[6px]"></span>
                   <li className="text-[#000] md:text-[20px] text-[12px] font-medium">
-                    {name}
+                    {data.name}
                   </li>
                 </div>
               </ul>
             </Col>
           </Row>
-
+ 
           <Row
             gutter={[24, 24]}
             className="md:mt-[84.74px] md:mb-[127.23px] mt-[31px]"
           >
-            {photos.map((photo) => {
+            {data.photos?.map((photo) => {
               return (
                 <Col
                   md={{ span: 12 }}
@@ -94,7 +108,7 @@ const Work = ({
                 </Col>
               );
             })}
-          </Row>
+          </Row> 
         </div>
       </Wrapper>
     </>
@@ -103,11 +117,11 @@ const Work = ({
 
 export default Work;
 
-export async function getServerSideProps(context) {
-  const { params } = context;
-  const res = await fetch(
-    `https://new.8plusit.com/api/portfolios/${params.id}`
-  );
-  const resData = await res.json();
-  return { props: { resData } };
-}
+// export async function getServerSideProps(context) {
+//   const { params } = context;
+//   const res = await fetch(
+//     `https://new.8plusit.com/api/portfolios/${params.id}`
+//   );
+//   const resData = await res.json();
+//   return { props: { resData } };
+// }

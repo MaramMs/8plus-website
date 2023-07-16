@@ -1,10 +1,23 @@
 import BlogCard from "@/components/BlogCard";
 import Wrapper from "@/components/Wrapper";
 import { Button, Row } from "antd";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const Blog = ({ resData: { data } }) => {
+const Blog = () => {
+  const [data , setData] = useState([])
+console.log(data,'dta');
+
+  useEffect(() => {
+    const postData = async () => {
+      const res = await fetch("https://new.8plusit.com/api/posts");
+      const resData = await res.json();
+      setData(resData.data);
+    };
+    postData();
+  }, []);
+  
+
   const {t} = useTranslation();
   const [numItemsToShow , setNumItemsToShow] = useState(6);
   const handleShowMore =() =>{
@@ -65,8 +78,8 @@ const Blog = ({ resData: { data } }) => {
 };
 export default Blog;
 
-export async function getServerSideProps() {
-  const res = await fetch("https://new.8plusit.com/api/posts");
-  const resData = await res.json();
-  return { props: { resData } };
-}
+// export async function getServerSideProps() {
+//   const res = await fetch("https://new.8plusit.com/api/posts");
+//   const resData = await res.json();
+//   return { props: { resData } };
+// }

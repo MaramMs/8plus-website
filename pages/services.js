@@ -3,8 +3,21 @@ import FormContact from "@/components/FormContact";
 import Wrapper from "@/components/Wrapper";
 import {Col,Row } from "antd";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
-const services = ({resData:{data}}) => {
+const services = () => {
+  const [data,setData] = useState([]);
+  useEffect(()=>{
+const serviceData = async() =>{
+  const res = await fetch("https://new.8plusit.com/api/services");
+  const resData = await res.json();
+setData(resData.data);
+
+}
+
+serviceData();
+  },[]);
+  console.log(data, 'data');
   return (
     <div className="overflow-x-hidden pt-[162px]">
       <div className="flex flex-col justify-center items-center ">
@@ -60,7 +73,7 @@ const services = ({resData:{data}}) => {
         <h2 className="text-[#1768AC] font-medium text-[20px] md:text-center text-right md:text-[32px] mb-[4px]">
           Contact Us
         </h2>
-        <p className="text-[#949494] text-[14px] font-[450] text-right break-all mb-[24px]">
+        <p className="text-[#949494] text-[14px] font-[450] text-right break-all mb-[24px] md:hidden">
           LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem
         </p>
         <FormContact data={data}/>
@@ -72,9 +85,9 @@ const services = ({resData:{data}}) => {
 
 export default services;
 
-export async function getServerSideProps() {
-  const res = await fetch("https://new.8plusit.com/api/services");
-  const resData = await res.json();
+// export async function getServerSideProps() {
+//   const res = await fetch("https://new.8plusit.com/api/services");
+//   const resData = await res.json();
 
-  return { props: { resData } };
-}
+//   return { props: { resData } };
+// }

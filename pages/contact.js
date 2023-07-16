@@ -2,21 +2,36 @@ import Footer from "@/components/Footer";
 import FormContact from "@/components/FormContact";
 import Wrapper from "@/components/Wrapper";
 import { Button, Col, Form, Input, Row, Select } from "antd";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { BsTelephoneFill } from "react-icons/bs";
 import { HiLocationMarker } from "react-icons/hi";
 import { IoMdMail } from "react-icons/io";
 
-const contact = ({
-  resDataServices: { data },
-  resDataHome: { data: homeData },
-}) => {
-  const {
-    site: { site_email, site_phone, site_address },
-  } = homeData;
-  console.log(homeData, "site_email");
+const contact = () => {
+
   const { t } = useTranslation();
+  const [dataHome, setDataHome] = useState([]);
+  const [dataServices, setDataServices] = useState([]);
+
+  useEffect(() => {
+    const getHome = async () => {
+      const resHome = await fetch("https://new.8plusit.com/api/home");
+      const resDataHome = await resHome.json();
+      setDataHome(resDataHome.data.site);
+    };
+
+    const getServices = async () => {
+      const resServices = await fetch("https://new.8plusit.com/api/services");
+      const resDataServices = await resServices.json();
+      setDataServices(resDataServices.data);
+    };
+
+    getHome();
+    getServices();
+  }, []);
+
+  console.log(dataHome ,'data home');
   return (
     <>
       <div className="pt-[162px] overflow-x-hidden">
@@ -29,7 +44,7 @@ const contact = ({
             <p className="break-words text-[14px] md:text-[16px] text-[#949494] font-[450] mt-[9px] leading-[23px] mb-[36px]">
               {t("home-desc")}
             </p>
-            <FormContact data={data} />
+            <FormContact data={dataServices} />
           </Col>
 
           <Col
@@ -44,19 +59,19 @@ const contact = ({
               <li className="flex items-center gap-[13px] md:mb-[71px] mb-[31px] flex-row-reverse	md:flex-row">
                 <HiLocationMarker className="text-[#fff] text-[19px]" />
                 <span className="text-[#fff] font-medium text-[16px]">
-                  {site_address}{" "}
+                  {dataHome.site_address}{" "}
                 </span>
               </li>
               <li className="flex items-center gap-[13px] md:mb-[71px] mb-[31px] flex-row-reverse	md:flex-row">
                 <BsTelephoneFill className="text-[#fff] text-[19px]" />
                 <span className="text-[#fff] font-medium text-[16px]">
-                  {site_phone}
+                  {dataHome.site_phone}
                 </span>
               </li>
               <li className="flex items-center gap-[13px] md:mb-[71px] mb-[31px] flex-row-reverse	md:flex-row">
                 <IoMdMail className="text-[#fff] text-[19px]" />
                 <span className="text-[#fff] font-medium text-[16px]">
-                  {site_email}
+                  {dataHome.site_email}
                 </span>
               </li>
             </ul>
@@ -69,12 +84,12 @@ const contact = ({
 
 export default contact;
 
-export async function getServerSideProps() {
-  const resServices = await fetch("https://new.8plusit.com/api/services");
-  const resDataServices = await resServices.json();
+// export async function getServerSideProps() {
+//   const resServices = await fetch("https://new.8plusit.com/api/services");
+//   const resDataServices = await resServices.json();
 
-  const resHome = await fetch("https://new.8plusit.com/api/home");
-  const resDataHome = await resHome.json();
+//   const resHome = await fetch("https://new.8plusit.com/api/home");
+//   const resDataHome = await resHome.json();
 
-  return { props: { resDataServices, resDataHome } };
-}
+//   return { props: { resDataServices, resDataHome } };
+// }

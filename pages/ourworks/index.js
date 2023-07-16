@@ -9,13 +9,29 @@ import { Empty, Select } from "antd";
 import CustomSwiper from "@/components/CustomSwiper";
 import CardProject from "@/components/CardProject";
 
-const index = ({
-  resData: {
-    data: { portfolios, categories },
-  },
-}) => {
-  console.log(portfolios, "categoruws");
+const index = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [data , setData] = useState([]);
+  const [categories , setCategories] = useState([])
+  
+  useEffect(() =>{
+    const postData = async () => {
+      const res = await fetch("https://new.8plusit.com/api/portfolios");
+      const resData = await res.json();
+      setData(resData.data);
+    };
+    const categoryData = async() =>{
+     
+      const res = await fetch("https://new.8plusit.com/api/categories");
+      const resData = await res.json();
+      setCategories(resData.data);
+    }
+    postData();
+    categoryData();
+  },[]);
+
+  
+  console.log(data,'data');
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 576);
@@ -33,16 +49,16 @@ const index = ({
   const handleCategoryClick = (id) => {
     setActiveCategory(id);
     if (id === 1) {
-      setFilteredProjects(portfolios);
+      setFilteredProjects(data);
     } else {
-      const filter = portfolios.filter(
-        (portfolio) => portfolio.category_id === id
+      const filter = data.filter(
+        (item) => item.category_id === id
       );
       setFilteredProjects(filter);
     }
   };
   useEffect(() => {
-    setFilteredProjects(portfolios);
+    setFilteredProjects(data);
   }, []);
   const handleChange = (value) => {
    handleCategoryClick(value)
@@ -114,9 +130,9 @@ const index = ({
 
 export default index;
 
-export async function getServerSideProps() {
-  const res = await fetch("https://new.8plusit.com/api");
-  const resData = await res.json();
+// export async function getServerSideProps() {
+//   const res = await fetch("https://new.8plusit.com/api");
+//   const resData = await res.json();
 
-  return { props: { resData } };
-}
+//   return { props: { resData } };
+// }

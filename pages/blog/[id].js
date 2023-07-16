@@ -5,12 +5,27 @@ import { Button, Col, Row } from "antd";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const BlogDetails = ({ resData: { data } }) => {
+const BlogDetails = () => {
+  const router = useRouter();
+  const {id}= router.query
+  console.log(id , 'params');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  console.log(data.meta_description,'data');
+
+  const [data , setData] = useState([])
+
+console.log(data , 'data');
+  useEffect(() => {
+    const postData = async () => {
+      const res = await fetch(`https://new.8plusit.com/api/posts/${id}`);
+      const resData = await res.json();
+      setData(resData.data);
+    };
+    postData();
+  }, [id]);
 
   const [isMobile, setIsMobile] = useState(false);
   const { t } = useTranslation();
@@ -137,7 +152,7 @@ const BlogDetails = ({ resData: { data } }) => {
 
             {isMobile ? (
               <>
-                {data.post_related.map((item) => {
+                {data.post_related?.map((item) => {
                   return (
                     <div className="mb-[22px]" key={item.id}>
                       <BlogCard item={item} />
@@ -147,7 +162,7 @@ const BlogDetails = ({ resData: { data } }) => {
               </>
             ) : (
               <>
-                {data.post_related.map((post) => {
+                {data.post_related?.map((post) => {
                   return (
                     <Link href={`/blog/${post.id}`}>
                       <div className="flex gap-[12px] mb-[25px] h-[150px] hover:border p-2 transition-all ease-in-out duration-[4000ms]">
@@ -212,13 +227,13 @@ const BlogDetails = ({ resData: { data } }) => {
 
 export default BlogDetails;
 
-export async function getServerSideProps(context) {
-  const { params } = context;
-  const res = await fetch(`https://new.8plusit.com/api/posts/${params.id}`);
-  const resData = await res.json();
-  return {
-    props: {
-      resData,
-    },
-  };
-}
+// export async function getServerSideProps(context) {
+//   const { params } = context;
+//   const res = await fetch(`https://new.8plusit.com/api/posts/${params.id}`);
+//   const resData = await res.json();
+//   return {
+//     props: {
+//       resData,
+//     },
+//   };
+// }
